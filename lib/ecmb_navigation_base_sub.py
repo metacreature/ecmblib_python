@@ -3,8 +3,8 @@ from typing import Callable
 from .ecmb_utils import ecmbUtils
 from .ecmb_navigation_base import ecmbNavigationBase
 from .ecmb_navigation_item import ecmbNavigationItem
-from .ecmb_folder import ecmbFolder
-from .ecmb_image import ecmbImage
+from .ecmb_content_folder import ecmbContentFolder
+from .ecmb_content_image import ecmbContentImage
 
 
 class ecmbNavigationBaseSub(ecmbNavigationBase):
@@ -32,7 +32,7 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         return headline_obj
     
 
-    def add_chapter(self, label_or_chapter: str|ecmbNavigationChapter, uid_or_folder: str|ecmbFolder, uid_or_image: str|ecmbImage, title: str = None) -> ecmbNavigationChapter:
+    def add_chapter(self, label_or_chapter: str|ecmbNavigationChapter, uid_or_folder: str|ecmbContentFolder, uid_or_image: str|ecmbContentImage, title: str = None) -> ecmbNavigationChapter:
         chapter_obj = None
 
         if type(label_or_chapter) == ecmbNavigationChapter:
@@ -48,7 +48,7 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         return chapter_obj
 
 
-    def add_item(self, label_or_item: str|ecmbNavigationItem, uid_or_image: str|ecmbImage, title: str = None) -> ecmbNavigationItem:
+    def add_item(self, label_or_item: str|ecmbNavigationItem, uid_or_image: str|ecmbContentImage, title: str = None) -> ecmbNavigationItem:
         item_obj = None
 
         if type(label_or_item) == ecmbNavigationItem:

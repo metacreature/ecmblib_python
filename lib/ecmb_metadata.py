@@ -2,18 +2,18 @@ from lxml import etree
 from .ecmb_utils import ecmbUtils
 from .ecmb_enums import *
 from .ecmb_metadata_base import ecmbMetaDataBase
-from .ecmb_based_on import ecmbBasedOn
+from .ecmb_metadata_based_on import ecmbMetaDataBasedOn
 
 class ecmbMetaData(ecmbMetaDataBase):
 
     _metadata_based_on_obj = None
 
     def __init__(self):
-        self._metadata_based_on_obj = ecmbBasedOn()
+        self._metadata_based_on_obj = ecmbMetaDataBasedOn()
         super().__init__()
 
 
-    def based_on(self) -> ecmbBasedOn:
+    def based_on(self) -> ecmbMetaDataBasedOn:
         return self._metadata_based_on_obj
 
     

@@ -5,9 +5,9 @@ from lxml import etree
 from typing import Callable
 from .ecmb_utils import ecmbUtils
 from .ecmb_content_base import ecmbContentBase
-from .ecmb_image import ecmbImage
+from .ecmb_content_image import ecmbContentImage
 
-class ecmbFolder(ecmbContentBase):
+class ecmbContentFolder(ecmbContentBase):
 
     _contents = None
 
@@ -16,14 +16,14 @@ class ecmbFolder(ecmbContentBase):
         self._contents = []
         
     
-    def add_image(self, src_or_image: str|BytesIO|ecmbImage, src_left: str|BytesIO = None, src_right: str|BytesIO = None, unique_id: str = None) -> ecmbImage:
+    def add_image(self, src_or_image: str|BytesIO|ecmbContentImage, src_left: str|BytesIO = None, src_right: str|BytesIO = None, unique_id: str = None) -> ecmbContentImage:
         image_obj = None
-        if type(src_or_image) == ecmbImage:
+        if type(src_or_image) == ecmbContentImage:
             image_obj = src_or_image
         elif type(src_or_image) == BytesIO or type(src_or_image) == str:
-            image_obj = ecmbImage(self._book_obj, src_or_image, src_left, src_right, unique_id)     
+            image_obj = ecmbContentImage(self._book_obj, src_or_image, src_left, src_right, unique_id)     
         else:
-            ecmbUtils.raise_exception('please provide ecmbImage, BytesIO or a path to an existing image-file')
+            ecmbUtils.raise_exception('please provide ecmbContentImage, BytesIO or a path to an existing image-file')
         
         image_obj.int_set_parent(self)
         self._contents.append(image_obj)
@@ -35,12 +35,12 @@ class ecmbFolder(ecmbContentBase):
         folder_obj = None
 
         from .ecmb_content import ecmbContent
-        if type(uid_or_folder) == ecmbFolder and type(uid_or_folder) != ecmbContent:
+        if type(uid_or_folder) == ecmbContentFolder and type(uid_or_folder) != ecmbContent:
             folder_obj = uid_or_folder
         elif type(uid_or_folder) == str or uid_or_folder == None:
-            folder_obj = ecmbFolder(self._book_obj, uid_or_folder)
+            folder_obj = ecmbContentFolder(self._book_obj, uid_or_folder)
         else:
-            ecmbUtils.raise_exception('please provide ecmbFolder, a unique_id or None')
+            ecmbUtils.raise_exception('please provide ecmbContentFolder, a unique_id or None')
             
         folder_obj.int_set_parent(self)
         self._contents.append(folder_obj)
@@ -80,7 +80,7 @@ class ecmbFolder(ecmbContentBase):
     def int_contains(self, obj: ecmbContentBase) -> bool:
         unique_id = obj.get_unique_id()
         for content in self._contents:
-            if unique_id == content.get_unique_id() or (type(content) != ecmbImage and content.int_contains(obj)):
+            if unique_id == content.get_unique_id() or (type(content) != ecmbContentImage and content.int_contains(obj)):
                 return True
         return False
 

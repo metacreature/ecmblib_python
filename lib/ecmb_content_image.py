@@ -5,7 +5,7 @@ from typing import Callable
 from .ecmb_utils import ecmbUtils
 from .ecmb_content_base import ecmbContentBase
 
-class ecmbImage(ecmbContentBase):
+class ecmbContentImage(ecmbContentBase):
 
     _src = None
     _src_format = None

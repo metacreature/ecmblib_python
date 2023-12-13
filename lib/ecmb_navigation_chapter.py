@@ -1,24 +1,24 @@
 from typing import  Callable
 from .ecmb_utils import ecmbUtils
 from .ecmb_navigation_base_sub import ecmbNavigationBaseSub
-from .ecmb_folder import ecmbFolder
-from .ecmb_image import ecmbImage
+from .ecmb_content_folder import ecmbContentFolder
+from .ecmb_content_image import ecmbContentImage
 
 
 class ecmbNavigationChapter(ecmbNavigationBaseSub):
 
     _target_folder_obj = None
 
-    def __init__(self, book_obj, label: str, folder: str|ecmbFolder, target: str|ecmbImage, title:str = None):
+    def __init__(self, book_obj, label: str, folder: str|ecmbContentFolder, target: str|ecmbContentImage, title:str = None):
         super()._init(book_obj, label, title)
         super()._set_target(target)
 
 
         target_folder_obj = None
-        if type(folder) == ecmbFolder or type(folder) == str and folder != '':
+        if type(folder) == ecmbContentFolder or type(folder) == str and folder != '':
             target_folder_obj = self._book_obj.int_get_content(folder)
         else:
-            ecmbUtils.raise_exception('folder must be either an unique_id or an ecmbFolder at chapter"' + self._label + '"!')
+            ecmbUtils.raise_exception('folder must be either an unique_id or an ecmbContentFolder at chapter"' + self._label + '"!')
 
         if not target_folder_obj:
             ecmbUtils.raise_exception('the given folder was not found in the book at chapter "' + self._label + '"!')
@@ -39,5 +39,5 @@ class ecmbNavigationChapter(ecmbNavigationBaseSub):
         return True
     
 
-    def int_parent_chapter_folder(self) -> ecmbFolder:
+    def int_parent_chapter_folder(self) -> ecmbContentFolder:
         return self._target_folder_obj

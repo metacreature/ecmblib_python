@@ -4,12 +4,12 @@ from typing import Callable
 from io import BytesIO
 from lxml import etree
 from .ecmb_utils import ecmbUtils
-from .ecmb_folder import ecmbFolder
+from .ecmb_content_folder import ecmbContentFolder
 
 
-# coz of add_folder rerurns an instance of ecmbFolder there is no other posibillity than extending ecmbFolder.
+# coz of add_folder rerurns an instance of ecmbContentFolder there is no other posibillity than extending ecmbContentFolder.
 # can't work with a base-class coz of that
-class ecmbContent(ecmbFolder):
+class ecmbContent(ecmbContentFolder):
 
     _cover_front = None
     _cover_front_format = None
@@ -32,7 +32,7 @@ class ecmbContent(ecmbFolder):
         self._cover_rear_format = cover_rear_format
 
     
-    def add_folder(self, uid_or_folder: str|Self = None) -> ecmbFolder:
+    def add_folder(self, uid_or_folder: str|Self = None) -> ecmbContentFolder:
         return super().add_folder(uid_or_folder)
     
 

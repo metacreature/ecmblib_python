@@ -4,7 +4,7 @@ from .ecmb_enums import *
 from .ecmb_metadata_base import ecmbMetaDataBase
 
 
-class ecmbBasedOn(ecmbMetaDataBase):
+class ecmbMetaDataBasedOn(ecmbMetaDataBase):
     
     def set_type(self, book_type: BASED_ON_BOOK_TYPE) -> None:
         book_type = ecmbUtils.enum_value(book_type)

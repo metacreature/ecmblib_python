@@ -39,9 +39,9 @@ class ecmbContentBase():
 
     def _init(self, book_obj, unique_id: str) -> None:
         
-        from .ecmb import ecmbBook
-        if type(book_obj) != ecmbBook:
-            ecmbUtils.raise_exception(f'ecmbBook expected as the first param, but got diffrent type!', 1)
+        #from .ecmb import ecmbBook
+        #if type(book_obj) != ecmbBook:
+        #    ecmbUtils.raise_exception(f'ecmbBook expected as the first param, but got diffrent type!', 1)
 
         ecmbUtils.validate_str_or_none(True,  'unique_id', unique_id, 1)
         if not unique_id:

@@ -1,19 +1,22 @@
 import zipfile, os, re
 from lxml import etree
 from typing import Callable
-from .ecmb_enums import *
-from .ecmb_utils import ecmbUtils, ecmbException
-from .ecmb_metadata import ecmbMetaData
-from .ecmb_based_on import ecmbBasedOn
-from .ecmb_content_base import ecmbContentBase
-from .ecmb_content import ecmbContent
-from .ecmb_folder import ecmbFolder
-from .ecmb_image import ecmbImage
 
-from .ecmb_navigation import ecmbNavigation
-from .ecmb_navigation_chapter import ecmbNavigationChapter
-from .ecmb_navigation_headline import ecmbNavigationHeadline
-from .ecmb_navigation_item import ecmbNavigationItem
+from .lib.ecmb_enums import *
+from .lib.ecmb_utils import ecmbUtils, ecmbException
+
+from .lib.ecmb_metadata import ecmbMetaData
+from .lib.ecmb_metadata_based_on import ecmbMetaDataBasedOn
+
+from .lib.ecmb_content import ecmbContent
+from .lib.ecmb_content_folder import ecmbContentFolder
+from .lib.ecmb_content_image import ecmbContentImage
+
+from .lib.ecmb_navigation import ecmbNavigation
+from .lib.ecmb_navigation_headline import ecmbNavigationHeadline
+from .lib.ecmb_navigation_chapter import ecmbNavigationChapter
+from .lib.ecmb_navigation_item import ecmbNavigationItem
+
 
 class ecmbBook:
 
@@ -60,7 +63,7 @@ class ecmbBook:
         return self._metadata_obj
 
     
-    def based_on(self) -> ecmbBasedOn:
+    def based_on(self) -> ecmbMetaDataBasedOn:
         return self._metadata_obj.based_on()
     
     
@@ -127,13 +130,14 @@ class ecmbBook:
 
 
     
-    def int_register_content(self, content: ecmbFolder|ecmbImage) -> None:
+    def int_register_content(self, content: ecmbContentFolder|ecmbContentImage) -> None:
         if content.get_unique_id() in self._content_ref.keys():
             ecmbUtils.raise_exception(f'the book contains allready content with the unique_id "' + content.get_unique_id() + '"!', 1)
         self._content_ref[content.get_unique_id()] = content
 
 
-    def int_get_content(self, ref: str|ecmbContentBase) -> ecmbContentBase:
+    def int_get_content(self, ref): # no typehining coz don't want the user to see the class ecmbContentBase
+        from .lib.ecmb_content_base import ecmbContentBase
         unique_id = ref.get_unique_id() if isinstance(ref, ecmbContentBase) else ref
         return self._content_ref.get(unique_id)
 
