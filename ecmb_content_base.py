@@ -43,7 +43,7 @@ class ecmbContentBase():
         if type(book_obj) != ecmbBook:
             ecmbUtils.raise_exception(f'ecmbBook expected as the first param, but got diffrent type!', 1)
 
-        ecmbUtils.validate_str_or_none(True,  'unique_id', unique_id)
+        ecmbUtils.validate_str_or_none(True,  'unique_id', unique_id, 1)
         if not unique_id:
             unique_id = str(uuid.uuid4())
 

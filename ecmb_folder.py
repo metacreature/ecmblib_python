@@ -18,10 +18,10 @@ class ecmbFolder(ecmbContentBase):
     
     def add_image(self, src_or_image: str|BytesIO|ecmbImage, src_left: str|BytesIO = None, src_right: str|BytesIO = None, unique_id: str = None) -> ecmbImage:
         image_obj = None
-        if type(src_or_image) == BytesIO or ecmbUtils.validate_not_empty_str(False, 'src_or_image', src_or_image):
-            image_obj = ecmbImage(self._book_obj, src_or_image, src_left, src_right, unique_id)
-        elif type(src_or_image) == ecmbImage:
+        if type(src_or_image) == ecmbImage:
             image_obj = src_or_image
+        elif type(src_or_image) == BytesIO or type(src_or_image) == str:
+            image_obj = ecmbImage(self._book_obj, src_or_image, src_left, src_right, unique_id)     
         else:
             ecmbUtils.raise_exception('please provide ecmbImage, BytesIO or a path to an existing image-file')
         
@@ -35,10 +35,10 @@ class ecmbFolder(ecmbContentBase):
         folder_obj = None
 
         from .ecmb_content import ecmbContent
-        if ecmbUtils.validate_str_or_none(False, 'uid_or_folder', uid_or_folder):
-            folder_obj = ecmbFolder(self._book_obj, uid_or_folder)
-        elif type(uid_or_folder) == ecmbFolder and type(uid_or_folder) != ecmbContent:
+        if type(uid_or_folder) == ecmbFolder and type(uid_or_folder) != ecmbContent:
             folder_obj = uid_or_folder
+        elif type(uid_or_folder) == str or uid_or_folder == None:
+            folder_obj = ecmbFolder(self._book_obj, uid_or_folder)
         else:
             ecmbUtils.raise_exception('please provide ecmbFolder, a unique_id or None')
             
@@ -76,6 +76,13 @@ class ecmbFolder(ecmbContentBase):
         
         return main_node
     
+
+    def int_contains(self, obj: ecmbContentBase) -> bool:
+        unique_id = obj.get_unique_id()
+        for content in self._contents:
+            if unique_id == content.get_unique_id() or (type(content) != ecmbImage and content.int_contains(obj)):
+                return True
+        return False
 
 
 

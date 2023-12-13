@@ -1,0 +1,80 @@
+from typing import TypeVar, Callable
+from .ecmb_utils import ecmbUtils
+from .ecmb_navigation_base import ecmbNavigationBase
+from .ecmb_folder import ecmbFolder
+from .ecmb_image import ecmbImage
+
+
+ecmbBook = TypeVar("ecmbBook")
+ecmbNavigationHeadline = TypeVar("ecmbNavigationHeadline")
+ecmbNavigationChapter = TypeVar("ecmbNavigationChapter")
+ecmbNavigationItem = TypeVar("ecmbNavigationItem")
+
+
+class ecmbNavigationBaseSub(ecmbNavigationBase):
+
+    _children = None
+
+    def _init(self, book_obj: ecmbBook, label: str, title: str) -> None:
+        super()._init(book_obj, label, title)
+        self._children = []
+
+
+    def add_headline(self, label_or_headline: str, title: str = None) -> ecmbNavigationHeadline:
+        headline_obj = None
+
+        from .ecmb_navigation_headline import ecmbNavigationHeadline
+        if type(label_or_headline) == ecmbNavigationHeadline:
+            headline_obj = label_or_headline
+        elif type(label_or_headline) == str:
+            headline_obj = ecmbNavigationHeadline(self._book_obj, label_or_headline, title)
+        else:
+            ecmbUtils.raise_exception('please provide ecmbNavigationHeadline or a label')
+            
+        headline_obj.int_set_parent(self)
+        self._children.append(headline_obj)
+
+        return headline_obj
+    
+
+    def add_chapter(self, label_or_chapter: str, uid_or_folder: str|ecmbFolder, uid_or_image: str|ecmbImage, title: str = None) -> ecmbNavigationChapter:
+        chapter_obj = None
+
+        from .ecmb_navigation_chapter import ecmbNavigationChapter
+        if type(label_or_chapter) == ecmbNavigationChapter:
+            chapter_obj = label_or_chapter
+        elif type(label_or_chapter) == str:
+            chapter_obj = ecmbNavigationChapter(self._book_obj, label_or_chapter, uid_or_folder, uid_or_image, title)
+        else:
+            ecmbUtils.raise_exception('please provide ecmbNavigationChapter or a label')
+            
+        chapter_obj.int_set_parent(self)
+        self._children.append(chapter_obj)
+
+        return chapter_obj
+
+
+    def add_item(self, label_or_item: str, uid_or_image: str|ecmbImage, title: str = None) -> ecmbNavigationItem:
+        item_obj = None
+
+        from .ecmb_navigation_item import ecmbNavigationItem
+        if type(label_or_item) == ecmbNavigationItem:
+            item_obj = label_or_item
+        elif type(label_or_item) == str:
+            item_obj = ecmbNavigationItem(self._book_obj, label_or_item, uid_or_image, title)
+        else:
+            ecmbUtils.raise_exception('please provide ecmbNavigationItem or a label')
+            
+        item_obj.int_set_parent(self)
+        self._children.append(item_obj)
+
+        return item_obj
+    
+
+    def int_validate(self, warnings: bool|Callable) -> bool:
+        found = False
+        for child in self._children:
+            if child.int_validate(warnings):
+                found = True
+        return found
+    

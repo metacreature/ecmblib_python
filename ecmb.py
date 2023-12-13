@@ -5,10 +5,15 @@ from .ecmb_enums import *
 from .ecmb_utils import ecmbUtils, ecmbException
 from .ecmb_metadata import ecmbMetaData
 from .ecmb_based_on import ecmbBasedOn
+from .ecmb_content_base import ecmbContentBase
 from .ecmb_content import ecmbContent
 from .ecmb_folder import ecmbFolder
 from .ecmb_image import ecmbImage
 
+from .ecmb_navigation import ecmbNavigation
+from .ecmb_navigation_chapter import ecmbNavigationChapter
+from .ecmb_navigation_headline import ecmbNavigationHeadline
+from .ecmb_navigation_item import ecmbNavigationItem
 
 class ecmbBook:
 
@@ -41,6 +46,7 @@ class ecmbBook:
 
         self._metadata_obj = ecmbMetaData()
         self._content_obj = ecmbContent(self)
+        self._navigation_obj = ecmbNavigation(self)
 
         self._version = '1.0'
         self._book_type = book_type
@@ -61,6 +67,10 @@ class ecmbBook:
     def content(self) -> ecmbContent:
         return self._content_obj
     
+
+    def navigation(self) -> ecmbNavigation:
+        return self._navigation_obj
+    
     
     def validate(self, warnings: bool|Callable = True) -> None:
         self._metadata_obj.int_validate()
@@ -68,6 +78,7 @@ class ecmbBook:
         self._content_obj.int_validate(warnings)
         if self._page_nr_counter % 2 != 0:
             ecmbUtils.write_warning(warnings, f'The Book has an an uneven page-count!')
+        self._navigation_obj.int_validate(warnings)
 
 
     def write(self, file_name: str, warnings: bool|Callable = True, demo_mode: bool = False) -> None:
@@ -120,6 +131,11 @@ class ecmbBook:
         if content.get_unique_id() in self._content_ref.keys():
             ecmbUtils.raise_exception(f'the book contains allready content with the unique_id "' + content.get_unique_id() + '"!', 1)
         self._content_ref[content.get_unique_id()] = content
+
+
+    def int_get_content(self, ref: str|ecmbContentBase) -> ecmbContentBase:
+        unique_id = ref.get_unique_id() if isinstance(ref, ecmbContentBase) else ref
+        return self._content_ref.get(unique_id)
 
 
     def int_get_width(self) -> int:
