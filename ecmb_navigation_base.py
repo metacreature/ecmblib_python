@@ -1,9 +1,8 @@
-from typing import Self, TypeVar
+from typing import Self
 from .ecmb_utils import ecmbUtils
 from .ecmb_folder import ecmbFolder
 from .ecmb_image import ecmbImage
 
-ecmbBook = TypeVar("ecmbBook")
 
 class ecmbNavigationBase():
 
@@ -30,7 +29,7 @@ class ecmbNavigationBase():
         return None
 
 
-    def _init(self, book_obj: ecmbBook, label: str, title: str) -> None:
+    def _init(self, book_obj, label: str, title: str) -> None:
         from .ecmb import ecmbBook
         if type(book_obj) != ecmbBook:
             ecmbUtils.raise_exception(f'ecmbBook expected, but got diffrent type!', 1)

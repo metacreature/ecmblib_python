@@ -1,13 +1,12 @@
-from typing import TypeVar, Callable
+from typing import Callable
 from .ecmb_utils import ecmbUtils
 from .ecmb_navigation_base import ecmbNavigationBase
 from .ecmb_image import ecmbImage
 
-ecmbBook = TypeVar("ecmbBook")
 
 class ecmbNavigationItem(ecmbNavigationBase):
 
-    def __init__(self, book_obj: ecmbBook, label: str, target: str|ecmbImage, title:str = None):
+    def __init__(self, book_obj, label: str, target: str|ecmbImage, title:str = None):
         super()._init(book_obj, label, title)
         super()._set_target(target)
 

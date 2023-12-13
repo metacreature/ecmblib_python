@@ -1,29 +1,24 @@
-from typing import TypeVar, Callable
+from __future__ import annotations
+from typing import Callable
 from .ecmb_utils import ecmbUtils
 from .ecmb_navigation_base import ecmbNavigationBase
+from .ecmb_navigation_item import ecmbNavigationItem
 from .ecmb_folder import ecmbFolder
 from .ecmb_image import ecmbImage
-
-
-ecmbBook = TypeVar("ecmbBook")
-ecmbNavigationHeadline = TypeVar("ecmbNavigationHeadline")
-ecmbNavigationChapter = TypeVar("ecmbNavigationChapter")
-ecmbNavigationItem = TypeVar("ecmbNavigationItem")
 
 
 class ecmbNavigationBaseSub(ecmbNavigationBase):
 
     _children = None
 
-    def _init(self, book_obj: ecmbBook, label: str, title: str) -> None:
+    def _init(self, book_obj, label: str, title: str) -> None:
         super()._init(book_obj, label, title)
         self._children = []
 
 
-    def add_headline(self, label_or_headline: str, title: str = None) -> ecmbNavigationHeadline:
+    def add_headline(self, label_or_headline: str|ecmbNavigationHeadline, title: str = None) -> ecmbNavigationHeadline:
         headline_obj = None
 
-        from .ecmb_navigation_headline import ecmbNavigationHeadline
         if type(label_or_headline) == ecmbNavigationHeadline:
             headline_obj = label_or_headline
         elif type(label_or_headline) == str:
@@ -37,10 +32,9 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         return headline_obj
     
 
-    def add_chapter(self, label_or_chapter: str, uid_or_folder: str|ecmbFolder, uid_or_image: str|ecmbImage, title: str = None) -> ecmbNavigationChapter:
+    def add_chapter(self, label_or_chapter: str|ecmbNavigationChapter, uid_or_folder: str|ecmbFolder, uid_or_image: str|ecmbImage, title: str = None) -> ecmbNavigationChapter:
         chapter_obj = None
 
-        from .ecmb_navigation_chapter import ecmbNavigationChapter
         if type(label_or_chapter) == ecmbNavigationChapter:
             chapter_obj = label_or_chapter
         elif type(label_or_chapter) == str:
@@ -54,10 +48,9 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         return chapter_obj
 
 
-    def add_item(self, label_or_item: str, uid_or_image: str|ecmbImage, title: str = None) -> ecmbNavigationItem:
+    def add_item(self, label_or_item: str|ecmbNavigationItem, uid_or_image: str|ecmbImage, title: str = None) -> ecmbNavigationItem:
         item_obj = None
 
-        from .ecmb_navigation_item import ecmbNavigationItem
         if type(label_or_item) == ecmbNavigationItem:
             item_obj = label_or_item
         elif type(label_or_item) == str:
@@ -78,3 +71,8 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
                 found = True
         return found
     
+
+# for type-hinting and and type-check in combination with "from __future__ import annotations"
+# can't include them on top coz these ar subclasses of ecmbNavigationBaseSub
+from .ecmb_navigation_chapter import ecmbNavigationChapter
+from .ecmb_navigation_headline import ecmbNavigationHeadline
