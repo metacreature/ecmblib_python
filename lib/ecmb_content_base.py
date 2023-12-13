@@ -8,7 +8,8 @@ from abc import ABC, abstractmethod
 from .ecmb_utils import ecmbUtils
 from .ecmb_enums import *
 
-class ecmbContentBase():
+
+class ecmbContentBase(ABC):
 
     _book_obj = None
     _parent_content_obj = None
@@ -38,10 +39,8 @@ class ecmbContentBase():
 
 
     def _init(self, book_obj, unique_id: str) -> None:
-        
-        #from .ecmb import ecmbBook
-        #if type(book_obj) != ecmbBook:
-        #    ecmbUtils.raise_exception(f'ecmbBook expected as the first param, but got diffrent type!', 1)
+        if not 'ecmbBook' in str(type(book_obj)):
+            ecmbUtils.raise_exception(f'ecmbBook expected as the first param, but got diffrent type!', 1)
 
         ecmbUtils.validate_str_or_none(True,  'unique_id', unique_id, 1)
         if not unique_id:
@@ -117,5 +116,5 @@ class ecmbContentBase():
 
 
     @abstractmethod
-    def int_build(self, target_file) -> etree.Element:
+    def int_build(self, target_file: zipfile.ZipFile) -> etree.Element:
         pass

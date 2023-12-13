@@ -30,9 +30,8 @@ class ecmbNavigationBase():
 
 
     def _init(self, book_obj, label: str, title: str) -> None:
-        #from .ecmb import ecmbBook
-        #if type(book_obj) != ecmbBook:
-        #    ecmbUtils.raise_exception(f'ecmbBook expected, but got diffrent type!', 1)
+        if not 'ecmbBook' in str(type(book_obj)):
+            ecmbUtils.raise_exception(f'ecmbBook expected, but got diffrent type!', 1)
         
         ecmbUtils.validate_not_empty_str(True,  'label', label, 1)
         ecmbUtils.validate_str_or_none(True,  'title', title, 1)

@@ -1,23 +1,21 @@
 import zipfile
-from typing import Self
 from typing import Callable
 from io import BytesIO
 from lxml import etree
 from .ecmb_utils import ecmbUtils
-from .ecmb_content_folder import ecmbContentFolder
+from .ecmb_content_base_sub import ecmbContentBaseSub
 
 
-# coz of add_folder rerurns an instance of ecmbContentFolder there is no other posibillity than extending ecmbContentFolder.
-# can't work with a base-class coz of that
-class ecmbContent(ecmbContentFolder):
+class ecmbContent(ecmbContentBaseSub):
 
     _cover_front = None
     _cover_front_format = None
     _cover_rear = None
     _cover_rear_format = None
 
-    def __init__(self, book_obj, unique_id: str = None):
-        super().__init__(book_obj, None)
+    def __init__(self, book_obj):
+        self._book_obj = book_obj
+        self._contents = []
 
     
     def set_cover_front(self, src: str|BytesIO) -> None:
@@ -30,10 +28,6 @@ class ecmbContent(ecmbContentFolder):
         (ignore, cover_rear_format) = self._check_image(src, 'src', False)
         self._cover_rear = src
         self._cover_rear_format = cover_rear_format
-
-    
-    def add_folder(self, uid_or_folder: str|Self = None) -> ecmbContentFolder:
-        return super().add_folder(uid_or_folder)
     
 
     def int_validate(self, warnings: bool|Callable) -> bool:
