@@ -1,4 +1,5 @@
 from typing import Callable
+from lxml import etree
 from .ecmb_utils import ecmbUtils
 from .ecmb_navigation_base import ecmbNavigationBase
 from .ecmb_navigation_base_sub import ecmbNavigationBaseSub
@@ -20,3 +21,17 @@ class ecmbNavigation(ecmbNavigationBaseSub):
             ecmbUtils.write_warning(warnings, 'Its recommended to provide a navigation!')
             return False
         return True
+    
+
+    def int_build(self) -> etree.Element:
+        if not self.int_validate(False):
+            return
+        
+        main_node = etree.Element('navigation')
+
+        for child in self._children:
+            child_node = child.int_build()
+            if child_node != None:
+                main_node.append(child_node)
+        
+        return main_node

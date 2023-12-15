@@ -2,8 +2,7 @@ import uuid, os, zipfile
 from io import BytesIO
 from PIL import Image
 from lxml import etree
-from typing import Callable
-from typing import Self
+from typing import Self, Callable
 from abc import ABC, abstractmethod
 from .ecmb_utils import ecmbUtils
 from .ecmb_enums import *
@@ -32,10 +31,10 @@ class ecmbContentBase(ABC):
         self._parent_content_obj = parent_content_obj
 
     
-    def int_get_build_path(self) -> str:
+    def int_get_build_path(self, leading_slash: bool = True) -> str:
         if self._parent_content_obj:
-            return self._parent_content_obj.int_get_build_path() + '/' + self._build_id
-        return self._build_id
+            return self._parent_content_obj.int_get_build_path(leading_slash) + '/' + self._build_id
+        return ('/' if leading_slash else '')  + self._build_id
 
 
     def _init(self, book_obj, unique_id: str) -> None:
@@ -103,6 +102,7 @@ class ecmbContentBase(ABC):
             with open(src, 'rb') as f:
                 data = f.read()
         else:
+            src.seek(0)
             data = src.getbuffer()
 
         target_file.writestr(file_path, data)

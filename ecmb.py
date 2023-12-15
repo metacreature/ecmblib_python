@@ -36,7 +36,7 @@ class ecmbBook:
     _build_id_counter = None
     _page_nr_counter = None
 
-    def __init__(self, book_type: BOOK_TYPE, language: str, uid: str, width: int, height: int) :  
+    def __init__(self, book_type: BOOK_TYPE, language: str, uid: str, width: int, height: int):  
         book_type = ecmbUtils.enum_value(book_type)
         
         ecmbUtils.validate_enum(True, 'book_type', book_type, BOOK_TYPE)
@@ -77,10 +77,12 @@ class ecmbBook:
     
     def validate(self, warnings: bool|Callable = True) -> None:
         self._metadata_obj.int_validate()
+
         self._page_nr_counter = 0
         self._content_obj.int_validate(warnings)
         if self._page_nr_counter % 2 != 0:
             ecmbUtils.write_warning(warnings, f'The Book has an an uneven page-count!')
+
         self._navigation_obj.int_validate(warnings)
 
 
@@ -93,43 +95,44 @@ class ecmbBook:
 
         target_file = zipfile.ZipFile(file_name, 'w', zipfile.ZIP_DEFLATED)
 
-        #try:
-        target_file.writestr('mimetype', 'application/ecmb+zip', compress_type=zipfile.ZIP_STORED)
+        try:
+            target_file.writestr('mimetype', 'application/ecmb+zip', compress_type=zipfile.ZIP_STORED)
 
-        root = etree.Element('book')
-        root.set('version', self._version)
-        root.set('type', self._book_type)
-        root.set('language', self._language)
-        root.set('uid', self._uid)
-        root.set('width', str(self._width))
-        root.set('height', str(self._height))
+            root = etree.Element('book')
+            root.set('version', self._version)
+            root.set('type', self._book_type)
+            root.set('language', self._language)
+            root.set('uid', self._uid)
+            root.set('width', str(self._width))
+            root.set('height', str(self._height))
 
-        metadata_node = self._metadata_obj.int_build()
-        if metadata_node != None:
-            root.append(metadata_node)
+            metadata_node = self._metadata_obj.int_build()
+            if metadata_node != None:
+                root.append(metadata_node)
 
-        self._build_id_counter = 0
-        content_node = self._content_obj.int_build(target_file)
-        if content_node != None:
-            root.append(content_node)
+            self._build_id_counter = 0
+            content_node = self._content_obj.int_build(target_file)
+            if content_node != None:
+                root.append(content_node)
 
-        
+            navigation_node = self._navigation_obj.int_build()
+            if navigation_node != None:
+                root.append(navigation_node)
 
-        xml_str = etree.tostring(root, pretty_print=demo_mode)
+            xml_str = etree.tostring(root, pretty_print=demo_mode)
+            target_file.writestr('ecmb.xml', xml_str)
 
-        with open('test.xml', 'wb') as f:
-            f.write(xml_str)
+        except Exception as e:
+            target_file.close()
+            os.remove(file_name) 
+            raise e
 
-        #except Exception as e:
-        #    target_file.close()
-        #    os.remove(file_name) 
-        #    raise e
+        if demo_mode:
+            target_file.extractall(file_name+'_unpacked')
 
         target_file.close()
 
 
-
-    
     def int_register_content(self, content: ecmbContentFolder|ecmbContentImage) -> None:
         if content.get_unique_id() in self._content_ref.keys():
             ecmbUtils.raise_exception(f'the book contains allready content with the unique_id "' + content.get_unique_id() + '"!', 1)

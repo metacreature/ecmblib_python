@@ -23,6 +23,8 @@ class BASED_ON_BOOK_TYPE(Enum):
     LIGHTNOVEL = 'lightnovel'
     MANGA = 'manga'
     COMIC = 'comic'
+    ANIME = 'anime'
+    GAME = 'game'
     OTHER ='other'
 
 
@@ -40,7 +42,13 @@ class CONTENT_WARNING(Enum):
     EMOTIONAL_ABUSE= 'Emotional Abuse'
     SEXUAL_ABUSE = 'Sexual Abuse'
     PHYSICAL_ABUSE = 'Physical Abuse'
+    DOMESTIC_ABUSE = 'Domestic Abuse'
     SELF_HARM = 'Self-Harm'
     SUICIDE = 'Suicide'
     DRUGS = 'Drugs'
 
+
+class TARGET_SIDE(Enum):
+    AUTO = 'auto'
+    LEFT = 'left'
+    RIGHT = 'right'

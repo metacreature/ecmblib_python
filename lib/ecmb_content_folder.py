@@ -3,6 +3,7 @@ from lxml import etree
 from typing import Callable
 from .ecmb_utils import ecmbUtils
 from .ecmb_content_base_sub import ecmbContentBaseSub
+from .ecmb_content_image import ecmbContentImage
 
 class ecmbContentFolder(ecmbContentBaseSub):
 
@@ -20,7 +21,7 @@ class ecmbContentFolder(ecmbContentBaseSub):
                 found = True
 
         if not found:
-            ecmbUtils.write_warning(warnings, 'folder with the unique_id "' + self._unique_id + '" is empty!')
+            ecmbUtils.raise_exception('folder with the unique_id "' + self._unique_id + '" is empty!')
         return found
 
 
@@ -32,7 +33,7 @@ class ecmbContentFolder(ecmbContentBaseSub):
         main_node = etree.Element('dir')
         main_node.set('name', self._build_id )
 
-        target_file.mkdir(self.int_get_build_path())
+        target_file.mkdir(self.int_get_build_path(False))
 
         for content in self._contents:
             content_node = content.int_build(target_file)
@@ -42,9 +43,13 @@ class ecmbContentFolder(ecmbContentBaseSub):
         return main_node
 
 
-
-
-
+    def int_get_first_image(self) -> ecmbContentImage:
+        for content in self._contents:
+            if type(content) == ecmbContentImage:
+                return content
+            image = content.int_get_first_image()
+            if image:
+                return image
 
 
         

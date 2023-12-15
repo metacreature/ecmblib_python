@@ -56,7 +56,7 @@ class ecmbContent(ecmbContentBaseSub):
             main_node.set('cover_rear', 'cover_rear.' + self._cover_rear_format)
             self._write_image(target_file, 'cover_rear.' + self._cover_rear_format, self._cover_rear)
 
-        target_file.mkdir(self.int_get_build_path())
+        target_file.mkdir(self.int_get_build_path(False))
 
         for content in self._contents:
             content_node = content.int_build(target_file)

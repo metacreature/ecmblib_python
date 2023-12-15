@@ -2,6 +2,7 @@ import zipfile
 from io import BytesIO
 from lxml import etree
 from typing import Callable
+from .ecmb_enums import *
 from .ecmb_utils import ecmbUtils
 from .ecmb_content_base import ecmbContentBase
 
@@ -49,13 +50,13 @@ class ecmbContentImage(ecmbContentBase):
 
     def int_build(self, target_file: zipfile.ZipFile) -> etree.Element:
         self._build_id = self._book_obj.int_get_next_build_id()
-        file_path = self.int_get_build_path()
+        file_path = self.int_get_build_path(False)
 
         if self._src_left:
             node = etree.Element('dimg')
 
-            node.set('src', self._build_id + '_f.' + self._src_format)
-            self._write_image(target_file, file_path + '_f.' + self._src_format, self._src)
+            node.set('src', self._build_id + '.' + self._src_format)
+            self._write_image(target_file, file_path + '.' + self._src_format, self._src)
 
             node.set('src_left', self._build_id + '_l.' + self._src_left_format)
             self._write_image(target_file, file_path + '_l.' + self._src_left_format, self._src_left)
@@ -69,4 +70,14 @@ class ecmbContentImage(ecmbContentBase):
             self._write_image(target_file, file_path + '.' + self._src_format, self._src)
         
         return node
-        
+    
+
+    def int_get_image_path(self, target_side: TARGET_SIDE = TARGET_SIDE.AUTO) -> str:
+        target_side = ecmbUtils.enum_value(target_side)
+
+        link = self.int_get_build_path()
+        link += '.' + self._src_format
+        if self._src_left and target_side and target_side != TARGET_SIDE.AUTO.value:
+            link += '#' + target_side
+
+        return link

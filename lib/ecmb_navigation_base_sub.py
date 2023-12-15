@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Callable
+from .ecmb_enums import *
 from .ecmb_utils import ecmbUtils
 from .ecmb_navigation_base import ecmbNavigationBase
 from .ecmb_navigation_item import ecmbNavigationItem
@@ -32,13 +33,13 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         return headline_obj
     
 
-    def add_chapter(self, label_or_chapter: str|ecmbNavigationChapter, uid_or_folder: str|ecmbContentFolder, uid_or_image: str|ecmbContentImage, title: str = None) -> ecmbNavigationChapter:
+    def add_chapter(self, label_or_chapter: str|ecmbNavigationChapter, uid_or_folder: str|ecmbContentFolder, uid_or_image: str|ecmbContentImage, target_side: TARGET_SIDE = TARGET_SIDE.AUTO, title: str = None) -> ecmbNavigationChapter:
         chapter_obj = None
 
         if type(label_or_chapter) == ecmbNavigationChapter:
             chapter_obj = label_or_chapter
         elif type(label_or_chapter) == str:
-            chapter_obj = ecmbNavigationChapter(self._book_obj, label_or_chapter, uid_or_folder, uid_or_image, title)
+            chapter_obj = ecmbNavigationChapter(self._book_obj, label_or_chapter, uid_or_folder, uid_or_image, target_side, title)
         else:
             ecmbUtils.raise_exception('please provide ecmbNavigationChapter or a label')
             
@@ -48,13 +49,13 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         return chapter_obj
 
 
-    def add_item(self, label_or_item: str|ecmbNavigationItem, uid_or_image: str|ecmbContentImage, title: str = None) -> ecmbNavigationItem:
+    def add_item(self, label_or_item: str|ecmbNavigationItem, uid_or_image: str|ecmbContentImage, target_side: TARGET_SIDE = TARGET_SIDE.AUTO, title: str = None) -> ecmbNavigationItem:
         item_obj = None
 
         if type(label_or_item) == ecmbNavigationItem:
             item_obj = label_or_item
         elif type(label_or_item) == str:
-            item_obj = ecmbNavigationItem(self._book_obj, label_or_item, uid_or_image, title)
+            item_obj = ecmbNavigationItem(self._book_obj, label_or_item, uid_or_image, target_side, title)
         else:
             ecmbUtils.raise_exception('please provide ecmbNavigationItem or a label')
             

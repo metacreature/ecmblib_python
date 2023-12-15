@@ -90,6 +90,6 @@ class ecmbMetaDataBase(ABC):
     def _clean_value(self, value) -> str:
        if value != None and value != '':
             if type(value) == bool:
-                value = 'TRUE' if value else 'FALSE'
+                value = 'true' if value else 'false'
             return str(value)
        return None
