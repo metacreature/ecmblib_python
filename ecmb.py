@@ -59,38 +59,35 @@ class ecmbBook:
         self._height = height
 
 
-    def metadata(self) -> ecmbMetaData:
+    def get_metadata(self) -> ecmbMetaData:
         return self._metadata_obj
+    
+    metadata: ecmbMetaData = property(get_metadata) 
 
     
-    def based_on(self) -> ecmbMetaDataBasedOn:
-        return self._metadata_obj.based_on()
+    def get_based_on(self) -> ecmbMetaDataBasedOn:
+        return self._metadata_obj.based_on
     
+    based_on: ecmbMetaDataBasedOn = property(get_based_on) 
+
     
-    def content(self) -> ecmbContent:
+    def get_content(self) -> ecmbContent:
         return self._content_obj
     
+    content: ecmbContent = property(get_content) 
 
-    def navigation(self) -> ecmbNavigation:
+
+    def get_navigation(self) -> ecmbNavigation:
         return self._navigation_obj
     
-    
-    def validate(self, warnings: bool|Callable = True) -> None:
-        self._metadata_obj.int_validate()
-
-        self._page_nr_counter = 0
-        self._content_obj.int_validate(warnings)
-        if self._page_nr_counter % 2 != 0:
-            ecmbUtils.write_warning(warnings, f'The Book has an an uneven page-count!')
-
-        self._navigation_obj.int_validate(warnings)
+    navigation: ecmbNavigation = property(get_navigation) 
 
 
     def write(self, file_name: str, warnings: bool|Callable = True, demo_mode: bool = False) -> None:
 
-        self.validate(warnings)
+        self._validate(warnings)
         
-        if not re.match(r'.ecmb$', file_name):
+        if re.search(r'\.ecmb$', file_name) == None:
             file_name += '.ecmb'
 
         target_file = zipfile.ZipFile(file_name, 'w', zipfile.ZIP_DEFLATED)
@@ -171,4 +168,15 @@ class ecmbBook:
     def int_get_next_page_nr(self) -> int:
         self._page_nr_counter  += 1
         return self._page_nr_counter
+    
+
+    def _validate(self, warnings: bool|Callable = True) -> None:
+        self._metadata_obj.int_validate()
+
+        self._page_nr_counter = 0
+        self._content_obj.int_validate(warnings)
+        if self._page_nr_counter % 2 != 0:
+            ecmbUtils.write_warning(warnings, f'The Book has an an uneven page-count!')
+
+        self._navigation_obj.int_validate(warnings)
     

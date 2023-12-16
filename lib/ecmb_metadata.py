@@ -13,8 +13,10 @@ class ecmbMetaData(ecmbMetaDataBase):
         super().__init__()
 
 
-    def based_on(self) -> ecmbMetaDataBasedOn:
+    def get_based_on(self) -> ecmbMetaDataBasedOn:
         return self._metadata_based_on_obj
+    
+    based_on: ecmbMetaDataBasedOn = property(get_based_on)
 
     
     def set_volume(self, volume: int) -> None:

@@ -23,7 +23,7 @@ class ecmbUtils():
         if warnings == True:
             print(f'\033[1;33;40m  -- WARNING: {caller} {msg}\033[0m', flush=True)
         elif callable(warnings):
-            warnings(f'{caller} {msg}')
+            warnings(f'WARNING: {caller} {msg}')
 
     
     @staticmethod

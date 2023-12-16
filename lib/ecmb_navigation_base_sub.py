@@ -33,7 +33,7 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         return headline_obj
     
 
-    def add_chapter(self, label_or_chapter: str|ecmbNavigationChapter, uid_or_folder: str|ecmbContentFolder, uid_or_image: str|ecmbContentImage, target_side: TARGET_SIDE = TARGET_SIDE.AUTO, title: str = None) -> ecmbNavigationChapter:
+    def add_chapter(self, label_or_chapter: str|ecmbNavigationChapter, uid_or_folder: str|ecmbContentFolder, uid_or_image: str|ecmbContentImage = None, target_side: TARGET_SIDE = TARGET_SIDE.AUTO, title: str = None) -> ecmbNavigationChapter:
         chapter_obj = None
 
         if type(label_or_chapter) == ecmbNavigationChapter:
