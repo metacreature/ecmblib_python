@@ -11,14 +11,14 @@ sys.path.append(directory.parent.parent.parent.parent)
 from ecmblib.ecmb import ecmbBook, ecmbException, BOOK_TYPE, AUTOR_TYPE, CONTENT_WARNING, BASED_ON_BOOK_TYPE, TARGET_SIDE
 
 
-
+print('\n', flush=True)
 
 # create book-obj
 ###################################################
 
 # book-type, language, unique-id, width of the images, height of the images
 # all images have to have the width and height you've defined here. Of course except of double-pages which have double-width
-# the minimun length of the unique_id is 16 - its recommende to use a md5-hash with a prefix of the publishers name 
+# the minimun length of the unique_id is 16 - its recommended to use a md5-hash with a prefix of the publishers name 
 book = ecmbBook(BOOK_TYPE.MANGA, 'en', 'bestmangapublisherinc_98a2cd52fea1168d', 900, 1200)
 
 
@@ -54,6 +54,16 @@ book.based_on.set_publishdate('1986')
 book.based_on.set_title('The Scary Hiking')
 
 book.based_on.add_author('Agatha Christie', AUTOR_TYPE.AUTHOR, href='https://www.agatha-christie.net')
+
+
+
+# NOTE!
+# passing an invalid value will cause an ecmbException
+# an invalid value @ the constructor of ecmbBook, a wrong image-size @ contents aso. will also cause an ecmbException
+try:
+    book.metadata.set_description(12345)
+except ecmbException as e:
+    print('EXCEPTION: ' + str(e), flush=True)
 
 
 # set the cover-images
@@ -99,7 +109,7 @@ folder2.add_image('../source_images/img_7.jpg', fp_left, fp_right, unique_id='th
 del img, img_left, img_right, fp_left, fp_right
 
 # subfolders and sub-sub-sub-sub-folders are supported 
-# ever folder have to have at least one image, even if there is only one in a sub-sub-sub-sub-folder
+# every folder have to have at least one image, even if there is only one in a sub-sub-sub-sub-folder
 # you can mix folders and images on the same level
 folder3 = folder2.add_folder()
 folder3.add_image('../source_images/img_8.jpg')
@@ -125,11 +135,11 @@ chapter2 = book.navigation.add_chapter('Chapter 2', 'the hiking-trip', 'the star
 chapter2.add_item('The Summit', 'the summit', target_side=TARGET_SIDE.LEFT)
 chapter2.add_chapter('Chapter 2.1', folder3, title='Downhill')
 
-# Note!
+# NOTE!
 # you can mix headlines, chapters and items like you want, but i recommend to not mess around ... eg. sub-chapter in the root:
 # book.navigation.add_chapter('Chapter 2.1', folder3, title='Downhill') 
 #
-# Of course the linked images must be part of the chapter's folder
+# Of course the linked images must be part of the chapter's folder, otherwhise you will get an Exception
 
 
 
@@ -138,16 +148,22 @@ chapter2.add_chapter('Chapter 2.1', folder3, title='Downhill')
 ###################################################
 def log_message(msg):
     print(msg, flush=True)
-    with open('advanced_book.log', 'w+') as f:
-        f.write(msg)
+    with open('advanced_book.log', 'a') as f:
+        f.write(msg + '\n')
 
 def warning_callback(msg):
     log_message(msg)
 
 
-log_message('Start building "advanced_book.ecmb"')
+log_message('\nStart building "advanced_book.ecmb"')
+
+# NOTE!
+# an empty folder, navigation-mismatch or a missing book-title will cause an ecmbException
 try:
     book.write('advanced_book.ecmb', warnings=warning_callback, demo_mode=True)
     log_message('SUCCESS!')
 except ecmbException as e:
     log_message('ERROR: ' + str(e))
+
+
+print('\n', flush=True)

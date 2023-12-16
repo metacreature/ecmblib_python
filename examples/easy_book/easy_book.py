@@ -9,12 +9,15 @@ from ecmblib.ecmb import ecmbBook, BOOK_TYPE, CONTENT_WARNING
 
 
 
+print('\n', flush=True)
+
+
 # create book-obj
 ###################################################
 
 # book-type, language, unique-id, width of the images, height of the images
 # all images have to have the width and height you've defined here. Of course except of double-pages which have double-width
-# the minimun length of the unique_id is 16 - its recommende to use a md5-hash with a prefix of the publishers name 
+# the minimun length of the unique_id is 16 - its recommended to use a md5-hash with a prefix of the publishers name 
 book = ecmbBook(BOOK_TYPE.MANGA, 'en', 'bestmangapublisherinc_98a2cd52fea1168d', 900, 1200)
 
 
@@ -86,4 +89,7 @@ book.write('easy_book.ecmb', warnings=True, demo_mode=True)
 
 
 
-print('\n    "easy_book.ecmb" was generated successfull!\n')
+print('  "easy_book.ecmb" was generated successfull!')
+
+
+print('\n', flush=True)

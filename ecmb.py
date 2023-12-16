@@ -176,7 +176,7 @@ class ecmbBook:
         self._page_nr_counter = 0
         self._content_obj.int_validate(warnings)
         if self._page_nr_counter % 2 != 0:
-            ecmbUtils.write_warning(warnings, f'The Book has an an uneven page-count!')
+            ecmbUtils.write_warning(warnings, f'the Book has an an uneven page-count!')
 
         self._navigation_obj.int_validate(warnings)
     
