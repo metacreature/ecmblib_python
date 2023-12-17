@@ -12,20 +12,20 @@ class BOOK_TYPE(Enum):
     
 
 class AUTOR_TYPE(Enum):
-    AUTHOR = 'author'
-    COAUTHOR = 'coauthor'
-    STORY = 'story'
-    ILLUSTRATION = 'illustration'
+    AUTHOR = 'Author'
+    COAUTHOR = 'Co-Author'
+    STORY = 'Story'
+    ILLUSTRATIONS = 'Illustrations'
     
 
 class BASED_ON_BOOK_TYPE(Enum):
-    NOVEL = 'novel'
-    LIGHTNOVEL = 'lightnovel'
-    MANGA = 'manga'
-    COMIC = 'comic'
-    ANIME = 'anime'
-    GAME = 'game'
-    OTHER ='other'
+    NOVEL = 'Novel'
+    LIGHTNOVEL = 'Lightnovel'
+    MANGA = 'Manga'
+    COMIC = 'Comic'
+    ANIME = 'Anime'
+    GAME = 'Game'
+    OTHER ='Other'
 
 
 class CONTENT_WARNING(Enum):

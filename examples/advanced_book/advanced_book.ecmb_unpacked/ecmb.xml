@@ -7,8 +7,8 @@
     <volume>1</volume>
     <description>A stick figure goes on a big thrilling hiking-trip.</description>
     <authors>
-      <author type="story" href="https://github.com/metacreature">Clemens K.</author>
-      <author type="illustration" href="https://github.com/metacreature">Clemens K.</author>
+      <author type="Story" href="https://github.com/metacreature">Clemens K.</author>
+      <author type="Illustrations" href="https://github.com/metacreature">Clemens K.</author>
     </authors>
     <genres>
       <genre>Adventure</genre>
@@ -18,13 +18,13 @@
       <warning>Sexual Content</warning>
     </warnings>
     <basedon>
-      <type>lightnovel</type>
+      <type>Lightnovel</type>
       <isbn>9876543210</isbn>
       <publisher href="https://www.bestnovelpublisher-inc.com">BestNovelPublisher Inc.</publisher>
       <publishdate>1986</publishdate>
       <title>The Scary Hiking</title>
       <authors>
-        <author type="author" href="https://www.agatha-christie.net">Agatha Christie</author>
+        <author type="Author" href="https://www.agatha-christie.net">Agatha Christie</author>
       </authors>
     </basedon>
   </metadata>
