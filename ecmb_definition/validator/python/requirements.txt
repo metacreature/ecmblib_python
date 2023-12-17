@@ -1,0 +1,6 @@
+# required python modules
+invoke
+pyyaml
+lxml
+pillow
+path

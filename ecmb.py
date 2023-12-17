@@ -1,4 +1,4 @@
-import zipfile, os, re
+import zipfile, os, re, shutil
 from lxml import etree
 from typing import Callable
 
@@ -17,6 +17,7 @@ from .lib.ecmb_navigation_headline import ecmbNavigationHeadline
 from .lib.ecmb_navigation_chapter import ecmbNavigationChapter
 from .lib.ecmb_navigation_item import ecmbNavigationItem
 
+from .ecmb_definition.validator.python.ecmb_validator import ecmbValidator
 
 class ecmbBook:
 
@@ -124,10 +125,20 @@ class ecmbBook:
             os.remove(file_name) 
             raise e
 
-        if demo_mode:
-            target_file.extractall(file_name+'_unpacked')
-
         target_file.close()
+
+        # validate the result
+        validator = ecmbValidator()
+        if not validator.validate(file_name):
+            os.remove(file_name) 
+            ecmbUtils.raise_exception('An Error occured during creation of the file!')
+
+        if demo_mode:
+            target_file = zipfile.ZipFile(file_name, 'r')
+            if os.path.exists(file_name+'_unpacked'):
+                shutil.rmtree(file_name+'_unpacked')
+            target_file.extractall(file_name+'_unpacked')
+            target_file.close()
 
 
     def int_register_content(self, content: ecmbContentFolder|ecmbContentImage) -> None:
