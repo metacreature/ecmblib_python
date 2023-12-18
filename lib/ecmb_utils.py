@@ -6,7 +6,6 @@ from typing import Callable
 class ecmbException(Exception):
     pass
 
-#TODO check if everything is UTF-8
 
 class ecmbUtils():
     
@@ -44,7 +43,19 @@ class ecmbUtils():
     @staticmethod
     def enum_values(enum_class: Enum) -> list:
         return [e.value for e in enum_class]
+    
 
+    @staticmethod
+    def validate_utf8(raise_exception: bool, varname: str,  value:str, stack_nr: int = 0) -> bool:
+        if type(value) == str and value != '':
+            try:
+                tmp = value.encode(encoding='utf-8').decode(encoding='utf-8')
+            except:
+                if raise_exception:
+                    ecmbUtils.raise_exception(f'{varname} contains invalid UTF-8 characters', stack_nr + 1)
+                return False
+        return True
+        
 
     @staticmethod
     def validate_str_or_none(raise_exception: bool, varname: str,  value, stack_nr: int = 0) -> bool:
@@ -52,7 +63,7 @@ class ecmbUtils():
             if raise_exception:
                 ecmbUtils.raise_exception(f'{varname} has to be a string or None', stack_nr + 1)
             return False
-        return True
+        return ecmbUtils.validate_utf8(raise_exception, varname,  value, stack_nr + 1)
     
 
     @staticmethod
@@ -61,7 +72,7 @@ class ecmbUtils():
             if raise_exception:
                 ecmbUtils.raise_exception(f'{varname} has to be a not empty string', stack_nr + 1)
             return False
-        return True
+        return ecmbUtils.validate_utf8(raise_exception, varname,  value, stack_nr + 1)
     
 
     @staticmethod
@@ -93,5 +104,5 @@ class ecmbUtils():
             if raise_exception:
                 ecmbUtils.raise_exception(f'{varname} has to be as string and match: "{regex}"', stack_nr + 1)
             return False
-        return True
+        return ecmbUtils.validate_utf8(raise_exception, varname,  value, stack_nr + 1)
     
