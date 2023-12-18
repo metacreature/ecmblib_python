@@ -11,7 +11,7 @@ class BOOK_TYPE(Enum):
     COMIC = 'comic'
     
 
-class AUTOR_TYPE(Enum):
+class AUTHOR_TYPE(Enum):
     AUTHOR = 'Author'
     COAUTHOR = 'Co-Author'
     STORY = 'Story'

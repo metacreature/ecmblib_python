@@ -34,11 +34,11 @@ class ecmbMetaDataBase(ABC):
         self._data['title'] = (title, {})
         
 
-    def add_author(self, name: str, authortype: AUTOR_TYPE = AUTOR_TYPE.AUTHOR, href: str = None) -> None:
+    def add_author(self, name: str, authortype: AUTHOR_TYPE = AUTHOR_TYPE.AUTHOR, href: str = None) -> None:
         authortype = ecmbUtils.enum_value(authortype)
 
         ecmbUtils.validate_not_empty_str(True,  'name', name)
-        ecmbUtils.validate_enum(True, 'authortype', authortype, AUTOR_TYPE)
+        ecmbUtils.validate_enum(True, 'authortype', authortype, AUTHOR_TYPE)
         ecmbUtils.validate_str_or_none(True,  'href', href)
         if not self._data.get('authors'):
             self._data['authors'] = []

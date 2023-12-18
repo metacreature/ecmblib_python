@@ -8,7 +8,7 @@ directory = path.Path(__file__).abspath()
 sys.path.append(directory.parent.parent.parent.parent)
 
 # you have to change this if ecmblib is installed as a module
-from ecmblib.ecmb import ecmbBook, ecmbException, BOOK_TYPE, AUTOR_TYPE, CONTENT_WARNING, BASED_ON_BOOK_TYPE, TARGET_SIDE
+from ecmblib.ecmb import ecmbBook, ecmbException, BOOK_TYPE, AUTHOR_TYPE, CONTENT_WARNING, BASED_ON_BOOK_TYPE, TARGET_SIDE
 
 
 print('\n', flush=True)
@@ -33,8 +33,8 @@ book.metadata.set_title('The Big Trip')
 book.metadata.set_volume(1)
 book.metadata.set_description('A stick figure goes on a big thrilling hiking-trip.')
 
-book.metadata.add_author('Clemens K.', AUTOR_TYPE.STORY, href='https://github.com/metacreature')
-book.metadata.add_author('Clemens K.', AUTOR_TYPE.ILLUSTRATIONS, href='https://github.com/metacreature')
+book.metadata.add_author('Clemens K.', AUTHOR_TYPE.STORY, href='https://github.com/metacreature')
+book.metadata.add_author('Clemens K.', AUTHOR_TYPE.ILLUSTRATIONS, href='https://github.com/metacreature')
 
 book.metadata.add_genre('Adventure')
 book.metadata.add_genre('Summer')
@@ -53,7 +53,7 @@ book.based_on.set_publisher('BestNovelPublisher Inc.', href='https://www.bestnov
 book.based_on.set_publishdate('1986')
 book.based_on.set_title('The Scary Hiking')
 
-book.based_on.add_author('Agatha Christie', AUTOR_TYPE.AUTHOR, href='https://www.agatha-christie.net')
+book.based_on.add_author('Agatha Christie', AUTHOR_TYPE.AUTHOR, href='https://www.agatha-christie.net')
 
 
 
