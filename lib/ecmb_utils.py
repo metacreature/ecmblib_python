@@ -6,6 +6,8 @@ from typing import Callable
 class ecmbException(Exception):
     pass
 
+#TODO check if everything is UTF-8
+
 class ecmbUtils():
     
     @staticmethod
@@ -37,6 +39,11 @@ class ecmbUtils():
         if isinstance(value, Enum):
             return value.value
         return value
+		
+		
+    @staticmethod
+    def enum_values(enum_class: Enum) -> list:
+        return [e.value for e in enum_class]
 
 
     @staticmethod
