@@ -100,7 +100,7 @@ class ecmbUtils():
     def validate_in_list(raise_exception: bool, varname: str,  value, value_list: list, stack_nr: int = 0) -> bool:
         if value == None or not value in value_list:
             if raise_exception:
-                ecmbUtils.raise_exception(f'{varname} has to be one of these values: "'+('", "'.join(enum_values)) +'"', stack_nr + 1)
+                ecmbUtils.raise_exception(f'{varname} has to be one of these values: "'+('", "'.join(value_list)) +'"', stack_nr + 1)
             return False
         return True
     
