@@ -77,11 +77,11 @@ class ecmbUtils():
 
     @staticmethod
     def validate_int(raise_exception: bool, varname: str,  value, min_value: int = None, max_value: int = None, stack_nr: int = 0) -> bool:
-        if type(value) != int or (min_value and value < min_value) or (max_value and value > max_value):
+        if type(value) != int or (min_value != None and value < min_value) or (max_value != None and value > max_value):
             if raise_exception:
                 msg = f'{varname} has to be as integer'
-                msg += ' >= ' + str(min_value) if min_value else ''
-                msg += ' <= ' + str(max_value) if max_value else ''
+                msg += ' >= ' + str(min_value) if min_value != None else ''
+                msg += ' <= ' + str(max_value) if max_value != None else ''
                 ecmbUtils.raise_exception(msg, stack_nr + 1)
             return False
         return True
@@ -89,9 +89,16 @@ class ecmbUtils():
 
     @staticmethod
     def validate_enum(raise_exception: bool, varname: str,  value, enum_class: Enum, stack_nr: int = 0) -> bool:
-        
         enum_values = [e.value for e in enum_class]
         if not value or type(value) != str or not value in enum_values:
+            if raise_exception:
+                ecmbUtils.raise_exception(f'{varname} has to be one of these values: "'+('", "'.join(enum_values)) +'"', stack_nr + 1)
+            return False
+        return True
+    
+    @staticmethod
+    def validate_in_list(raise_exception: bool, varname: str,  value, value_list: list, stack_nr: int = 0) -> bool:
+        if value == None or not value in value_list:
             if raise_exception:
                 ecmbUtils.raise_exception(f'{varname} has to be one of these values: "'+('", "'.join(enum_values)) +'"', stack_nr + 1)
             return False
