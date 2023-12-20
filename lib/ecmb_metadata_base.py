@@ -13,33 +13,36 @@ class ecmbMetaDataBase(ABC):
 
     def set_isbn(self, isbn: str) -> None:
         if isbn != None and isbn != '':
-            ecmbUtils.validate_regex(True,  'isbn', isbn, '^([0-9]{10}|[0-9]{13})$')
+            ecmbUtils.validate_regex(True, 'isbn', isbn, '^([0-9]{10}|[0-9]{13})$')
         self._data['isbn'] = (isbn, {})
 
     
     def set_publisher(self, publisher: str, href: str = None) -> None:
-        ecmbUtils.validate_str_or_none(True,  'publisher', publisher)
-        ecmbUtils.validate_str_or_none(True,  'href', href)
+        ecmbUtils.validate_str_or_none(True, 'publisher', publisher)
+        if href != None and href != '':
+            ecmbUtils.validate_regex(True, 'href', href, '^(http|https)://.+$')
         self._data['publisher'] = (publisher, {'href': href})
 
 
     def set_publishdate(self, publishdate: str) -> None:
         if publishdate != None and publishdate != '':
-            ecmbUtils.validate_regex(True,  'publishdate', publishdate, '^[0-9]{4}(-[0-9]{2}-[0-9]{2})?$')
+            ecmbUtils.validate_regex(True, 'publishdate', publishdate, '^[0-9]{4}(-[0-9]{2}-[0-9]{2})?$')
         self._data['publishdate'] = (publishdate, {})
 
     
     def set_title(self, title: str) -> None:
-        ecmbUtils.validate_not_empty_str(True,  'title', title)
+        ecmbUtils.validate_not_empty_str(True, 'title', title)
         self._data['title'] = (title, {})
         
 
     def add_author(self, name: str, authortype: AUTHOR_TYPE = AUTHOR_TYPE.AUTHOR, href: str = None) -> None:
         authortype = ecmbUtils.enum_value(authortype)
 
-        ecmbUtils.validate_not_empty_str(True,  'name', name)
+        ecmbUtils.validate_not_empty_str(True, 'name', name)
         ecmbUtils.validate_enum(True, 'authortype', authortype, AUTHOR_TYPE)
-        ecmbUtils.validate_str_or_none(True,  'href', href)
+        if href != None and href != '':
+            ecmbUtils.validate_regex(True, 'href', href, '^(http|https)://.+$')
+            
         if not self._data.get('authors'):
             self._data['authors'] = []
         self._data['authors'].append(('author', name, {'type': authortype, 'href': href}))
