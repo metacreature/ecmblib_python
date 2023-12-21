@@ -14,7 +14,7 @@ class ecmbContent(ecmbContentBaseSub):
     _cover_rear_format = None
 
     def __init__(self, book_obj):
-        self._book_obj = book_obj
+        self._init(book_obj, None)
         self._contents = []
 
     
