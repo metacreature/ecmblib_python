@@ -25,8 +25,6 @@ class ecmbBook:
     _book_type = None
     _language = None
     _uid = None
-    _width = None
-    _height = None
 
     _content_ref = None
 
@@ -37,14 +35,12 @@ class ecmbBook:
     _build_id_counter = None
     _page_nr_counter = None
 
-    def __init__(self, book_type: BOOK_TYPE, language: str, uid: str, width: int, height: int):  
+    def __init__(self, book_type: BOOK_TYPE, language: str, uid: str):  
         book_type = ecmbUtils.enum_value(book_type)
         
         ecmbUtils.validate_enum(True, 'book_type', book_type, BOOK_TYPE)
         ecmbUtils.validate_regex(True, 'language', language, r'^[a-z]{2}$')
         ecmbUtils.validate_regex(True, 'uid', uid, r'^[a-z0-9_]{16,255}$')
-        ecmbUtils.validate_int(True, 'width', width, 100)
-        ecmbUtils.validate_int(True, 'height', height, 100)
 
         self._content_ref = {}
 
@@ -56,8 +52,6 @@ class ecmbBook:
         self._book_type = book_type
         self._language = language
         self._uid = uid
-        self._width = width
-        self._height = height
 
 
     def get_metadata(self) -> ecmbMetaData:
@@ -96,13 +90,11 @@ class ecmbBook:
         try:
             target_file.writestr('mimetype', 'application/ecmb+zip', compress_type=zipfile.ZIP_STORED)
 
-            root = etree.Element('book')
+            root = etree.Element('ecmb')
             root.set('version', self._version)
             root.set('type', self._book_type)
             root.set('language', self._language)
             root.set('uid', self._uid)
-            root.set('width', str(self._width))
-            root.set('height', str(self._height))
 
             metadata_node = self._metadata_obj.int_build()
             if metadata_node != None:
@@ -117,7 +109,7 @@ class ecmbBook:
             if navigation_node != None:
                 root.append(navigation_node)
 
-            xml_str = etree.tostring(root, pretty_print=demo_mode)
+            xml_str = etree.tostring(root, pretty_print=demo_mode, xml_declaration=True, encoding="utf-8")
             target_file.writestr('ecmb.xml', xml_str)
 
         except Exception as e:
@@ -151,14 +143,6 @@ class ecmbBook:
         from .lib.ecmb_content_base import ecmbContentBase
         unique_id = ref.get_unique_id() if isinstance(ref, ecmbContentBase) else ref
         return self._content_ref.get(unique_id)
-
-
-    def int_get_width(self) -> int:
-        return self._width
-    
-
-    def int_get_height(self) -> int:
-        return self._height
     
 
     def int_get_next_build_id(self) -> str:

@@ -61,7 +61,7 @@ class ecmbContentBase(ABC):
             if not os.path.exists(src):
                 ecmbUtils.raise_exception(f'{error_msg} does not exist!', 1)
         else:
-            ecmbUtils.raise_exception('please provide  BytesIO or a path to an existing image-file', 1)
+            ecmbUtils.raise_exception('please provide BytesIO or a path to an existing image-file', 1)
             
         try: 
             img_obj = Image.open(src)
@@ -77,17 +77,13 @@ class ecmbContentBase(ABC):
         if not file_format in allowed_formats:
             ecmbUtils.raise_exception(f'{error_msg} allowed image-formats: "'+('", "'.join(allowed_formats)) +'", but "{file_format}" detected!', 1)
         
-        is_double = False
-        if img_obj.width != self._book_obj.int_get_width():
-            if img_obj.width == self._book_obj.int_get_width() * 2:
-                if not allow_double:
-                    ecmbUtils.raise_exception(f'{error_msg} double-page-image detected, but not allowed in this place!', 1)
-                is_double = True
-            else:
-                ecmbUtils.raise_exception(f'{error_msg} allowed image-width: "'+ str(self._book_obj.int_get_width()) +'", but "' + str(img_obj.width) + '" detected!', 1)
-            
-        if img_obj.height != self._book_obj.int_get_height():
-            ecmbUtils.raise_exception(f'{error_msg} allowed image-height: "'+ str(self._book_obj.int_get_height()) +'", but "' + str(img_obj.height) + '" detected!', 1)
+        if img_obj.width > img_obj.height * 1.05: # TODO aspect-ration
+            is_double = True
+            if not allow_double:
+                ecmbUtils.raise_exception(f'{error_msg} double-page-image detected, but not allowed in this place!', 1)
+        else:
+            is_double = False
+
         
         if file_format == 'jpeg':
             file_format = 'jpg'
