@@ -77,7 +77,7 @@ class ecmbContentBase(ABC):
         if not file_format in allowed_formats:
             ecmbUtils.raise_exception(f'{error_msg} allowed image-formats: "'+('", "'.join(allowed_formats)) +'", but "{file_format}" detected!', 1)
         
-        if img_obj.width > img_obj.height * 1.05: # TODO aspect-ration
+        if (img_obj.width / img_obj.height) > (self._book_obj.int_get_width() / self._book_obj.int_get_height() * 1.5):
             is_double = True
             if not allow_double:
                 ecmbUtils.raise_exception(f'{error_msg} double-page-image detected, but not allowed in this place!', 1)
