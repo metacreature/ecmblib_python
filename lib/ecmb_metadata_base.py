@@ -28,11 +28,6 @@ class ecmbMetaDataBase(ABC):
         if publishdate != None and publishdate != '':
             ecmbUtils.validate_regex(True, 'publishdate', publishdate, '^[0-9]{4}(-[0-9]{2}-[0-9]{2})?$')
         self._data['publishdate'] = (publishdate, {})
-
-    
-    def set_title(self, title: str) -> None:
-        ecmbUtils.validate_not_empty_str(True, 'title', title)
-        self._data['title'] = (title, {})
         
 
     def add_author(self, name: str, authortype: AUTHOR_TYPE = AUTHOR_TYPE.AUTHOR, href: str = None) -> None:

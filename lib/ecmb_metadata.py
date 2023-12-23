@@ -18,6 +18,11 @@ class ecmbMetaData(ecmbMetaDataBase):
     
     based_on: ecmbMetaDataBasedOn = property(get_based_on)
 
+
+    def set_title(self, title: str) -> None:
+        ecmbUtils.validate_not_empty_str(True, 'title', title)
+        self._data['title'] = (title, {})
+
     
     def set_volume(self, volume: int) -> None:
         if volume != None:

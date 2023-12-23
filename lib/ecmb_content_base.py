@@ -71,15 +71,21 @@ class ecmbContentBase(ABC):
         file_format = img_obj.format
         file_format = file_format.lower() if file_format else None
         if not file_format:
+            if type(src) == str:
+                img_obj.close()
             ecmbUtils.raise_exception(f'{error_msg} faild to determine image-format! Maybe it\'s not an image!', 1)
         
         allowed_formats = [e.value for e in ALLOWED_IMAGE_EXTENTIONS]
         if not file_format in allowed_formats:
+            if type(src) == str:
+                img_obj.close()
             ecmbUtils.raise_exception(f'{error_msg} allowed image-formats: "'+('", "'.join(allowed_formats)) +'", but "{file_format}" detected!', 1)
         
         if (img_obj.width / img_obj.height) > (self._book_obj.int_get_width() / self._book_obj.int_get_height() * 1.5):
             is_double = True
             if not allow_double:
+                if type(src) == str:
+                    img_obj.close()
                 ecmbUtils.raise_exception(f'{error_msg} double-page-image detected, but not allowed in this place!', 1)
         else:
             is_double = False
@@ -87,6 +93,9 @@ class ecmbContentBase(ABC):
         
         if file_format == 'jpeg':
             file_format = 'jpg'
+        
+        if type(src) == str:
+            img_obj.close()
         
         return (is_double, file_format)
     

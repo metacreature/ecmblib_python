@@ -12,6 +12,11 @@ class ecmbMetaDataBasedOn(ecmbMetaDataBase):
         if book_type != None and book_type != '':
             ecmbUtils.validate_enum(True, 'book_type', book_type, BASED_ON_BOOK_TYPE)
         self._data['type'] = (book_type, {})
+
+
+    def set_title(self, title: str) -> None:
+        ecmbUtils.validate_str_or_none(True, 'title', title)
+        self._data['title'] = (title, {})
     
 
     def int_validate(self) -> None:

@@ -19,12 +19,20 @@ class ecmbContent(ecmbContentBaseSub):
 
     
     def set_cover_front(self, src: str|BytesIO) -> None:
+        if src == None or src == '':
+            self._cover_front = None
+            self._cover_front_format = None
+            return
         (ignore, cover_front_format) = self._check_image(src, 'src', False)
         self._cover_front = src
         self._cover_front_format = cover_front_format
 
 
     def set_cover_rear(self, src: str|BytesIO) -> None:
+        if src == None or src == '':
+            self._cover_rear = None
+            self._cover_rear_format = None
+            return
         (ignore, cover_rear_format) = self._check_image(src, 'src', False)
         self._cover_rear = src
         self._cover_rear_format = cover_rear_format

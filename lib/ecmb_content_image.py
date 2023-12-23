@@ -18,10 +18,11 @@ class ecmbContentImage(ecmbContentBase):
     def __init__(self, book_obj, src: str|BytesIO, src_left: str|BytesIO = None, src_right: str|BytesIO = None, unique_id: str = None):
         self._init(book_obj, unique_id)
 
+        msg = 'for image: "' + src + '"' if type(src) == str else 'at unique_id: "' + self._unique_id + '"'
+
         (is_double, src_format) = self._check_image(src, 'src', True)
         if is_double:
             if not src_left or not src_right:
-                msg = 'for image: "' + src + '"' if type(src) == str else 'at unique_id: "' + self._unique_id + '"'
                 ecmbUtils.raise_exception(f'double-page-image detected, but src_left or/and src_right missing {msg}!')
             
             (ignore, src_left_format) = self._check_image(src_left, 'src_left', False)
@@ -31,6 +32,8 @@ class ecmbContentImage(ecmbContentBase):
             self._src_left_format = src_left_format
             self._src_right = src_right
             self._src_right_format = src_right_format
+        elif src_left or src_right:
+            ecmbUtils.raise_exception(f'single-page-image detected, but src_left or/and src_right are provided {msg}!')
             
         self._src = src
         self._src_format = src_format
@@ -77,7 +80,7 @@ class ecmbContentImage(ecmbContentBase):
 
         link = self.int_get_build_path()
         link += '.' + self._src_format
-        if self._src_left and target_side and target_side != TARGET_SIDE.AUTO.value:
+        if self._src_left and target_side:
             link += '#' + target_side
 
         return link

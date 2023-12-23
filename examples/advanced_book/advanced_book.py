@@ -80,7 +80,7 @@ book.content.set_cover_rear('../source_images/rear.jpg')
 # folders with an uneven page-count are supported
 # also double-pages on an uneven page and uneven page-count of the book ... of course you will get a warning
 folder1 = book.content.add_folder()
-# folder1.add_image('../source_images/img_2.jpg')
+# folder1.add_image('../source_images/img_1.jpg')
 folder1.add_image('../source_images/img_2.jpg')
 
 # you can define unique_ids to access the the objects easier for the navigation
