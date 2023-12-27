@@ -80,7 +80,7 @@ class ecmbContentImage(ecmbContentBase):
 
         link = self.int_get_build_path()
         link += '.' + self._src_format
-        if self._src_left and target_side:
-            link += '#' + target_side
+        if self._src_left:
+            link += '#' + (target_side if target_side else TARGET_SIDE.AUTO)
 
         return link
