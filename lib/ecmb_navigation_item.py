@@ -11,7 +11,7 @@ class ecmbNavigationItem(ecmbNavigationBase):
 
     def __init__(self, book_obj, label: str, target: str|ecmbContentImage, target_side: TARGET_SIDE = TARGET_SIDE.AUTO, title:str = None):
         super()._init(book_obj, label, title)
-        super()._set_target(target, target_side)
+        super()._set_target('navigation-item', target, target_side)
 
 
     def int_validate(self, warnings: bool|Callable) -> bool:

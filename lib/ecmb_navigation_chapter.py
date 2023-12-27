@@ -15,7 +15,7 @@ class ecmbNavigationChapter(ecmbNavigationBaseSub):
     def __init__(self, book_obj, label: str, folder: str|ecmbContentFolder, target: str|ecmbContentImage = None, target_side: TARGET_SIDE = TARGET_SIDE.AUTO, title:str = None):
         super()._init(book_obj, label, title)
         if target != None:
-            super()._set_target(target, target_side)
+            super()._set_target('chapter', target, target_side)
 
         target_folder_obj = None
         if type(folder) == ecmbContentFolder or type(folder) == str and folder != '':

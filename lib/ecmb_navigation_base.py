@@ -23,7 +23,7 @@ class ecmbNavigationBase(ABC):
 
     def int_set_parent(self, parent_navigation_obj: Self) -> None:
         if self._parent_navigation_obj != None:
-            ecmbUtils.raise_exception(f'the navigation-obj with the label "' + self._label + '" can\'t be added twice!', 1)
+            ecmbUtils.raise_exception(f'the navigation-object with the label "' + self._label + '" can\'t be added twice!', 1)
         self._parent_navigation_obj = parent_navigation_obj
 
         
@@ -45,21 +45,22 @@ class ecmbNavigationBase(ABC):
         self._title = title
 
 
-    def _set_target(self, target: str|ecmbContentImage, target_side: TARGET_SIDE) -> None:
+    def _set_target(self, origin: str, target: str|ecmbContentImage, target_side: TARGET_SIDE) -> None:
         target_side = ecmbUtils.enum_value(target_side)
         if target_side:
-            ecmbUtils.validate_enum(True, 'target_side', target_side, TARGET_SIDE, 1)
+            if not ecmbUtils.validate_enum(False, 'target_side', target_side, TARGET_SIDE, 1):
+                ecmbUtils.raise_exception('target_side has to be one of these values: "'+ '","'.join(ecmbUtils.enum_values(TARGET_SIDE))+ f'" at {origin} "' + self._label + '"!', 1)
 
         target_image_obj = None
         if type(target) == ecmbContentImage or (type(target) == str and target != ''):
             target_image_obj = self._book_obj.int_get_content(target) 
             if not target_image_obj:
-                ecmbUtils.raise_exception('the given target was not found in the book on navigation-item "' + self._label + '"!', 1)
+                ecmbUtils.raise_exception(f'the given target was not found in the book at {origin} "' + self._label + '"!', 1)
         else:
-            ecmbUtils.raise_exception('target must be either an unique_id or an ecmbContentImage on navigation-item "' + self._label + '"!', 1)
+            ecmbUtils.raise_exception(f'target must be either an unique_id or an ecmbContentImage at {origin} "' + self._label + '"!', 1)
 
         if type(target_image_obj) != ecmbContentImage:
-            ecmbUtils.raise_exception('target is not an ecmbContentImage at navigation-item "' + self._label + '"!', 1)
+            ecmbUtils.raise_exception(f'target is not an ecmbContentImage at {origin} "' + self._label + '"!', 1)
 
         self._target_image_obj = target_image_obj
         self._target_image_side = target_side

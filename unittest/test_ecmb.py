@@ -366,6 +366,10 @@ class testEcmb(unittest.TestCase):
                     case 48:
                         book.navigation.add_chapter('xyz', 'aaa').add_item('xyz', 'ddd')
                         book.write(self._test_filename, False)
+                    case 49:
+                        book.navigation.add_chapter('xyz', 'aaa', 'ccc', 'xxx')
+                    case 50:
+                        book.navigation.add_item('xyz', 'ccc', 'xxx')
                     case _:
                         if os.path.exists(self._test_filename):
                             os.unlink(self._test_filename)
