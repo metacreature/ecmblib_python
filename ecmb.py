@@ -101,6 +101,8 @@ class ecmbBook:
             root.set('type', self._book_type)
             root.set('language', self._language)
             root.set('uid', self._uid)
+            root.set('width', str(self._width))
+            root.set('height', str(self._height))
 
             metadata_node = self._metadata_obj.int_build()
             if metadata_node != None:
