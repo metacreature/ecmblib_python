@@ -61,7 +61,7 @@ class ecmbContentBase(ABC):
             if not os.path.exists(src):
                 ecmbUtils.raise_exception(f'{error_msg} does not exist!', 1)
         else:
-            ecmbUtils.raise_exception('please provide BytesIO or a path to an existing image-file', 1)
+            ecmbUtils.raise_exception('please provide BytesIO or a path to an existing image-file!', 1)
             
         try: 
             img_obj = Image.open(src)
@@ -79,7 +79,7 @@ class ecmbContentBase(ABC):
         if not file_format in allowed_formats:
             if type(src) == str:
                 img_obj.close()
-            ecmbUtils.raise_exception(f'{error_msg} allowed image-formats: "'+('", "'.join(allowed_formats)) +'", but "{file_format}" detected!', 1)
+            ecmbUtils.raise_exception(f'{error_msg} allowed image-formats: "'+('", "'.join(allowed_formats)) + f'", but "{file_format}" detected!', 1)
         
         if (img_obj.width / img_obj.height) > (self._book_obj.int_get_width() / self._book_obj.int_get_height() * 1.5):
             is_double = True

@@ -52,12 +52,14 @@ class ecmbNavigationBase(ABC):
 
         target_image_obj = None
         if type(target) == ecmbContentImage or (type(target) == str and target != ''):
-            target_image_obj = self._book_obj.int_get_content(target)
+            target_image_obj = self._book_obj.int_get_content(target) 
+            if not target_image_obj:
+                ecmbUtils.raise_exception('the given target was not found in the book on navigation-item "' + self._label + '"!', 1)
         else:
             ecmbUtils.raise_exception('target must be either an unique_id or an ecmbContentImage on navigation-item "' + self._label + '"!', 1)
 
-        if not target_image_obj:
-            ecmbUtils.raise_exception('the given target was not found in the book on navigation-item "' + self._label + '"!', 1)
+        if type(target_image_obj) != ecmbContentImage:
+            ecmbUtils.raise_exception('target is not an ecmbContentImage at navigation-item "' + self._label + '"!', 1)
 
         self._target_image_obj = target_image_obj
         self._target_image_side = target_side

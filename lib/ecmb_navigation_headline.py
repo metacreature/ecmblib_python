@@ -12,7 +12,7 @@ class ecmbNavigationHeadline(ecmbNavigationBaseSub):
 
     def int_validate(self, warnings: bool|Callable) -> bool:
         if not super().int_validate(warnings):
-            ecmbUtils.write_warning(warnings, 'the headline "' + self._label + '" doesn\'t contain a navigation-item!')
+            ecmbUtils.raise_exception('the headline "' + self._label + '" doesn\'t contain a navigation-item!')
             return False
         return True
     

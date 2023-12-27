@@ -15,7 +15,7 @@ class ecmbContentBaseSub(ecmbContentBase):
         elif type(src_or_image) == BytesIO or type(src_or_image) == str:
             image_obj = ecmbContentImage(self._book_obj, src_or_image, src_left, src_right, unique_id)     
         else:
-            ecmbUtils.raise_exception('please provide ecmbContentImage, BytesIO or a path to an existing image-file')
+            ecmbUtils.raise_exception('please provide ecmbContentImage, BytesIO or a path to an existing image-file!')
         
         image_obj.int_set_parent(self)
         self._contents.append(image_obj)
@@ -31,7 +31,7 @@ class ecmbContentBaseSub(ecmbContentBase):
         elif type(uid_or_folder) == str or uid_or_folder == None:
             folder_obj = ecmbContentFolder(self._book_obj, uid_or_folder)
         else:
-            ecmbUtils.raise_exception('please provide ecmbContentFolder, a unique_id or None')
+            ecmbUtils.raise_exception('please provide ecmbContentFolder, a unique_id or None!')
             
         folder_obj.int_set_parent(self)
         self._contents.append(folder_obj)

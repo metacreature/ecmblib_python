@@ -21,6 +21,8 @@ class ecmbMetaDataBase(ABC):
         ecmbUtils.validate_str_or_none(True, 'publisher', publisher)
         if href != None and href != '':
             ecmbUtils.validate_regex(True, 'href', href, '^(http|https)://.+$')
+            if not publisher:
+                ecmbUtils.raise_exception('publisher is mandatory when link to puslisher is given!')
         self._data['publisher'] = (publisher, {'href': href})
 
 

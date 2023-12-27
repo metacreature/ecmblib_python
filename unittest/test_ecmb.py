@@ -8,7 +8,7 @@ directory = path.Path(__file__).abspath()
 sys.path.append(directory.parent.parent.parent)
 
 # you have to change this if ecmblib is installed as a module
-from ecmblib.ecmb import ecmbBook, ecmbUtils, ecmbException, BOOK_TYPE, AUTHOR_TYPE, CONTENT_WARNING, BASED_ON_BOOK_TYPE, TARGET_SIDE
+from ecmblib.ecmb import ecmbBook, ecmbUtils, ecmbContentImage, ecmbException, BOOK_TYPE, AUTHOR_TYPE, CONTENT_WARNING, BASED_ON_BOOK_TYPE, TARGET_SIDE
 
 class testEcmb(unittest.TestCase):
 
@@ -245,6 +245,139 @@ class testEcmb(unittest.TestCase):
             return True
         except ecmbException as e:
             return str(e)
+
+    def test_erros(self):
+        result = self._errors()
+        if result != True:
+            self.fail(result)
+
+    def _errors(self):
+        testcase = 0
+        while testcase >= 0:
+            testcase += 1
+            try:
+                book = ecmbBook(BOOK_TYPE.MANGA, 'en', 'bestmangapublisherinc_98a2cd52fea1168d', 900, 1200)
+                if testcase >= 20:
+                    book.metadata.set_title('xyz')
+                if testcase >= 35:
+                    book.content.add_folder('aaa').add_folder('bbb').add_image(self._source_dir + 'img_1.jpg', unique_id='ccc')
+                    book.content.add_image(self._source_dir + 'img_1.jpg', unique_id='ddd')
+                match testcase:
+                    case 1:
+                        book = ecmbBook(False, 'en', 'bestmangapublisherinc_98a2cd52fea1168d', 900, 1200)
+                    case 2:
+                        book = ecmbBook('xyz', 'en', 'bestmangapublisherinc_98a2cd52fea1168d', 900, 1200)
+                    case 3:
+                        book = ecmbBook(BOOK_TYPE.MANGA, 'enx', 'bestmangapublisherinc_98a2cd52fea1168d', 900, 1200)
+                    case 4:
+                        book = ecmbBook(BOOK_TYPE.MANGA, 'en', False, 900, 1200)
+                    case 5:
+                        book = ecmbBook(BOOK_TYPE.MANGA, 'en', 'bestmangapublisherinc_98a2cd52fea1168d', False, 1200)
+                    case 6:
+                        book.metadata.set_title(None)
+                    case 7:
+                        book.metadata.set_title(False)
+                    case 8:
+                        book.metadata.set_isbn(False)
+                    case 9:
+                        book.metadata.set_isbn('437474')
+                    case 10:
+                        book.metadata.add_author(None)
+                    case 11:
+                        book.metadata.add_author(False)
+                    case 12:
+                        book.metadata.add_genre(None)
+                    case 13:
+                        book.metadata.add_genre(False)
+                    case 14:
+                        book.metadata.add_content_warning(None)
+                    case 15:
+                        book.metadata.add_content_warning(False)
+                    case 16:
+                        book.metadata.add_content_warning('xyz')
+                    case 17:
+                        book.metadata.set_publisher(False)
+                    case 18:
+                        book.metadata.set_publisher('', 'https://aaaa')
+                    case 19:
+                        book.write(self._test_filename, False)
+                    case 20:
+                        book.based_on.set_publisher('xyz')
+                        book.write(self._test_filename, False)
+                    case 21:
+                        book.write(self._test_filename, False)
+                    case 22:
+                        book.content.add_folder(False)
+                    case 23:
+                        book.content.add_folder()
+                        book.write(self._test_filename, False)
+                    case 24:
+                        book.content.set_cover_front(self._source_dir + 'im.jpg')
+                    case 25:
+                        book.content.set_cover_front(self._source_dir + 'unittets.txt')
+                    case 26:
+                        book.content.set_cover_front(self._source_dir + 'img_1.gif')
+                    case 27:
+                        book.content.set_cover_front(False)
+                    case 28:
+                        book.content.set_cover_front(self._source_dir + 'img_7.jpg')
+                    case 29:
+                        img = ecmbContentImage(False, self._source_dir + 'img_1.jpg')
+                    case 30:
+                        img = ecmbContentImage(book, self._source_dir + 'img_1.jpg')
+                        book.content.add_image(img)
+                        book.content.add_image(img)
+                    case 31:
+                        book.content.add_image(self._source_dir + 'img_7.jpg')
+                    case 32:
+                        book.content.add_image(self._source_dir + 'img_1.jpg', self._source_dir + 'img_1.jpg', self._source_dir + 'img_1.jpg')
+                    case 33:
+                        book.content.add_image(self._source_dir + 'img_7.jpg', self._source_dir + 'img_7.jpg', self._source_dir + 'img_7.jpg')
+                    case 34:
+                        book.content.add_image(False)
+                    case 35:
+                        book.navigation.add_headline(False)
+                    case 36:
+                        book.navigation.add_headline('xyz', False)
+                    case 37:
+                        book.navigation.add_headline('xyz')
+                        book.write(self._test_filename, False)
+                    case 38:
+                        book.navigation.add_chapter('xyz', False)
+                    case 39:
+                        book.navigation.add_chapter('xyz', 'ccc')
+                    case 40:
+                        book.navigation.add_chapter('xyz', 'xxx')
+                    case 41:
+                        book.navigation.add_chapter('xyz', 'aaa', False)
+                    case 42:
+                        book.navigation.add_chapter('xyz', 'aaa', 'bbb')
+                    case 43:
+                        book.navigation.add_chapter('xyz', 'aaa', 'xxx')
+                    case 44:
+                        book.navigation.add_item('xyz', False)
+                    case 45:
+                        book.navigation.add_item('xyz', 'bbb')
+                    case 46:
+                        book.navigation.add_item('xyz', 'xxx')
+                    case 47:
+                        book.navigation.add_chapter('xyz', 'aaa', 'ddd')
+                        book.write(self._test_filename, False)
+                    case 48:
+                        book.navigation.add_chapter('xyz', 'aaa').add_item('xyz', 'ddd')
+                        book.write(self._test_filename, False)
+                    case _:
+                        if os.path.exists(self._test_filename):
+                            os.unlink(self._test_filename)
+                        return True
+                
+                if os.path.exists(self._test_filename):
+                    os.unlink(self._test_filename)
+                return f'error-test faled at {testcase}'
+            except ecmbException as e:
+                #print(str(e))
+                pass
+                
 
 
 if __name__ == '__main__':

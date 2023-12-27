@@ -52,7 +52,7 @@ class ecmbUtils():
                 tmp = value.encode(encoding='utf-8').decode(encoding='utf-8')
             except:
                 if raise_exception:
-                    ecmbUtils.raise_exception(f'{varname} contains invalid UTF-8 characters', stack_nr + 1)
+                    ecmbUtils.raise_exception(f'{varname} contains invalid UTF-8 characters!', stack_nr + 1)
                 return False
         return True
         
@@ -61,7 +61,7 @@ class ecmbUtils():
     def validate_str_or_none(raise_exception: bool, varname: str,  value, stack_nr: int = 0) -> bool:
         if value != None and type(value) != str:
             if raise_exception:
-                ecmbUtils.raise_exception(f'{varname} has to be a string or None', stack_nr + 1)
+                ecmbUtils.raise_exception(f'{varname} has to be a string or None!', stack_nr + 1)
             return False
         return ecmbUtils.validate_utf8(raise_exception, varname,  value, stack_nr + 1)
     
@@ -70,7 +70,7 @@ class ecmbUtils():
     def validate_not_empty_str(raise_exception: bool, varname: str,  value, stack_nr: int = 0) -> bool:
         if type(value) != str or value == '':
             if raise_exception:
-                ecmbUtils.raise_exception(f'{varname} has to be a not empty string', stack_nr + 1)
+                ecmbUtils.raise_exception(f'{varname} has to be a not empty string!', stack_nr + 1)
             return False
         return ecmbUtils.validate_utf8(raise_exception, varname,  value, stack_nr + 1)
     
@@ -82,6 +82,7 @@ class ecmbUtils():
                 msg = f'{varname} has to be as integer'
                 msg += ' >= ' + str(min_value) if min_value != None else ''
                 msg += ' <= ' + str(max_value) if max_value != None else ''
+                msg += '!'
                 ecmbUtils.raise_exception(msg, stack_nr + 1)
             return False
         return True
@@ -92,7 +93,7 @@ class ecmbUtils():
         enum_values = [e.value for e in enum_class]
         if not value or type(value) != str or not value in enum_values:
             if raise_exception:
-                ecmbUtils.raise_exception(f'{varname} has to be one of these values: "'+('", "'.join(enum_values)) +'"', stack_nr + 1)
+                ecmbUtils.raise_exception(f'{varname} has to be one of these values: "'+('", "'.join(enum_values)) +'"!', stack_nr + 1)
             return False
         return True
     
@@ -100,7 +101,7 @@ class ecmbUtils():
     def validate_in_list(raise_exception: bool, varname: str,  value, value_list: list, stack_nr: int = 0) -> bool:
         if value == None or not value in value_list:
             if raise_exception:
-                ecmbUtils.raise_exception(f'{varname} has to be one of these values: "'+('", "'.join(value_list)) +'"', stack_nr + 1)
+                ecmbUtils.raise_exception(f'{varname} has to be one of these values: "'+('", "'.join(value_list)) +'"!', stack_nr + 1)
             return False
         return True
     
@@ -109,7 +110,7 @@ class ecmbUtils():
     def validate_regex(raise_exception: bool, varname: str,  value, regex: str, stack_nr: int = 0) -> bool:
         if type(value) != str or not re.match(regex, value):
             if raise_exception:
-                ecmbUtils.raise_exception(f'{varname} has to be as string and match: "{regex}"', stack_nr + 1)
+                ecmbUtils.raise_exception(f'{varname} has to be as string and match: "{regex}"!', stack_nr + 1)
             return False
         return ecmbUtils.validate_utf8(raise_exception, varname,  value, stack_nr + 1)
     

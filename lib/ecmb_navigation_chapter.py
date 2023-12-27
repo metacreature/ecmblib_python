@@ -20,11 +20,13 @@ class ecmbNavigationChapter(ecmbNavigationBaseSub):
         target_folder_obj = None
         if type(folder) == ecmbContentFolder or type(folder) == str and folder != '':
             target_folder_obj = self._book_obj.int_get_content(folder)
+            if not target_folder_obj:
+                ecmbUtils.raise_exception('the given folder was not found in the book at chapter "' + self._label + '"!')
         else:
             ecmbUtils.raise_exception('folder must be either an unique_id or an ecmbContentFolder at chapter"' + self._label + '"!')
 
-        if not target_folder_obj:
-            ecmbUtils.raise_exception('the given folder was not found in the book at chapter "' + self._label + '"!')
+        if type(target_folder_obj) != ecmbContentFolder:
+            ecmbUtils.raise_exception('folder is not an ecmbContentFolder at chapter"' + self._label + '"!')
 
         self._target_folder_obj = target_folder_obj
 

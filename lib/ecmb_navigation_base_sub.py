@@ -25,7 +25,7 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         elif type(label_or_headline) == str:
             headline_obj = ecmbNavigationHeadline(self._book_obj, label_or_headline, title)
         else:
-            ecmbUtils.raise_exception('please provide ecmbNavigationHeadline or a label')
+            ecmbUtils.raise_exception('please provide ecmbNavigationHeadline or a label!')
             
         headline_obj.int_set_parent(self)
         self._children.append(headline_obj)
@@ -41,7 +41,7 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         elif type(label_or_chapter) == str:
             chapter_obj = ecmbNavigationChapter(self._book_obj, label_or_chapter, uid_or_folder, uid_or_image, target_side, title)
         else:
-            ecmbUtils.raise_exception('please provide ecmbNavigationChapter or a label')
+            ecmbUtils.raise_exception('please provide ecmbNavigationChapter or a label!')
             
         chapter_obj.int_set_parent(self)
         self._children.append(chapter_obj)
@@ -57,7 +57,7 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         elif type(label_or_item) == str:
             item_obj = ecmbNavigationItem(self._book_obj, label_or_item, uid_or_image, target_side, title)
         else:
-            ecmbUtils.raise_exception('please provide ecmbNavigationItem or a label')
+            ecmbUtils.raise_exception('please provide ecmbNavigationItem or a label!')
             
         item_obj.int_set_parent(self)
         self._children.append(item_obj)
