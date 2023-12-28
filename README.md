@@ -8,7 +8,7 @@
 - validateable via XSD
 - published under [MIT License](https://choosealicense.com/licenses/mit/)
 
-## The project ([https://metacreature.github.io/](https://metacreature.github.io/))
+## The project ([https://metacreature.github.io/ecmb](https://metacreature.github.io/ecmb))
 **It contains:**
 - the [definition](https://github.com/metacreature/ecmb_definition) of the file-format and a file-validator
 - a [library](https://github.com/metacreature/ecmblib_python) for packing the eBooks
@@ -44,4 +44,4 @@ The examples are working even if you didn't install the library via pip, but coz
 If you want to use type-hinting you have to install the library first and then change the import of ecmblib at the top of the examples.
 
 ### Documentation:
-[https://metacreature.github.io/ecmblib_python.html](https://metacreature.github.io/ecmblib_python.html)
+[https://metacreature.github.io/ecmb/ecmblib_python.html](https://metacreature.github.io/ecmb/ecmblib_python.html)
