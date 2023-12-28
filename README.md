@@ -33,10 +33,8 @@ You can't do anything wrong with this, coz if you do a mistake (eg. passing a bo
  
 ### Trying out examples
 - download and install Python3 (>=3.11) [https://www.python.org/downloads/](https://www.python.org/downloads/)
-- download and install Git [https://git-scm.com/downloads](https://git-scm.com/downloads)
-- create an empty folder on your harddisk (eg. my_empty_folder)
+- download and install Git [https://git-scm.com/downloads](https://git-scm.com/downloads)´
 - open the git-console and then
-    - go to the empty folder `cd my_empty_folder/`
     - clone this repositiory `git clone git@github.com:metacreature/ecmblib_python.git`
     - go to the project-folder `cd ecmblib_python/`
     - run `pip install -r requirements.txt`
