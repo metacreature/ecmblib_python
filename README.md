@@ -21,10 +21,10 @@
 
 ## About this repository:
 
-This is the library you can use for your project to build *.ecmb, while not caring about the internals of the file-format. 
+This is the library you can use for your project to build *.ecmb-files, while not caring about the internals of the file-format. 
 You can't do anything wrong with this, coz if you do a mistake (eg. passing a boolean to set_description()) an ecmbException will be raised and after the creation the file will be automatic validated. 
 
-# Using the Library
+# Using the library
 
 ### Installation
 - download and install Python3 (>=3.11) [https://www.python.org/downloads/](https://www.python.org/downloads/)
