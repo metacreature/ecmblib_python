@@ -38,7 +38,7 @@ You can't do anything wrong with this, coz if you do a mistake (eg. passing a bo
     - clone this repositiory `git clone git@github.com:metacreature/ecmblib_python.git`
     - go to the project-folder `cd ecmblib_python`
     - run `pip install -r requirements.txt`
-    - go to the example-folder `cd examples/advanced_book/
+    - go to the example-folder `cd examples/advanced_book/`
     - run `python advanced_book.py`
 The examples are working even if you didn't install the library via pip, but coz of the relative import type-hinting is not working.
 If you want to use type-hinting you have to install the library first and then change the import of ecmblib at the top of the examples.
