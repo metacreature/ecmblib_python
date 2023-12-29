@@ -30,10 +30,10 @@ from PIL import Image
 import path
 import sys
 directory = path.Path(__file__).abspath()
-sys.path.append(directory.parent.parent.parent)
+sys.path.append(str(directory.parent.parent) + '/src/')
 
 # you have to change this if ecmblib is installed as a module
-from ecmblib.ecmb import ecmbBook, ecmbUtils, ecmbContentImage, ecmbException, BOOK_TYPE, AUTHOR_TYPE, CONTENT_WARNING, BASED_ON_BOOK_TYPE, TARGET_SIDE
+from ecmblib import ecmbBook, ecmbUtils, ecmbContentImage, ecmbException, BOOK_TYPE, AUTHOR_TYPE, CONTENT_WARNING, BASED_ON_BOOK_TYPE, TARGET_SIDE
 
 class testEcmb(unittest.TestCase):
 

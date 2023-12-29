@@ -2,13 +2,14 @@ import io
 from PIL import Image
 
 # only for relative import if you cloned the project
+# you have to delete this if ecmblib is installed as a module
 import path
 import sys
 directory = path.Path(__file__).abspath()
-sys.path.append(directory.parent.parent.parent.parent)
+sys.path.append(str(directory.parent.parent.parent) + '/src/')
 
-# you have to change this if ecmblib is installed as a module
-from ecmblib.ecmb import ecmbBook, ecmbException, BOOK_TYPE, AUTHOR_TYPE, CONTENT_WARNING, BASED_ON_BOOK_TYPE, TARGET_SIDE
+
+from ecmblib import ecmbBook, ecmbException, BOOK_TYPE, AUTHOR_TYPE, CONTENT_WARNING, BASED_ON_BOOK_TYPE, TARGET_SIDE
 
 
 print('\n', flush=True)

@@ -1,11 +1,12 @@
 # only for relative import if you cloned the project
+# you have to delete this if ecmblib is installed as a module
 import path
 import sys
 directory = path.Path(__file__).abspath()
-sys.path.append(directory.parent.parent.parent.parent)
+sys.path.append(str(directory.parent.parent.parent) + '/src/')
 
-# you have to change this if ecmblib is installed as a module
-from ecmblib.ecmb import ecmbBook, BOOK_TYPE, CONTENT_WARNING
+
+from ecmblib import ecmbBook, BOOK_TYPE, CONTENT_WARNING
 
 
 
