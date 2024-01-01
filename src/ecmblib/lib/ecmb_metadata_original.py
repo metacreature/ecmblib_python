@@ -42,7 +42,7 @@ class ecmbMetaDataOriginal(ecmbMetaDataBase):
     def set_language(self, language: str) -> None:
         if language != None and language != '':
             ecmbUtils.validate_regex(True, 'language', language, '^[a-z]{2}$')
-        self._data['isbn'] = (language, {})
+        self._data['language'] = (language, {})
 
 
     def set_title(self, title: str) -> None:

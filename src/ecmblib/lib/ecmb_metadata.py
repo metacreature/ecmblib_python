@@ -110,6 +110,7 @@ class ecmbMetaData(ecmbMetaDataBase):
         if type(title) != str or title == '':
             ecmbUtils.raise_exception(f'the book-title is missing! Please use book.metadata().set_title("My Book Title")')
 
+        self._metadata_original_obj.int_validate()
         self._metadata_based_on_obj.int_validate()
 
 
@@ -121,6 +122,11 @@ class ecmbMetaData(ecmbMetaDataBase):
 
         if self._build(main_node):
             found = True
+
+        original_node = self._metadata_original_obj.int_build()
+        if original_node != None:
+            found = True
+            main_node.append(original_node)
 
         based_on_node = self._metadata_based_on_obj.int_build()
         if based_on_node != None:

@@ -316,7 +316,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-
 	
 
 	<xs:simpleType name="warning">
@@ -340,6 +339,7 @@
 			<xs:enumeration value="Drugs"/>
 		</xs:restriction>
 	</xs:simpleType>
+	
 	
 	<xs:simpleType name="basedontype">
 		<xs:restriction base="xs:string">
