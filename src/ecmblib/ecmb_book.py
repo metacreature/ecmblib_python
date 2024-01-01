@@ -31,6 +31,7 @@ from .lib.ecmb_enums import *
 from .lib.ecmb_utils import ecmbUtils, ecmbException
 
 from .lib.ecmb_metadata import ecmbMetaData
+from .lib.ecmb_metadata_original import ecmbMetaDataOriginal
 from .lib.ecmb_metadata_based_on import ecmbMetaDataBasedOn
 
 from .lib.ecmb_content import ecmbContent
@@ -90,7 +91,13 @@ class ecmbBook:
     
     metadata: ecmbMetaData = property(get_metadata) 
 
+
+    def get_original(self) -> ecmbMetaDataOriginal:
+        return self._metadata_obj.original
     
+    original: ecmbMetaDataOriginal = property(get_original) 
+    
+
     def get_based_on(self) -> ecmbMetaDataBasedOn:
         return self._metadata_obj.based_on
     

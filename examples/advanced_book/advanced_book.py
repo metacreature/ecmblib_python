@@ -35,7 +35,7 @@ book.metadata.set_volume(1)
 book.metadata.set_description('A stick figure goes on a big thrilling hiking-trip.')
 
 book.metadata.add_author('Clemens K.', AUTHOR_TYPE.STORY, href='https://github.com/metacreature')
-book.metadata.add_author('Clemens K.', AUTHOR_TYPE.ILLUSTRATIONS, href='https://github.com/metacreature')
+book.metadata.add_author('Clemens K.', AUTHOR_TYPE.ART, href='https://github.com/metacreature')
 
 book.metadata.add_genre('Adventure')
 book.metadata.add_genre('Summer')

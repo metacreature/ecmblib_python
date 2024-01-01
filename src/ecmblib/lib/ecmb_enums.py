@@ -40,7 +40,14 @@ class AUTHOR_TYPE(Enum):
     AUTHOR = 'Author'
     COAUTHOR = 'Co-Author'
     STORY = 'Story'
-    ILLUSTRATIONS = 'Illustrations'
+    ART = 'Art'
+    COLORIST = 'Colorist'
+    COVERARTIST = 'CoverArtist'
+
+
+class EDITOR_TYPE(Enum):
+    TRANSLATOR = 'Translator'
+    SCANNER = 'Scanner'
     
 
 class BASED_ON_BOOK_TYPE(Enum):

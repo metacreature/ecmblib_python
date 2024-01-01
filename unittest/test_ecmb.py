@@ -33,7 +33,7 @@ directory = path.Path(__file__).abspath()
 sys.path.append(str(directory.parent.parent) + '/src/')
 
 # you have to change this if ecmblib is installed as a module
-from ecmblib import ecmbBook, ecmbUtils, ecmbContentImage, ecmbException, BOOK_TYPE, AUTHOR_TYPE, CONTENT_WARNING, BASED_ON_BOOK_TYPE, TARGET_SIDE
+from ecmblib import ecmbBook, ecmbUtils, ecmbContentImage, ecmbException, BOOK_TYPE, AUTHOR_TYPE, EDITOR_TYPE, CONTENT_WARNING, BASED_ON_BOOK_TYPE, TARGET_SIDE
 
 class testEcmb(unittest.TestCase):
 
@@ -63,11 +63,20 @@ class testEcmb(unittest.TestCase):
             book.metadata.set_title('The Big Trip')
             book.metadata.set_volume(1)
             book.metadata.set_description('A stick figure goes on a big thrilling hiking-trip.')
+            book.metadata.set_note('my first build')
 
             book.metadata.add_author('Clemens K.')
-            book.metadata.add_author('Clemens K.', AUTHOR_TYPE.ILLUSTRATIONS)
             book.metadata.add_author('Clemens K.', 'Story')
             book.metadata.add_author('Clemens K.', AUTHOR_TYPE.COAUTHOR, href='https://github.com/metacreature')
+            author_list = ecmbUtils.enum_values(AUTHOR_TYPE)
+            for author in author_list:
+                book.metadata.add_author('Clemens K.', author)
+
+            book.metadata.add_editor('Clemens K.', 'Translator')
+            book.metadata.add_editor('Clemens K.', EDITOR_TYPE.TRANSLATOR, href='https://github.com/metacreature')
+            editor_list = ecmbUtils.enum_values(EDITOR_TYPE)
+            for editor in editor_list:
+                book.metadata.add_editor('Clemens K.', editor)
 
             book.metadata.add_genre('Adventure')
             book.metadata.add_genre('Summer')
@@ -76,8 +85,26 @@ class testEcmb(unittest.TestCase):
             for warning in warning_list:
                 book.metadata.add_content_warning(warning)
 
+
+            # original
+            book.original.set_language('jp')
+            book.original.set_isbn('9876543210')
+            book.original.set_publisher('BestNovelPublisher Inc.')
+            book.original.set_publisher('BestNovelPublisher Inc.', href='https://www.bestnovelpublisher-inc.com')
+            book.original.set_publishdate('1986')
+            book.original.set_title('The Scary Hiking')
+
+            book.original.add_author('Clemens K.')
+            book.original.add_author('Clemens K.', 'Story')
+            book.original.add_author('Clemens K.', AUTHOR_TYPE.COAUTHOR, href='https://github.com/metacreature')
+            author_list = ecmbUtils.enum_values(AUTHOR_TYPE)
+            for author in author_list:
+                book.original.add_author('Clemens K.', author)
+
+
             # based on
             book.based_on.set_type(BASED_ON_BOOK_TYPE.LIGHTNOVEL)
+            book.based_on.set_language('jp')
             book.based_on.set_isbn('9876543210')
             book.based_on.set_publisher('BestNovelPublisher Inc.')
             book.based_on.set_publisher('BestNovelPublisher Inc.', href='https://www.bestnovelpublisher-inc.com')
@@ -85,9 +112,11 @@ class testEcmb(unittest.TestCase):
             book.based_on.set_title('The Scary Hiking')
 
             book.based_on.add_author('Clemens K.')
-            book.based_on.add_author('Clemens K.', AUTHOR_TYPE.ILLUSTRATIONS)
             book.based_on.add_author('Clemens K.', 'Story')
             book.based_on.add_author('Clemens K.', AUTHOR_TYPE.COAUTHOR, href='https://github.com/metacreature')
+            author_list = ecmbUtils.enum_values(AUTHOR_TYPE)
+            for author in author_list:
+                book.based_on.add_author('Clemens K.', author)
 
             # cover
             book.content.set_cover_front(self._source_dir + 'front.jpg')
@@ -121,9 +150,19 @@ class testEcmb(unittest.TestCase):
             book.metadata.set_title('The Big Trip')
             book.metadata.set_volume(None)
             book.metadata.set_description(None)
+            book.metadata.set_note(None)
+
+            # original
+            book.original.set_language(None)
+            book.original.set_isbn(None)
+            book.original.set_publisher(None)
+            book.original.set_publisher(None, href=None)
+            book.original.set_publishdate(None)
+            book.original.set_title(None)
 
             # based on
             book.based_on.set_type(None)
+            book.based_on.set_language(None)
             book.based_on.set_isbn(None)
             book.based_on.set_publisher(None)
             book.based_on.set_publisher(None, href=None)
@@ -161,9 +200,19 @@ class testEcmb(unittest.TestCase):
             book.metadata.set_publishdate('')
             book.metadata.set_title('The Big Trip')
             book.metadata.set_description('')
+            book.metadata.set_note('')
+
+            # original
+            book.original.set_language('')
+            book.original.set_isbn('')
+            book.original.set_publisher('')
+            book.original.set_publisher('', href='')
+            book.original.set_publishdate('')
+            book.original.set_title('')
 
             # based on
             book.based_on.set_type('')
+            book.based_on.set_language('')
             book.based_on.set_isbn('')
             book.based_on.set_publisher('')
             book.based_on.set_publisher('', href='')
@@ -395,6 +444,23 @@ class testEcmb(unittest.TestCase):
                         book.navigation.add_chapter('xyz', 'aaa', 'ccc', 'xxx')
                     case 50:
                         book.navigation.add_item('xyz', 'ccc', 'xxx')
+
+                    case 51:
+                        book.metadata.set_note(False)
+                    case 52:
+                        book.metadata.add_editor(None, EDITOR_TYPE.SCANNER)
+                    case 53:
+                        book.metadata.add_editor(False, EDITOR_TYPE.SCANNER)
+                    case 53:
+                        book.metadata.add_editor('clemens K.', 'xyz')
+                    case 54:
+                        book.original.set_language(False)
+                    case 55:
+                        book.original.set_language('xyz')
+                    case 56:
+                        book.original.set_publisher('xyz')
+                        book.write(self._test_filename, False)
+
                     case _:
                         if os.path.exists(self._test_filename):
                             os.unlink(self._test_filename)

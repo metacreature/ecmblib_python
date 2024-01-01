@@ -27,15 +27,24 @@ from lxml import etree
 from .ecmb_utils import ecmbUtils
 from .ecmb_enums import *
 from .ecmb_metadata_base import ecmbMetaDataBase
+from .ecmb_metadata_original import ecmbMetaDataOriginal
 from .ecmb_metadata_based_on import ecmbMetaDataBasedOn
 
 class ecmbMetaData(ecmbMetaDataBase):
 
+    _metadata_original_obj = None
     _metadata_based_on_obj = None
 
     def __init__(self):
+        self._metadata_original_obj = ecmbMetaDataOriginal()
         self._metadata_based_on_obj = ecmbMetaDataBasedOn()
         super().__init__()
+
+
+    def get_original(self) -> ecmbMetaDataOriginal:
+        return self._metadata_original_obj
+    
+    original: ecmbMetaDataOriginal = property(get_original)
 
 
     def get_based_on(self) -> ecmbMetaDataBasedOn:
@@ -60,6 +69,24 @@ class ecmbMetaData(ecmbMetaDataBase):
         self._data['description'] = (description, {})
 
 
+    def set_note(self, note: str) -> None:
+        ecmbUtils.validate_str_or_none(True, 'note', note)
+        self._data['note'] = (note, {})
+
+
+    def add_editor(self, name: str, editortype: EDITOR_TYPE, href: str = None) -> None:
+        editortype = ecmbUtils.enum_value(editortype)
+
+        ecmbUtils.validate_not_empty_str(True, 'name', name)
+        ecmbUtils.validate_enum(True, 'editortype', editortype, EDITOR_TYPE)
+        if href != None and href != '':
+            ecmbUtils.validate_regex(True, 'href', href, '^(http|https)://.+$')
+            
+        if not self._data.get('editors'):
+            self._data['editors'] = []
+        self._data['editors'].append(('editor', name, {'type': editortype, 'href': href}))
+
+
     def add_genre(self, genre: str) -> None:
         ecmbUtils.validate_not_empty_str(True,  'genre', genre)
         if not self._data.get('genres'):
@@ -74,6 +101,7 @@ class ecmbMetaData(ecmbMetaDataBase):
         if not self._data.get('warnings'):
             self._data['warnings'] = []
         self._data['warnings'].append(('warning', content_warning, {}))
+
 
     
     def int_validate(self) -> None:
