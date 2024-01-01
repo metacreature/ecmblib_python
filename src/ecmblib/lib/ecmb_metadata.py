@@ -69,9 +69,9 @@ class ecmbMetaData(ecmbMetaDataBase):
         self._data['description'] = (description, {})
 
 
-    def set_note(self, note: str) -> None:
-        ecmbUtils.validate_str_or_none(True, 'note', note)
-        self._data['note'] = (note, {})
+    def set_notes(self, notes: str) -> None:
+        ecmbUtils.validate_str_or_none(True, 'notes', notes)
+        self._data['notes'] = (notes, {})
 
 
     def add_editor(self, name: str, editortype: EDITOR_TYPE, href: str = None) -> None:

@@ -63,7 +63,7 @@ class testEcmb(unittest.TestCase):
             book.metadata.set_title('The Big Trip')
             book.metadata.set_volume(1)
             book.metadata.set_description('A stick figure goes on a big thrilling hiking-trip.')
-            book.metadata.set_note('my first build')
+            book.metadata.set_notes('my first build')
 
             book.metadata.add_author('Clemens K.')
             book.metadata.add_author('Clemens K.', 'Story')
@@ -150,7 +150,7 @@ class testEcmb(unittest.TestCase):
             book.metadata.set_title('The Big Trip')
             book.metadata.set_volume(None)
             book.metadata.set_description(None)
-            book.metadata.set_note(None)
+            book.metadata.set_notes(None)
 
             # original
             book.original.set_language(None)
@@ -200,7 +200,7 @@ class testEcmb(unittest.TestCase):
             book.metadata.set_publishdate('')
             book.metadata.set_title('The Big Trip')
             book.metadata.set_description('')
-            book.metadata.set_note('')
+            book.metadata.set_notes('')
 
             # original
             book.original.set_language('')
@@ -446,7 +446,7 @@ class testEcmb(unittest.TestCase):
                         book.navigation.add_item('xyz', 'ccc', 'xxx')
 
                     case 51:
-                        book.metadata.set_note(False)
+                        book.metadata.set_notes(False)
                     case 52:
                         book.metadata.add_editor(None, EDITOR_TYPE.SCANNER)
                     case 53:
