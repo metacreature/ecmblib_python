@@ -62,7 +62,7 @@ class ecmbBook:
     _build_id_counter = None
     _page_nr_counter = None
 
-    def __init__(self, book_type: BOOK_TYPE, language: str, uid: str, width: int, height: int):  
+    def __init__(self, book_type: BOOK_TYPE, language: str, uid: str, width: int, height: int):
         book_type = ecmbUtils.enum_value(book_type)
         
         ecmbUtils.validate_enum(True, 'book_type', book_type, BOOK_TYPE)
