@@ -1,3 +1,6 @@
+> [!WARNING]
+> This project is still under developement, so please don't use it atm
+
 # *.ecmb - The new Comic-Manga-eBook
 **Benefits:**
 - right to left reading in page-mode for Mangas, while scroll-mode is still top-down
@@ -22,8 +25,10 @@
 
 ## About this repository:
 
-This is the library you can use for your project to build *.ecmb-files, while not caring about the internals of the file-format. 
+This is the python-library you can use for your project to build `*`.ecmb - files without caring about the internals of the file-format.
 You can't do anything wrong with this, coz if you do a mistake (eg. passing a boolean to set_description()) an ecmbException will be raised and after the creation the file will be automatic validated. 
+
+Published under [MIT License](https://choosealicense.com/licenses/mit/)
 
 # Using the library
 
