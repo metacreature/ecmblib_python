@@ -39,8 +39,7 @@ The project
 **If you like it I would be happy if you** `donate on checkya <https://checkya.com/1hhp2cpit9eha/payme>`_
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+	ecmblib
 
 
 

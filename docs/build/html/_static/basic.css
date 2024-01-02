@@ -55,7 +55,7 @@ div.sphinxsidebarwrapper {
 
 div.sphinxsidebar {
     float: left;
-    width: 230px;
+    width: 270px;
     margin-left: -100%;
     font-size: 90%;
     word-wrap: break-word;
@@ -223,7 +223,7 @@ table.modindextable td {
 
 div.body {
     min-width: 360px;
-    max-width: 950px;
+    max-width: 800px;
 }
 
 div.body p, div.body dd, div.body li, div.body blockquote {
@@ -238,7 +238,7 @@ a.headerlink {
 }
 
 a:visited {
-    color: rgb(9, 105, 218);
+    color: #551A8B;
 }
 
 h1:hover > a.headerlink,
