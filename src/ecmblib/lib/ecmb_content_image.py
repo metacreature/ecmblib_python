@@ -32,6 +32,23 @@ from .ecmb_utils import ecmbUtils
 from .ecmb_content_base import ecmbContentBase
 
 class ecmbContentImage(ecmbContentBase):
+    """ecmbContentImage 
+    
+    :note:
+    * if you add a double-page-image you have to add the splitted left and right part as well to give the reader-app more opportunities. The class automatic detects if a double-page-image is added and will raise an ecmbException if you didn't provide the left and right part
+    * provide a unique-id if you want to access this image easily later at navigation
+
+    :param book_obj:
+    :type book_obj: ecmbBook
+    :param src: an image (single-page or double-page)
+    :type src: str | BytesIO
+    :param src_left: the left part of the double-page-image
+    :type src_left: str | BytesIO, optional
+    :param src_right: the right part of the double-page-image
+    :type src_right: str | BytesIO, optional
+    :param unique_id: provide a unique-id if you want to access this image easily later at navigation
+    :type unique_id: str, optional
+    """    
 
     _src = None
     _src_format = None

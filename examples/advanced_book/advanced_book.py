@@ -9,7 +9,7 @@ directory = path.Path(__file__).abspath()
 sys.path.append(str(directory.parent.parent.parent) + '/src/')
 
 
-from ecmblib import ecmbBook, ecmbException, BOOK_TYPE, AUTHOR_TYPE, CONTENT_WARNING, BASED_ON_BOOK_TYPE, TARGET_SIDE
+from ecmblib import ecmbBook, ecmbException, BOOK_TYPE, AUTHOR_TYPE, CONTENT_WARNING, BASED_ON_TYPE, TARGET_SIDE
 
 
 print('\n', flush=True)
@@ -48,7 +48,7 @@ book.metadata.add_content_warning(CONTENT_WARNING.SEXUAL_CONTENT)
 # add data of the book which the story is based on
 ###################################################
 
-book.based_on.set_type(BASED_ON_BOOK_TYPE.LIGHTNOVEL)
+book.based_on.set_type(BASED_ON_TYPE.LIGHTNOVEL)
 book.based_on.set_isbn('9876543210')
 book.based_on.set_publisher('BestNovelPublisher Inc.', href='https://www.bestnovelpublisher-inc.com')
 book.based_on.set_publishdate('1986')

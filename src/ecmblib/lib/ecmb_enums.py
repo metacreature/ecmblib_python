@@ -50,7 +50,7 @@ class EDITOR_TYPE(Enum):
     SCANNER = 'Scanner'
     
 
-class BASED_ON_BOOK_TYPE(Enum):
+class BASED_ON_TYPE(Enum):
     NOVEL = 'Novel'
     LIGHTNOVEL = 'Lightnovel'
     MANGA = 'Manga'

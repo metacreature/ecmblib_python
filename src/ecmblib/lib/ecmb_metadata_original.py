@@ -30,6 +30,15 @@ from .ecmb_metadata_base import ecmbMetaDataBase
 
 
 class ecmbMetaDataOriginal(ecmbMetaDataBase):
+    """ecmbMetaDataOriginal
+
+    If the book was (fan-) translated you can place the data of the original book here.
+    Its reccomended to add the authors here and leave the authors at the main meta-data empty
+
+    :note: 
+    * if you add any original book's metadata the title is mandatory
+
+    """
 
     _msg = None
     _node = None
@@ -40,12 +49,22 @@ class ecmbMetaDataOriginal(ecmbMetaDataBase):
        self._node = 'original'
     
     def set_language(self, language: str) -> None:
+        """set_language 
+
+        :param language: the language of the book
+        :type language: str
+        """ 
         if language != None and language != '':
             ecmbUtils.validate_regex(True, 'language', language, '^[a-z]{2}$')
         self._data['language'] = (language, {})
 
 
     def set_title(self, title: str) -> None:
+        """set_title 
+
+        :param title: the title of the book
+        :type title: str
+        """        
         ecmbUtils.validate_str_or_none(True, 'title', title)
         self._data['title'] = (title, {})
     

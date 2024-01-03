@@ -41,7 +41,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="ecmblib package" href="ecmblib.html" />
+    <link rel="next" title="Class-reference" href="ecmblib.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -137,7 +137,7 @@
     
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="ecmblib.html">
-                        ecmblib package
+                        Class-reference
                       </a>
                     </li>
                 
@@ -228,7 +228,7 @@ document.write(`
     
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="ecmblib.html">
-                        ecmblib package
+                        Class-reference
                       </a>
                     </li>
                 
@@ -283,7 +283,8 @@ document.write(`
   <section id="welcome-to-ecmblib-s-documentation">
 <h1>Welcome to ecmblib’s documentation!<a class="headerlink" href="#welcome-to-ecmblib-s-documentation" title="Link to this heading">#</a></h1>
 <p>“ecmblib” is the python-library you can use for your project to build <cite>*</cite>.ecmb - files without caring about the internals of the file-format.
-You can’t do anything wrong with this, coz if you do a mistake (eg. passing a boolean to set_description()) an ecmbException will be raised and after the creation the file will be automatic validated.</p>
+You can’t do anything wrong with this, coz if you do a mistake (eg. passing a boolean to set_description()) an ecmbException will be raised.
+After the creation the file will be automatic validated.</p>
 <p>Published under: <a class="reference external" href="https://choosealicense.com/licenses/mit/">MIT License</a></p>
 <p>Go to source-code: <a class="github reference external" href="https://github.com/metacreature/ecmblib_python">metacreature/ecmblib_python</a></p>
 <section id="ecmb-the-new-comic-manga-ebook">
@@ -311,23 +312,105 @@ You can’t do anything wrong with this, coz if you do a mistake (eg. passing a 
 <li><p>unfortunately there is no web-scraper to download source-images, coz I guess that would be illegal in my country to publish something like that. Maybe you’ll find some here: <a class="github reference external" href="https://github.com/topics/manga-scraper">topics/manga-scraper</a></p></li>
 </ul>
 <p><strong>If you like it I would be happy if you</strong> <a class="reference external" href="https://checkya.com/1hhp2cpit9eha/payme">donate on checkya</a></p>
+</section>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="ecmblib.html">ecmblib package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ecmblib.html#module-ecmblib.ecmb_book">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ecmblib.html#module-ecmblib">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecmblib.html">Class-reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ecmblib.html#module-ecmblib.ecmb_book">ecmbBook</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ecmblib.html#ecmblib.ecmb_book.ecmbBook"><code class="docutils literal notranslate"><span class="pre">ecmbBook</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.ecmb_book.ecmbBook.metadata"><code class="docutils literal notranslate"><span class="pre">ecmbBook.metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.ecmb_book.ecmbBook.original"><code class="docutils literal notranslate"><span class="pre">ecmbBook.original</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.ecmb_book.ecmbBook.based_on"><code class="docutils literal notranslate"><span class="pre">ecmbBook.based_on</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.ecmb_book.ecmbBook.content"><code class="docutils literal notranslate"><span class="pre">ecmbBook.content</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.ecmb_book.ecmbBook.navigation"><code class="docutils literal notranslate"><span class="pre">ecmbBook.navigation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.ecmb_book.ecmbBook.write"><code class="docutils literal notranslate"><span class="pre">ecmbBook.write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ecmblib.html#meta-data">Meta-Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ecmblib.html#module-ecmblib.lib.ecmb_metadata">ecmbMetaData</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData.original"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData.original</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData.based_on"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData.based_on</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData.set_title"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData.set_title()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData.set_volume"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData.set_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData.set_description"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData.set_description()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData.set_notes"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData.set_notes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData.add_editor"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData.add_editor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData.add_genre"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData.add_genre()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData.add_content_warning"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData.add_content_warning()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData.add_author"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData.add_author()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData.set_isbn"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData.set_isbn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData.set_publishdate"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData.set_publishdate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata.ecmbMetaData.set_publisher"><code class="docutils literal notranslate"><span class="pre">ecmbMetaData.set_publisher()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ecmblib.html#module-ecmblib.lib.ecmb_metadata_original">ecmbMetaDataOriginal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_original.ecmbMetaDataOriginal"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataOriginal</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_original.ecmbMetaDataOriginal.set_language"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataOriginal.set_language()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_original.ecmbMetaDataOriginal.set_title"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataOriginal.set_title()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_original.ecmbMetaDataOriginal.add_author"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataOriginal.add_author()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_original.ecmbMetaDataOriginal.set_isbn"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataOriginal.set_isbn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_original.ecmbMetaDataOriginal.set_publishdate"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataOriginal.set_publishdate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_original.ecmbMetaDataOriginal.set_publisher"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataOriginal.set_publisher()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ecmblib.html#module-ecmblib.lib.ecmb_metadata_based_on">ecmbMetaDataBasedOn</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataBasedOn</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn.set_type"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataBasedOn.set_type()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn.add_author"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataBasedOn.add_author()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn.set_isbn"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataBasedOn.set_isbn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn.set_language"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataBasedOn.set_language()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn.set_publishdate"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataBasedOn.set_publishdate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn.set_publisher"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataBasedOn.set_publisher()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn.set_title"><code class="docutils literal notranslate"><span class="pre">ecmbMetaDataBasedOn.set_title()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ecmblib.html#content">Content</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ecmblib.html#module-ecmblib.lib.ecmb_content">ecmbContent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_content.ecmbContent"><code class="docutils literal notranslate"><span class="pre">ecmbContent</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_content.ecmbContent.set_cover_front"><code class="docutils literal notranslate"><span class="pre">ecmbContent.set_cover_front()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_content.ecmbContent.set_cover_rear"><code class="docutils literal notranslate"><span class="pre">ecmbContent.set_cover_rear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_content.ecmbContent.add_folder"><code class="docutils literal notranslate"><span class="pre">ecmbContent.add_folder()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_content.ecmbContent.add_image"><code class="docutils literal notranslate"><span class="pre">ecmbContent.add_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_content.ecmbContent.get_unique_id"><code class="docutils literal notranslate"><span class="pre">ecmbContent.get_unique_id()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ecmblib.html#module-ecmblib.lib.ecmb_content_folder">ecmbContentFolder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_content_folder.ecmbContentFolder"><code class="docutils literal notranslate"><span class="pre">ecmbContentFolder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_content_folder.ecmbContentFolder.add_folder"><code class="docutils literal notranslate"><span class="pre">ecmbContentFolder.add_folder()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_content_folder.ecmbContentFolder.add_image"><code class="docutils literal notranslate"><span class="pre">ecmbContentFolder.add_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_content_folder.ecmbContentFolder.get_unique_id"><code class="docutils literal notranslate"><span class="pre">ecmbContentFolder.get_unique_id()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ecmblib.html#module-ecmblib.lib.ecmb_content_image">ecmbContentImage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_content_image.ecmbContentImage"><code class="docutils literal notranslate"><span class="pre">ecmbContentImage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ecmblib.html#ecmblib.lib.ecmb_content_image.ecmbContentImage.get_unique_id"><code class="docutils literal notranslate"><span class="pre">ecmbContentImage.get_unique_id()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
-</section>
-<section id="indices-and-tables">
-<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
 </section>
 </section>
 
@@ -346,7 +429,7 @@ You can’t do anything wrong with this, coz if you do a mistake (eg. passing a 
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ecmblib package</p>
+        <p class="prev-next-title">Class-reference</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -368,7 +451,7 @@ You can’t do anything wrong with this, coz if you do a mistake (eg. passing a 
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmb-the-new-comic-manga-ebook"><cite>*</cite>.ecmb - The new Comic-Manga-eBook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-project">The project</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-and-tables">Indices and tables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
 </ul>
   </nav></div>
 

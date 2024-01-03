@@ -31,6 +31,17 @@ from .ecmb_metadata_original import ecmbMetaDataOriginal
 from .ecmb_metadata_based_on import ecmbMetaDataBasedOn
 
 class ecmbMetaData(ecmbMetaDataBase):
+    """ecmbMetaData
+
+    Here you can add the book's main meta-data.
+
+    If the book was (fan-) translated you can add the information for the original book to ecmbMetaDataOriginal.
+    Its reccomended to add the authors to the original book, and leave them empty here at main meta-data.
+
+    :note: 
+    * the title is mandatory
+
+    """
 
     _metadata_original_obj = None
     _metadata_based_on_obj = None
@@ -41,40 +52,83 @@ class ecmbMetaData(ecmbMetaDataBase):
         super().__init__()
 
 
-    def get_original(self) -> ecmbMetaDataOriginal:
+    @property
+    def original(self) -> ecmbMetaDataOriginal:
+        """original 
+
+        If the book was (fan-) translated you can add the information for the original book to ecmbMetaDataOriginal.
+        Its reccomended to add the authors to the original book, and leave them empty here at main meta-data.
+
+        :rtype: ecmbMetaDataOriginal
+        """        
         return self._metadata_original_obj
-    
-    original: ecmbMetaDataOriginal = property(get_original)
 
 
-    def get_based_on(self) -> ecmbMetaDataBasedOn:
+    @property
+    def based_on(self) -> ecmbMetaDataBasedOn:
+        """based_on
+        
+        If the book based on eg. a light-novel and you want to give that credit, you can add the information to ecmbMetaDataBasedOn
+
+        :rtype: ecmbMetaDataBasedOn
+        """        
         return self._metadata_based_on_obj
-    
-    based_on: ecmbMetaDataBasedOn = property(get_based_on)
 
 
     def set_title(self, title: str) -> None:
+        """set_title 
+
+        :param title: the title of the book
+        :type title: str
+
+        """        
         ecmbUtils.validate_not_empty_str(True, 'title', title)
         self._data['title'] = (title, {})
 
     
     def set_volume(self, volume: int) -> None:
+        """set_volume 
+
+        :param volume: if its a series of books you should set the volume-number
+        :type volume: int
+        """        
         if volume != None:
             ecmbUtils.validate_int(True,  'volume', volume, 1)
         self._data['volume'] = (volume, {})
 
 
     def set_description(self, description: str) -> None:
+        """set_description 
+
+        :param description: the book's summary in the book’s language
+        :type description: str
+        """        
         ecmbUtils.validate_str_or_none(True,  'description', description)
         self._data['description'] = (description, {})
 
 
     def set_notes(self, notes: str) -> None:
+        """set_notes 
+
+        :param notes: personal notes you would like to add
+        :type notes: str
+        """        
         ecmbUtils.validate_str_or_none(True, 'notes', notes)
         self._data['notes'] = (notes, {})
 
 
     def add_editor(self, name: str, editortype: EDITOR_TYPE, href: str = None) -> None:
+        """add_editor 
+        
+        If it's an (fan-)translated book you can add the editor-credits here
+
+        :param name: the name of the editor
+        :type name: str
+        :param editortype: the role of the editor
+        :type editortype: EDITOR_TYPE
+        :param href: the homepage of the editor
+        :type href: str, optional
+        """        
         editortype = ecmbUtils.enum_value(editortype)
 
         ecmbUtils.validate_not_empty_str(True, 'name', name)
@@ -88,6 +142,11 @@ class ecmbMetaData(ecmbMetaDataBase):
 
 
     def add_genre(self, genre: str) -> None:
+        """add_genre 
+
+        :param genre: add the genre in the book's language
+        :type genre: str
+        """        
         ecmbUtils.validate_not_empty_str(True,  'genre', genre)
         if not self._data.get('genres'):
             self._data['genres'] = []
@@ -95,6 +154,13 @@ class ecmbMetaData(ecmbMetaDataBase):
 
 
     def add_content_warning(self, content_warning: CONTENT_WARNING) -> None:
+        """add_content_warning 
+
+        Use content-based warnings for using safe-guard if necessary
+        
+        :param content_warning: content-based warning
+        :type content_warning: CONTENT_WARNING
+        """        
         content_warning = ecmbUtils.enum_value(content_warning)
 
         ecmbUtils.validate_enum(True, 'content_warning', content_warning, CONTENT_WARNING)

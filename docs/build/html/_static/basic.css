@@ -8,6 +8,22 @@
  * :license: BSD, see LICENSE for details.
  *
  */
+ 
+section h1,
+section h2{
+	display: block;
+	border-bottom: 2px solid #EEE;
+}
+section span.sig-prename.descclassname{
+	display: none !important;
+}
+
+dl.py.class > dd > .py.property,
+dl.py.class > dd > .py.method{
+	margin-top: 48px !important;
+	margin-bottom: 48px !important;
+}
+
 
 /* -- main layout ----------------------------------------------------------- */
 

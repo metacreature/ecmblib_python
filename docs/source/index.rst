@@ -7,7 +7,8 @@ Welcome to ecmblib's documentation!
 ===================================
 
 "ecmblib" is the python-library you can use for your project to build `*`.ecmb - files without caring about the internals of the file-format.
-You can't do anything wrong with this, coz if you do a mistake (eg. passing a boolean to set_description()) an ecmbException will be raised and after the creation the file will be automatic validated.
+You can't do anything wrong with this, coz if you do a mistake (eg. passing a boolean to set_description()) an ecmbException will be raised. 
+After the creation the file will be automatic validated.
 
 Published under: `MIT License <https://choosealicense.com/licenses/mit/>`_
 
@@ -38,14 +39,9 @@ The project
 
 **If you like it I would be happy if you** `donate on checkya <https://checkya.com/1hhp2cpit9eha/payme>`_
 
+
+Contents
+--------
+
 .. toctree::
 	ecmblib
-
-
-
-Indices and tables
-------------------
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

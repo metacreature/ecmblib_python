@@ -37,12 +37,24 @@ class ecmbMetaDataBase(ABC):
 
 
     def set_isbn(self, isbn: str) -> None:
+        """set_isbn
+
+        :param isbn: isbn-10 or isbn-13
+        :type isbn: str
+        """        
         if isbn != None and isbn != '':
             ecmbUtils.validate_regex(True, 'isbn', isbn, '^([0-9]{10}|[0-9]{13})$')
         self._data['isbn'] = (isbn, {})
 
     
     def set_publisher(self, publisher: str, href: str = None) -> None:
+        """set_publisher 
+
+        :param publisher: the name of the publisher
+        :type publisher: str
+        :param href: the homepage of the publisher
+        :type href: str, optional
+        """        
         ecmbUtils.validate_str_or_none(True, 'publisher', publisher)
         if href != None and href != '':
             ecmbUtils.validate_regex(True, 'href', href, '^(http|https)://.+$')
@@ -52,12 +64,26 @@ class ecmbMetaDataBase(ABC):
 
 
     def set_publishdate(self, publishdate: str) -> None:
+        """set_publishdate 
+
+        :param publishdate: the publishe-date of the book (YYYY-MM-DD or YYYY)
+        :type publishdate: str 
+        """        
         if publishdate != None and publishdate != '':
             ecmbUtils.validate_regex(True, 'publishdate', publishdate, '^[0-9]{4}(-[0-9]{2}-[0-9]{2})?$')
         self._data['publishdate'] = (publishdate, {})
         
 
     def add_author(self, name: str, authortype: AUTHOR_TYPE = AUTHOR_TYPE.AUTHOR, href: str = None) -> None:
+        """add_author 
+
+        :param name: the name of the author
+        :type name: str
+        :param authortype: the role of the author
+        :type authortype: AUTHOR_TYPE, optional
+        :param href: the homepage of the author
+        :type href: str, optional
+        """        
         authortype = ecmbUtils.enum_value(authortype)
 
         ecmbUtils.validate_not_empty_str(True, 'name', name)

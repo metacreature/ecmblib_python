@@ -33,7 +33,7 @@ directory = path.Path(__file__).abspath()
 sys.path.append(str(directory.parent.parent) + '/src/')
 
 # you have to change this if ecmblib is installed as a module
-from ecmblib import ecmbBook, ecmbUtils, ecmbContentImage, ecmbException, BOOK_TYPE, AUTHOR_TYPE, EDITOR_TYPE, CONTENT_WARNING, BASED_ON_BOOK_TYPE, TARGET_SIDE
+from ecmblib import ecmbBook, ecmbUtils, ecmbContentImage, ecmbException, BOOK_TYPE, AUTHOR_TYPE, EDITOR_TYPE, CONTENT_WARNING, BASED_ON_TYPE, TARGET_SIDE
 
 class testEcmb(unittest.TestCase):
 
@@ -103,7 +103,7 @@ class testEcmb(unittest.TestCase):
 
 
             # based on
-            book.based_on.set_type(BASED_ON_BOOK_TYPE.LIGHTNOVEL)
+            book.based_on.set_type(BASED_ON_TYPE.LIGHTNOVEL)
             book.based_on.set_language('jp')
             book.based_on.set_isbn('9876543210')
             book.based_on.set_publisher('BestNovelPublisher Inc.')

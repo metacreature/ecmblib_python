@@ -34,6 +34,26 @@ class ecmbContentBaseSub(ecmbContentBase):
     _contents = None
     
     def add_image(self, src_or_image: str|BytesIO|ecmbContentImage, src_left: str|BytesIO = None, src_right: str|BytesIO = None, unique_id: str = None) -> ecmbContentImage:
+        """add_image
+
+        Adds an image
+        
+        :note:
+        * if you add a double-page-image you have to add the splitted left and right part as well to give the reader-app more opportunities. The class automatic detects if a double-page-image is added and will raise an ecmbException if you didn't provide the left and right part
+        * provide a unique-id if you want to access this image easily later at navigation
+        * if you add a previously created ecmbContentImage all other parameters are ignored
+
+        :param src_or_image: an image (single-page or double-page) or a previously created ecmbContentImage
+        :type src_or_image: str | BytesIO | ecmbContentImage
+        :param src_left: the left part of the double-page-image
+        :type src_left: str | BytesIO, optional
+        :param src_right: the right part of the double-page-image
+        :type src_right: str | BytesIO, optional
+        :param unique_id: provide a unique-id if you want to access this image easily later at navigation
+        :type unique_id: str, optional
+
+        :rtype: ecmbContentImage
+        """
         image_obj = None
         if type(src_or_image) == ecmbContentImage:
             image_obj = src_or_image
@@ -49,6 +69,19 @@ class ecmbContentBaseSub(ecmbContentBase):
 
 
     def add_folder(self, uid_or_folder: str|ecmbContentFolder = None) -> ecmbContentFolder:
+        """add_folder 
+        
+        Adds an (sub-)folder. If you want to use chapters (and subchapters) in navigation you have to organize the images in folders, coz a chapter points to a folder.
+
+        :note:
+        * because the class will generate internal names no name is necesary
+        * provide a unique-id if you want to access this folder easily later at navigation
+
+        :param uid_or_folder: an unique-id or a previously created ecmbContentFolder
+        :type uid_or_folder: str | ecmbContentFolder, optional
+        
+        :rtype: ecmbContentFolder
+        """        
         folder_obj = None
 
         if type(uid_or_folder) == ecmbContentFolder:

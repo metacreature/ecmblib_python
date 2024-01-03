@@ -43,6 +43,11 @@ class ecmbContentBase(ABC):
 
        
     def get_unique_id(self) -> str:
+        """get_unique_id 
+
+        :return: returns the unique-id of the object
+        :rtype: str
+        """        
         return self._unique_id
     
     

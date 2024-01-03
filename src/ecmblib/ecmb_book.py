@@ -46,6 +46,24 @@ from .lib.ecmb_navigation_item import ecmbNavigationItem
 from .ecmb_definition.validator.python.ecmb_validator import ecmbValidator
 
 class ecmbBook:
+    """
+    The main class to genererate `*`.ecmb - files
+
+    :note: 
+    * the title is mandatory, so please call book.metadata.set_title('My Title')
+    * All functions in the library will raise an ecmbException on invalid values!
+
+    :param book_type: the book-type defines the reading-direction of the book
+    :type book_type: BOOK_TYPE
+    :param language: language of the content (ISO 639-1 language-code)
+    :type language: str
+    :param uid: unique-id of the book (minlength: 16, maxlength:255)
+    :type uid: str 
+    :param width: approximately width of the images
+    :type width: int
+    :param height: approximately height of the images
+    :type height: int
+    """      
 
     _version = None
     _book_type = None
@@ -86,38 +104,73 @@ class ecmbBook:
         self._height = height
 
 
-    def get_metadata(self) -> ecmbMetaData:
+    @property
+    def metadata(self) -> ecmbMetaData:
+        """metadata
+
+        You can add the book's meta-data like title, genres, ... to ecmbMetaData
+
+        :rtype: ecmbMetaData
+        """         
         return self._metadata_obj
-    
-    metadata: ecmbMetaData = property(get_metadata) 
 
 
-    def get_original(self) -> ecmbMetaDataOriginal:
+    @property
+    def original(self) -> ecmbMetaDataOriginal:
+        """
+        alias for ecmbMetaData.original
+
+        If the book was (fan-) translated you can add the information for the original book to ecmbMetaDataOriginal.
+
+        :rtype: ecmbMetaDataOriginal
+        """        
         return self._metadata_obj.original
     
-    original: ecmbMetaDataOriginal = property(get_original) 
-    
 
-    def get_based_on(self) -> ecmbMetaDataBasedOn:
+    @property
+    def based_on(self) -> ecmbMetaDataBasedOn:
+        '''
+        alias for ecmbMetaData.based_on
+
+        If the book based on eg. a light-novel and you want to give that credit, you can add the information to ecmbMetaDataBasedOn
+
+        :rtype: ecmbMetaDataBasedOn
+        '''
         return self._metadata_obj.based_on
-    
-    based_on: ecmbMetaDataBasedOn = property(get_based_on) 
 
-    
-    def get_content(self) -> ecmbContent:
+  
+    @property  
+    def content(self) -> ecmbContent:
+        """content 
+
+        Add folders and images to ecmbContent
+
+        :rtype: ecmbContent
+        """        
         return self._content_obj
-    
-    content: ecmbContent = property(get_content) 
 
 
-    def get_navigation(self) -> ecmbNavigation:
+    @property
+    def navigation(self) -> ecmbNavigation:
+        """navigation 
+
+        Add Chapters, Headlines or Links to ecmbNavigation
+
+        :rtype: ecmbNavigation
+        """    
         return self._navigation_obj
-    
-    navigation: ecmbNavigation = property(get_navigation) 
 
 
     def write(self, file_name: str, warnings: bool|Callable = True, demo_mode: bool = False) -> None:
+        """write 
 
+        :param file_name:
+        :type file_name: str
+        :param warnings: defines if warnings should be printed to the console or not or alternatively use a callback-function myfunc(msg)
+        :type warnings: bool | Callable, optional
+        :param demo_mode: in demo-mode the generated file will be automaticaly unszipped
+        :type demo_mode: bool, optional
+        """        
         self._validate(warnings)
         
         if re.search(r'\.ecmb$', file_name) == None:

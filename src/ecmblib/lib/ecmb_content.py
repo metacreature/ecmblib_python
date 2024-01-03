@@ -32,7 +32,14 @@ from .ecmb_content_base_sub import ecmbContentBaseSub
 
 
 class ecmbContent(ecmbContentBaseSub):
+    """ecmbContent
 
+    This is the root-node of the book's contents.
+
+    If you want to use chapters (and subchapters) in navigation you have to organize the images in folders, coz a chapter points to a folder.
+    You can add images directly to the root as well for example the introduction, table of contents, spacer-images between the chapters, ...
+
+    """
     _cover_front = None
     _cover_front_format = None
     _cover_rear = None
@@ -44,6 +51,11 @@ class ecmbContent(ecmbContentBaseSub):
 
     
     def set_cover_front(self, src: str|BytesIO) -> None:
+        """set_cover_front 
+
+        :param src: the front-cover of the book
+        :type src: str | BytesIO
+        """        
         if src == None or src == '':
             self._cover_front = None
             self._cover_front_format = None
@@ -54,6 +66,11 @@ class ecmbContent(ecmbContentBaseSub):
 
 
     def set_cover_rear(self, src: str|BytesIO) -> None:
+        """set_cover_rear 
+
+        :param src: the rear-cover of the book
+        :type src: str | BytesIO
+        """        
         if src == None or src == '':
             self._cover_rear = None
             self._cover_rear_format = None

@@ -31,6 +31,19 @@ from .ecmb_content_base_sub import ecmbContentBaseSub
 from .ecmb_content_image import ecmbContentImage
 
 class ecmbContentFolder(ecmbContentBaseSub):
+    """ecmbContentFolder
+
+    If you want to use chapters (and subchapters) in navigation you have to organize the images in folders, coz a chapter points to a folder.
+
+    :note:
+    * because the class will generate internal names no name is necesary
+    * provide a unique-id if you want to access this folder easily later at navigation
+
+    :param book_obj:
+    :type book_obj: ecmbBook
+    :param unique_id: _description_, defaults to None
+    :type unique_id: str, optional 
+    """    
 
     _contents = None
 
