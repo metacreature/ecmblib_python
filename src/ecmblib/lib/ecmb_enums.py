@@ -38,6 +38,7 @@ class ALLOWED_IMAGE_EXTENTIONS(Enum):
     PNG = 'png'
     WEBP = 'webp'
 
+
 class BOOK_TYPE(Enum):
     """BOOK_TYPE 
     
@@ -46,35 +47,7 @@ class BOOK_TYPE(Enum):
     """    
     MANGA = 'manga'
     COMIC = 'comic'
-    
 
-class AUTHOR_TYPE(Enum):
-    """AUTHOR_TYPE 
-    
-    * AUTHOR = 'Author'
-    * COAUTHOR = 'Co-Author'
-    * STORY = 'Story'
-    * ART = 'Art'
-    * COLORIST = 'Colorist'
-    * COVERARTIST = 'CoverArtist'
-    """    
-    AUTHOR = 'Author'
-    COAUTHOR = 'Co-Author'
-    STORY = 'Story'
-    ART = 'Art'
-    COLORIST = 'Colorist'
-    COVERARTIST = 'CoverArtist'
-
-
-class EDITOR_TYPE(Enum):
-    """EDITOR_TYPE 
-    
-    * TRANSLATOR = 'Translator'
-    * SCANNER = 'Scanner'
-    """    
-    TRANSLATOR = 'Translator'
-    SCANNER = 'Scanner'
-    
 
 class BASED_ON_TYPE(Enum):
     """BASED_ON_TYPE 
@@ -94,6 +67,34 @@ class BASED_ON_TYPE(Enum):
     ANIME = 'Anime'
     GAME = 'Game'
     OTHER ='Other'
+    
+
+class AUTHOR_ROLE(Enum):
+    """AUTHOR_ROLE 
+    
+    * AUTHOR = 'Author'
+    * COAUTHOR = 'Co-Author'
+    * STORY = 'Story'
+    * ART = 'Art'
+    * COLORIST = 'Colorist'
+    * COVERARTIST = 'CoverArtist'
+    """    
+    AUTHOR = 'Author'
+    COAUTHOR = 'Co-Author'
+    STORY = 'Story'
+    ART = 'Art'
+    COLORIST = 'Colorist'
+    COVERARTIST = 'CoverArtist'
+
+
+class EDITOR_ROLE(Enum):
+    """EDITOR_ROLE 
+    
+    * TRANSLATOR = 'Translator'
+    * SCANNER = 'Scanner'
+    """    
+    TRANSLATOR = 'Translator'
+    SCANNER = 'Scanner'
 
 
 class CONTENT_WARNING(Enum):

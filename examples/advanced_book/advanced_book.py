@@ -9,7 +9,7 @@ directory = path.Path(__file__).abspath()
 sys.path.append(str(directory.parent.parent.parent) + '/src/')
 
 
-from ecmblib import ecmbBook, ecmbException, BOOK_TYPE, AUTHOR_TYPE, CONTENT_WARNING, BASED_ON_TYPE, TARGET_SIDE
+from ecmblib import ecmbBook, ecmbException, BOOK_TYPE, AUTHOR_ROLE, CONTENT_WARNING, BASED_ON_TYPE, TARGET_SIDE
 
 
 print('\n', flush=True)
@@ -32,10 +32,10 @@ book.metadata.set_publisher('BestMangaPublisher Inc.', href='https://www.bestman
 book.metadata.set_publishdate('2023-01-18')
 book.metadata.set_title('The Big Trip')
 book.metadata.set_volume(1)
-book.metadata.set_description('A stick figure goes on a big thrilling hiking-trip.')
+book.metadata.set_summary('A stick figure goes on a big thrilling hiking-trip.')
 
-book.metadata.add_author('Clemens K.', AUTHOR_TYPE.STORY, href='https://github.com/metacreature')
-book.metadata.add_author('Clemens K.', AUTHOR_TYPE.ART, href='https://github.com/metacreature')
+book.metadata.add_author('Clemens K.', AUTHOR_ROLE.STORY, href='https://github.com/metacreature')
+book.metadata.add_author('Clemens K.', AUTHOR_ROLE.ART, href='https://github.com/metacreature')
 
 book.metadata.add_genre('Adventure')
 book.metadata.add_genre('Summer')
@@ -54,7 +54,7 @@ book.based_on.set_publisher('BestNovelPublisher Inc.', href='https://www.bestnov
 book.based_on.set_publishdate('1986')
 book.based_on.set_title('The Scary Hiking')
 
-book.based_on.add_author('Agatha Christie', AUTHOR_TYPE.AUTHOR, href='https://www.agatha-christie.net')
+book.based_on.add_author('Agatha Christie', AUTHOR_ROLE.AUTHOR, href='https://www.agatha-christie.net')
 
 
 
@@ -62,7 +62,7 @@ book.based_on.add_author('Agatha Christie', AUTHOR_TYPE.AUTHOR, href='https://ww
 # passing an invalid value will cause an ecmbException
 # an invalid value @ the constructor of ecmbBook, a wrong image-size @ contents aso. will also cause an ecmbException
 try:
-    book.metadata.set_description(12345)
+    book.metadata.set_summary(12345)
 except ecmbException as e:
     print('EXCEPTION: ' + str(e), flush=True)
 
@@ -124,20 +124,20 @@ folder3.add_image('../source_images/img_9.jpg')
 # you can pass either an object or a unique-id
 # first param is of course the label
 highlights = book.navigation.add_headline('Highlights')
-highlights.add_item('The Girl', the_girl)
+highlights.add_link('The Girl', the_girl)
 
 # on double-pages you can choose one side if you want to which is nice if the user reads the book in portrait-mode. Default is 'auto'
 # this also works for folders
-highlights.add_item('The Summit', 'the summit', target_side=TARGET_SIDE.LEFT)
+highlights.add_link('The Summit', 'the summit', target_side=TARGET_SIDE.LEFT)
 
 # if you want to link to a specific image (default is the first one) you can pass either an image-object or a unique-id
 chapter1 = book.navigation.add_chapter('Chapter 1', folder1, title='The Bus-Trip')
 chapter2 = book.navigation.add_chapter('Chapter 2', 'the hiking-trip', 'the start of the hiking-trip', title='The Hiking-Trip')
-chapter2.add_item('The Summit', 'the summit', target_side=TARGET_SIDE.LEFT)
+chapter2.add_link('The Summit', 'the summit', target_side=TARGET_SIDE.LEFT)
 chapter2.add_chapter('Chapter 2.1', folder3, title='Downhill')
 
 # NOTE!
-# you can mix headlines, chapters and items like you want, but i recommend to not mess around ... eg. sub-chapter in the root:
+# you can mix headlines, chapters and links like you want, but i recommend to not mess around ... eg. sub-chapter in the root:
 # book.navigation.add_chapter('Chapter 2.1', folder3, title='Downhill') 
 #
 # Of course the linked images must be part of the chapter's folder, otherwhise you will get an Exception

@@ -28,7 +28,7 @@ book = ecmbBook(BOOK_TYPE.MANGA, 'en', 'bestmangapublisherinc_98a2cd52fea1168d',
 
 book.metadata.set_title('The Big Trip')
 book.metadata.set_volume(1)
-book.metadata.set_description('A stick figure goes on a big thrilling hiking-trip.')
+book.metadata.set_summary('A stick figure goes on a big thrilling hiking-trip.')
 
 book.metadata.add_author('Clemens K.')
 

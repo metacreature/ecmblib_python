@@ -97,14 +97,14 @@ class ecmbMetaData(ecmbMetaDataBase):
         self._data['volume'] = (volume, {})
 
 
-    def set_description(self, description: str) -> None:
-        """set_description 
+    def set_summary(self, summary: str) -> None:
+        """set_summary 
 
-        :param description: the book's summary in the book’s language
-        :type description: str
+        :param summary: the book's summary in the book’s language
+        :type summary: str
         """        
-        ecmbUtils.validate_str_or_none(True,  'description', description)
-        self._data['description'] = (description, {})
+        ecmbUtils.validate_str_or_none(True,  'summary', summary)
+        self._data['summary'] = (summary, {})
 
 
     def set_notes(self, notes: str) -> None:
@@ -117,28 +117,28 @@ class ecmbMetaData(ecmbMetaDataBase):
         self._data['notes'] = (notes, {})
 
 
-    def add_editor(self, name: str, editortype: EDITOR_TYPE, href: str = None) -> None:
+    def add_editor(self, name: str, role: EDITOR_ROLE, href: str = None) -> None:
         """add_editor 
         
         If it's an (fan-)translated book you can add the editor-credits here
 
         :param name: the name of the editor
         :type name: str
-        :param editortype: the role of the editor
-        :type editortype: EDITOR_TYPE
+        :param role: the role of the editor
+        :type role: EDITOR_ROLE
         :param href: the homepage of the editor
         :type href: str, optional
         """        
-        editortype = ecmbUtils.enum_value(editortype)
+        role = ecmbUtils.enum_value(role)
 
         ecmbUtils.validate_not_empty_str(True, 'name', name)
-        ecmbUtils.validate_enum(True, 'editortype', editortype, EDITOR_TYPE)
+        ecmbUtils.validate_enum(True, 'role', role, EDITOR_ROLE)
         if href != None and href != '':
             ecmbUtils.validate_regex(True, 'href', href, '^(http|https)://.+$')
             
         if not self._data.get('editors'):
             self._data['editors'] = []
-        self._data['editors'].append(('editor', name, {'type': editortype, 'href': href}))
+        self._data['editors'].append(('editor', name, {'role': role, 'href': href}))
 
 
     def add_genre(self, genre: str) -> None:

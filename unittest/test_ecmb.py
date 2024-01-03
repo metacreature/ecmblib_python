@@ -33,7 +33,7 @@ directory = path.Path(__file__).abspath()
 sys.path.append(str(directory.parent.parent) + '/src/')
 
 # you have to change this if ecmblib is installed as a module
-from ecmblib import ecmbBook, ecmbUtils, ecmbContentImage, ecmbException, BOOK_TYPE, AUTHOR_TYPE, EDITOR_TYPE, CONTENT_WARNING, BASED_ON_TYPE, TARGET_SIDE
+from ecmblib import ecmbBook, ecmbUtils, ecmbContentImage, ecmbException, BOOK_TYPE, AUTHOR_ROLE, EDITOR_ROLE, CONTENT_WARNING, BASED_ON_TYPE, TARGET_SIDE
 
 class testEcmb(unittest.TestCase):
 
@@ -62,19 +62,19 @@ class testEcmb(unittest.TestCase):
             book.metadata.set_publishdate('2023-01-18')
             book.metadata.set_title('The Big Trip')
             book.metadata.set_volume(1)
-            book.metadata.set_description('A stick figure goes on a big thrilling hiking-trip.')
+            book.metadata.set_summary('A stick figure goes on a big thrilling hiking-trip.')
             book.metadata.set_notes('my first build')
 
             book.metadata.add_author('Clemens K.')
             book.metadata.add_author('Clemens K.', 'Story')
-            book.metadata.add_author('Clemens K.', AUTHOR_TYPE.COAUTHOR, href='https://github.com/metacreature')
-            author_list = ecmbUtils.enum_values(AUTHOR_TYPE)
+            book.metadata.add_author('Clemens K.', AUTHOR_ROLE.COAUTHOR, href='https://github.com/metacreature')
+            author_list = ecmbUtils.enum_values(AUTHOR_ROLE)
             for author in author_list:
                 book.metadata.add_author('Clemens K.', author)
 
             book.metadata.add_editor('Clemens K.', 'Translator')
-            book.metadata.add_editor('Clemens K.', EDITOR_TYPE.TRANSLATOR, href='https://github.com/metacreature')
-            editor_list = ecmbUtils.enum_values(EDITOR_TYPE)
+            book.metadata.add_editor('Clemens K.', EDITOR_ROLE.TRANSLATOR, href='https://github.com/metacreature')
+            editor_list = ecmbUtils.enum_values(EDITOR_ROLE)
             for editor in editor_list:
                 book.metadata.add_editor('Clemens K.', editor)
 
@@ -96,8 +96,8 @@ class testEcmb(unittest.TestCase):
 
             book.original.add_author('Clemens K.')
             book.original.add_author('Clemens K.', 'Story')
-            book.original.add_author('Clemens K.', AUTHOR_TYPE.COAUTHOR, href='https://github.com/metacreature')
-            author_list = ecmbUtils.enum_values(AUTHOR_TYPE)
+            book.original.add_author('Clemens K.', AUTHOR_ROLE.COAUTHOR, href='https://github.com/metacreature')
+            author_list = ecmbUtils.enum_values(AUTHOR_ROLE)
             for author in author_list:
                 book.original.add_author('Clemens K.', author)
 
@@ -113,8 +113,8 @@ class testEcmb(unittest.TestCase):
 
             book.based_on.add_author('Clemens K.')
             book.based_on.add_author('Clemens K.', 'Story')
-            book.based_on.add_author('Clemens K.', AUTHOR_TYPE.COAUTHOR, href='https://github.com/metacreature')
-            author_list = ecmbUtils.enum_values(AUTHOR_TYPE)
+            book.based_on.add_author('Clemens K.', AUTHOR_ROLE.COAUTHOR, href='https://github.com/metacreature')
+            author_list = ecmbUtils.enum_values(AUTHOR_ROLE)
             for author in author_list:
                 book.based_on.add_author('Clemens K.', author)
 
@@ -149,7 +149,7 @@ class testEcmb(unittest.TestCase):
             book.metadata.set_publishdate(None)
             book.metadata.set_title('The Big Trip')
             book.metadata.set_volume(None)
-            book.metadata.set_description(None)
+            book.metadata.set_summary(None)
             book.metadata.set_notes(None)
 
             # original
@@ -199,7 +199,7 @@ class testEcmb(unittest.TestCase):
             book.metadata.set_publisher('', href='')
             book.metadata.set_publishdate('')
             book.metadata.set_title('The Big Trip')
-            book.metadata.set_description('')
+            book.metadata.set_summary('')
             book.metadata.set_notes('')
 
             # original
@@ -283,15 +283,15 @@ class testEcmb(unittest.TestCase):
 
 
             nav1 = book.navigation.add_headline('aaaaaaaa')
-            nav1.add_item('bbbbbbb', image1)
-            nav1.add_item('cccccc', 'img_1')
+            nav1.add_link('bbbbbbb', image1)
+            nav1.add_link('cccccc', 'img_1')
             nav1.add_chapter('dddddd', folder1)
             nav1.add_chapter('eeeee', sub2, image5)
             nav1.add_chapter('fffff', 'dir_2', 'img_6')
 
             nav2 = book.navigation.add_headline('gggg', 'hhhhh')
-            nav2.add_item('iiiiii', image1, title='jjjjj')
-            nav2.add_item('kkkkkkk', 'img_1', title='llllllll')
+            nav2.add_link('iiiiii', image1, title='jjjjj')
+            nav2.add_link('kkkkkkk', 'img_1', title='llllllll')
             nav2.add_chapter('mmmmm', folder1, title='nnnnnnnn')
             nav2.add_chapter('ooooooo', sub2, image5, title='ppppp')
             nav2.add_chapter('qqqqq', 'dir_2', 'img_6', title='rrrrr')
@@ -300,13 +300,13 @@ class testEcmb(unittest.TestCase):
             nav4 = nav3.add_chapter('tttttt', sub1)
 
             nav5 = book.navigation.add_chapter('uuuuuu', folder3, image7, TARGET_SIDE.RIGHT)
-            nav5.add_item('vvvvvv', image7, TARGET_SIDE.RIGHT)
+            nav5.add_link('vvvvvv', image7, TARGET_SIDE.RIGHT)
 
             nav6 = book.navigation.add_chapter('uuuuuu', folder3, 'img_7', TARGET_SIDE.LEFT)
-            nav6.add_item('vvvvvv', 'img_7', TARGET_SIDE.LEFT)
+            nav6.add_link('vvvvvv', 'img_7', TARGET_SIDE.LEFT)
 
             nav7 = book.navigation.add_chapter('uuuuuu', folder3, 'img_7')
-            nav7.add_item('vvvvvv', 'img_7')
+            nav7.add_link('vvvvvv', 'img_7')
 
             book.write(self._test_filename, False)
             
@@ -429,28 +429,28 @@ class testEcmb(unittest.TestCase):
                     case 43:
                         book.navigation.add_chapter('xyz', 'aaa', 'xxx')
                     case 44:
-                        book.navigation.add_item('xyz', False)
+                        book.navigation.add_link('xyz', False)
                     case 45:
-                        book.navigation.add_item('xyz', 'bbb')
+                        book.navigation.add_link('xyz', 'bbb')
                     case 46:
-                        book.navigation.add_item('xyz', 'xxx')
+                        book.navigation.add_link('xyz', 'xxx')
                     case 47:
                         book.navigation.add_chapter('xyz', 'aaa', 'ddd')
                         book.write(self._test_filename, False)
                     case 48:
-                        book.navigation.add_chapter('xyz', 'aaa').add_item('xyz', 'ddd')
+                        book.navigation.add_chapter('xyz', 'aaa').add_link('xyz', 'ddd')
                         book.write(self._test_filename, False)
                     case 49:
                         book.navigation.add_chapter('xyz', 'aaa', 'ccc', 'xxx')
                     case 50:
-                        book.navigation.add_item('xyz', 'ccc', 'xxx')
+                        book.navigation.add_link('xyz', 'ccc', 'xxx')
 
                     case 51:
                         book.metadata.set_notes(False)
                     case 52:
-                        book.metadata.add_editor(None, EDITOR_TYPE.SCANNER)
+                        book.metadata.add_editor(None, EDITOR_ROLE.SCANNER)
                     case 53:
-                        book.metadata.add_editor(False, EDITOR_TYPE.SCANNER)
+                        book.metadata.add_editor(False, EDITOR_ROLE.SCANNER)
                     case 53:
                         book.metadata.add_editor('clemens K.', 'xyz')
                     case 54:

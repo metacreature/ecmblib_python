@@ -41,7 +41,7 @@ class ecmbContentFolder(ecmbContentBaseSub):
 
     :param book_obj:
     :type book_obj: ecmbBook
-    :param unique_id: _description_, defaults to None
+    :param unique_id: provide a unique-id if you want to access this folder easily later at navigation
     :type unique_id: str, optional 
     """    
 

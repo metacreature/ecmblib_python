@@ -28,7 +28,7 @@ from typing import Callable
 from .ecmb_enums import *
 from .ecmb_utils import ecmbUtils
 from .ecmb_navigation_base import ecmbNavigationBase
-from .ecmb_navigation_item import ecmbNavigationItem
+from .ecmb_navigation_link import ecmbNavigationLink
 from .ecmb_content_folder import ecmbContentFolder
 from .ecmb_content_image import ecmbContentImage
 
@@ -112,19 +112,19 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         return chapter_obj
 
 
-    def add_item(self, label_or_item: str|ecmbNavigationItem, target: str|ecmbContentImage, target_side: TARGET_SIDE = TARGET_SIDE.AUTO, title: str = None) -> ecmbNavigationItem:
-        """add_item
+    def add_link(self, label_or_link: str|ecmbNavigationLink, target: str|ecmbContentImage, target_side: TARGET_SIDE = TARGET_SIDE.AUTO, title: str = None) -> ecmbNavigationLink:
+        """add_link
 
         Adds/creates a link to an image.
 
         The target-image has to be part of this chapter's folder. If you are pointing to a double-page-image you can define if it should point to the left or right part (defaults to auto).
 
         :note:
-        * if you add a previously created ecmbNavigationItem all other parameters are ignored
+        * if you add a previously created ecmbNavigationLink all other parameters are ignored
 
 
-        :param label_or_item: a label or a previously created ecmbNavigationItem
-        :type label_or_item: str | ecmbNavigationItem
+        :param label_or_link: a label or a previously created ecmbNavigationLink
+        :type label_or_link: str | ecmbNavigationLink
         :param target: a image-object or a unique-id pointing to a image
         :type target: str | ecmbContentImage
         :param target_side: the side of a double-page-image
@@ -132,21 +132,21 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         :param title: the hover-text of the link
         :type title: str, optional
 
-        :rtype: ecmbNavigationItem
+        :rtype: ecmbNavigationLink
         """        
-        item_obj = None
+        link_obj = None
 
-        if type(label_or_item) == ecmbNavigationItem:
-            item_obj = label_or_item
-        elif type(label_or_item) == str:
-            item_obj = ecmbNavigationItem(self._book_obj, label_or_item, target, target_side, title)
+        if type(label_or_link) == ecmbNavigationLink:
+            link_obj = label_or_link
+        elif type(label_or_link) == str:
+            link_obj = ecmbNavigationLink(self._book_obj, label_or_link, target, target_side, title)
         else:
-            ecmbUtils.raise_exception('please provide ecmbNavigationItem or a label!')
+            ecmbUtils.raise_exception('please provide ecmbNavigationLink or a label!')
             
-        item_obj.int_set_parent(self)
-        self._children.append(item_obj)
+        link_obj.int_set_parent(self)
+        self._children.append(link_obj)
 
-        return item_obj
+        return link_obj
     
 
     def int_validate(self, warnings: bool|Callable) -> bool:

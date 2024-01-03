@@ -69,10 +69,10 @@ ecmbNavigationHeadline
 .. automodule:: ecmblib.lib.ecmb_navigation_headline
 
 
-ecmbNavigationItem
+ecmbNavigationLink
 ------------------
 
-.. automodule:: ecmblib.lib.ecmb_navigation_item
+.. automodule:: ecmblib.lib.ecmb_navigation_link
 
 
 Misc

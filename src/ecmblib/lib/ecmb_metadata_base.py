@@ -74,26 +74,26 @@ class ecmbMetaDataBase(ABC):
         self._data['publishdate'] = (publishdate, {})
         
 
-    def add_author(self, name: str, authortype: AUTHOR_TYPE = AUTHOR_TYPE.AUTHOR, href: str = None) -> None:
+    def add_author(self, name: str, role: AUTHOR_ROLE = AUTHOR_ROLE.AUTHOR, href: str = None) -> None:
         """add_author 
 
         :param name: the name of the author
         :type name: str
-        :param authortype: the role of the author
-        :type authortype: AUTHOR_TYPE, optional
+        :param role: the role of the author
+        :type role: AUTHOR_ROLE, optional
         :param href: the homepage of the author
         :type href: str, optional
         """        
-        authortype = ecmbUtils.enum_value(authortype)
+        role = ecmbUtils.enum_value(role)
 
         ecmbUtils.validate_not_empty_str(True, 'name', name)
-        ecmbUtils.validate_enum(True, 'authortype', authortype, AUTHOR_TYPE)
+        ecmbUtils.validate_enum(True, 'role', role, AUTHOR_ROLE)
         if href != None and href != '':
             ecmbUtils.validate_regex(True, 'href', href, '^(http|https)://.+$')
             
         if not self._data.get('authors'):
             self._data['authors'] = []
-        self._data['authors'].append(('author', name, {'type': authortype, 'href': href}))
+        self._data['authors'].append(('author', name, {'role': role, 'href': href}))
 
 
     @abstractmethod

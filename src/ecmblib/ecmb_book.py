@@ -41,7 +41,7 @@ from .lib.ecmb_content_image import ecmbContentImage
 from .lib.ecmb_navigation import ecmbNavigation
 from .lib.ecmb_navigation_headline import ecmbNavigationHeadline
 from .lib.ecmb_navigation_chapter import ecmbNavigationChapter
-from .lib.ecmb_navigation_item import ecmbNavigationItem
+from .lib.ecmb_navigation_link import ecmbNavigationLink
 
 from .ecmb_definition.validator.python.ecmb_validator import ecmbValidator
 
