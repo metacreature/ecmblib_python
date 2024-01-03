@@ -30,8 +30,21 @@ from .ecmb_navigation_base_sub import ecmbNavigationBaseSub
 
 
 class ecmbNavigationHeadline(ecmbNavigationBaseSub):
+    """ecmbNavigationHeadline
+
+    :note:
+    * you have to add at minimum one child to a headline
+
+    :param book_obj:
+    :type book_obj: ecmbBook
+    :param label: a label 
+    :type label: str
+    :param title: the hover-text of the headline
+    :type title: str, optional
+    """    
 
     def __init__(self, book_obj, label: str, title:str = None):
+        
         super()._init(book_obj, label, title)
 
 

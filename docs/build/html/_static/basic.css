@@ -24,6 +24,31 @@ dl.py.class > dd > .py.method{
 	margin-bottom: 48px !important;
 }
 
+section[id="module-ecmblib.lib.ecmb_enums"] > dl > dt > em.property,
+section[id="module-ecmblib.lib.ecmb_enums"] > dl > dt >  .sig-paren,
+section[id="module-ecmblib.lib.ecmb_enums"] > dl > dt >  .sig-param{
+	display: none !important; 
+}
+section[id="module-ecmblib.lib.ecmb_enums"] > dl > dt{
+	color: #FFFFFF;
+}
+section[id="module-ecmblib.lib.ecmb_enums"] > dl > dt:target {
+  color: var(--pst-color-target);
+}
+
+dt[id="ecmblib.lib.ecmb_content.ecmbContent"] >  .sig-paren,
+dt[id="ecmblib.lib.ecmb_content.ecmbContent"] >  .sig-param{
+	display: none !important; 
+}
+
+dl.method:has(dt[id="ecmblib.lib.ecmb_content.ecmbContent.get_unique_id"]) {
+	display: none !important; 
+}
+
+dt[id="ecmblib.lib.ecmb_navigation.ecmbNavigation"] >  .sig-paren,
+dt[id="ecmblib.lib.ecmb_navigation.ecmbNavigation"] >  .sig-param{
+	display: none !important; 
+}
 
 /* -- main layout ----------------------------------------------------------- */
 

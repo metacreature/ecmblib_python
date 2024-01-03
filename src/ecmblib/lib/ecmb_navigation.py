@@ -31,7 +31,13 @@ from .ecmb_navigation_base_sub import ecmbNavigationBaseSub
 
 
 class ecmbNavigation(ecmbNavigationBaseSub):
+    """ecmbNavigation
 
+    This is the root-node of the book's navigation.
+
+    Navigation is optinal. If you don't add it the app will automaticaly generate a navigation based on the folder-structure.
+
+    """
     def __init__(self, book_obj):
         self._book_obj = book_obj
         self._children = []

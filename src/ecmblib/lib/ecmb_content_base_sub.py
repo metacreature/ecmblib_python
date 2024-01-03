@@ -36,7 +36,7 @@ class ecmbContentBaseSub(ecmbContentBase):
     def add_image(self, src_or_image: str|BytesIO|ecmbContentImage, src_left: str|BytesIO = None, src_right: str|BytesIO = None, unique_id: str = None) -> ecmbContentImage:
         """add_image
 
-        Adds an image
+        Adds/creates an image
         
         :note:
         * if you add a double-page-image you have to add the splitted left and right part as well to give the reader-app more opportunities. The class automatic detects if a double-page-image is added and will raise an ecmbException if you didn't provide the left and right part
@@ -71,7 +71,7 @@ class ecmbContentBaseSub(ecmbContentBase):
     def add_folder(self, uid_or_folder: str|ecmbContentFolder = None) -> ecmbContentFolder:
         """add_folder 
         
-        Adds an (sub-)folder. If you want to use chapters (and subchapters) in navigation you have to organize the images in folders, coz a chapter points to a folder.
+        Adds/creates an (sub-)folder. If you want to use chapters (and subchapters) in navigation you have to organize the images in folders, coz a chapter points to a folder.
 
         :note:
         * because the class will generate internal names no name is necesary

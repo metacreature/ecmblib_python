@@ -34,6 +34,23 @@ from .ecmb_content_image import ecmbContentImage
 
 
 class ecmbNavigationChapter(ecmbNavigationBaseSub):
+    """ecmbNavigationChapter
+
+    You can define a target-image, which could be any image as long its part of this chapter's folder (default is the first image of the folder).  If you are pointing to a double-page-image you can define if it should point to the left or right part (defaults to auto).
+
+    :param book_obj:
+    :type book_obj: ecmbBook
+    :param label: a label
+    :type label: str
+    :param folder: a folder-object or a unique-id pointing to a folder
+    :type folder: str | ecmbContentFolder
+    :param target: a image-object or a unique-id pointing to a image
+    :type target: str | ecmbContentImage, optional
+    :param target_side: the side of a double-page-image
+    :type target_side: TARGET_SIDE, optional
+    :param title: the hover-text of the chapter
+    :type title: str, optional
+    """       
 
     _target_folder_obj = None
 

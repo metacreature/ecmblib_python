@@ -43,6 +43,21 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
 
 
     def add_headline(self, label_or_headline: str|ecmbNavigationHeadline, title: str = None) -> ecmbNavigationHeadline:
+        """add_headline 
+        
+        Adds/creates a headline.
+
+        :note:
+        * you have to add at minimum one child to a headline
+        * if you add a previously created ecmbContentImage all other parameters are ignored
+
+        :param label_or_headline: a label or a previously created ecmbNavigationHeadline
+        :type label_or_headline: str | ecmbNavigationHeadline
+        :param title: the hover-text of the headline
+        :type title: str, optional
+        
+        :rtype: ecmbNavigationHeadline
+        """        
         headline_obj = None
 
         if type(label_or_headline) == ecmbNavigationHeadline:
@@ -58,13 +73,36 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         return headline_obj
     
 
-    def add_chapter(self, label_or_chapter: str|ecmbNavigationChapter, uid_or_folder: str|ecmbContentFolder, uid_or_image: str|ecmbContentImage = None, target_side: TARGET_SIDE = TARGET_SIDE.AUTO, title: str = None) -> ecmbNavigationChapter:
+    def add_chapter(self, label_or_chapter: str|ecmbNavigationChapter, folder: str|ecmbContentFolder, target: str|ecmbContentImage = None, target_side: TARGET_SIDE = TARGET_SIDE.AUTO, title: str = None) -> ecmbNavigationChapter:
+        """add_chapter 
+
+        Adds/creates a (sub-) chapter.
+
+        You can define a target-image, which could be any image as long its part of the chapter's folder (default is the first image of the folder). If you are pointing to a double-page-image you can define if it should point to the left or right part (defaults to auto).
+
+        :note:
+        * if you add a previously created ecmbNavigationChapter all other parameters are ignored
+        
+
+        :param label_or_chapter: a label or a previously created ecmbNavigationChapter
+        :type label_or_chapter: str | ecmbNavigationChapter
+        :param folder: a folder-object or a unique-id pointing to a folder
+        :type folder: str | ecmbContentFolder
+        :param target: a image-object or a unique-id pointing to a image
+        :type target: str | ecmbContentImage, optional
+        :param target_side: the side of a double-page-image
+        :type target_side: TARGET_SIDE, optional
+        :param title: the hover-text of the chapter
+        :type title: str, optional
+        
+        :rtype: ecmbNavigationChapter
+        """  
         chapter_obj = None
 
         if type(label_or_chapter) == ecmbNavigationChapter:
             chapter_obj = label_or_chapter
         elif type(label_or_chapter) == str:
-            chapter_obj = ecmbNavigationChapter(self._book_obj, label_or_chapter, uid_or_folder, uid_or_image, target_side, title)
+            chapter_obj = ecmbNavigationChapter(self._book_obj, label_or_chapter, folder, target, target_side, title)
         else:
             ecmbUtils.raise_exception('please provide ecmbNavigationChapter or a label!')
             
@@ -74,13 +112,34 @@ class ecmbNavigationBaseSub(ecmbNavigationBase):
         return chapter_obj
 
 
-    def add_item(self, label_or_item: str|ecmbNavigationItem, uid_or_image: str|ecmbContentImage, target_side: TARGET_SIDE = TARGET_SIDE.AUTO, title: str = None) -> ecmbNavigationItem:
+    def add_item(self, label_or_item: str|ecmbNavigationItem, target: str|ecmbContentImage, target_side: TARGET_SIDE = TARGET_SIDE.AUTO, title: str = None) -> ecmbNavigationItem:
+        """add_item
+
+        Adds/creates a link to an image.
+
+        The target-image has to be part of this chapter's folder. If you are pointing to a double-page-image you can define if it should point to the left or right part (defaults to auto).
+
+        :note:
+        * if you add a previously created ecmbNavigationItem all other parameters are ignored
+
+
+        :param label_or_item: a label or a previously created ecmbNavigationItem
+        :type label_or_item: str | ecmbNavigationItem
+        :param target: a image-object or a unique-id pointing to a image
+        :type target: str | ecmbContentImage
+        :param target_side: the side of a double-page-image
+        :type target_side: TARGET_SIDE, optional
+        :param title: the hover-text of the link
+        :type title: str, optional
+
+        :rtype: ecmbNavigationItem
+        """        
         item_obj = None
 
         if type(label_or_item) == ecmbNavigationItem:
             item_obj = label_or_item
         elif type(label_or_item) == str:
-            item_obj = ecmbNavigationItem(self._book_obj, label_or_item, uid_or_image, target_side, title)
+            item_obj = ecmbNavigationItem(self._book_obj, label_or_item, target, target_side, title)
         else:
             ecmbUtils.raise_exception('please provide ecmbNavigationItem or a label!')
             

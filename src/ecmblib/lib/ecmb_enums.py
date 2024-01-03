@@ -26,17 +26,38 @@
 from enum import Enum
 
 class ALLOWED_IMAGE_EXTENTIONS(Enum):
+    """ALLOWED_IMAGE_EXTENTIONS 
+    
+    * JPG = 'jpg'
+    * JPEG = 'jpeg'
+    * PNG = 'png'
+    * WEBP = 'webp'
+    """    
     JPG = 'jpg'
     JPEG = 'jpeg'
     PNG = 'png'
     WEBP = 'webp'
 
 class BOOK_TYPE(Enum):
+    """BOOK_TYPE 
+    
+    * MANGA = 'manga'
+    * COMIC = 'comic'
+    """    
     MANGA = 'manga'
     COMIC = 'comic'
     
 
 class AUTHOR_TYPE(Enum):
+    """AUTHOR_TYPE 
+    
+    * AUTHOR = 'Author'
+    * COAUTHOR = 'Co-Author'
+    * STORY = 'Story'
+    * ART = 'Art'
+    * COLORIST = 'Colorist'
+    * COVERARTIST = 'CoverArtist'
+    """    
     AUTHOR = 'Author'
     COAUTHOR = 'Co-Author'
     STORY = 'Story'
@@ -46,11 +67,26 @@ class AUTHOR_TYPE(Enum):
 
 
 class EDITOR_TYPE(Enum):
+    """EDITOR_TYPE 
+    
+    * TRANSLATOR = 'Translator'
+    * SCANNER = 'Scanner'
+    """    
     TRANSLATOR = 'Translator'
     SCANNER = 'Scanner'
     
 
 class BASED_ON_TYPE(Enum):
+    """BASED_ON_TYPE 
+
+    * NOVEL = 'Novel'
+    * LIGHTNOVEL = 'Lightnovel'
+    * MANGA = 'Manga'
+    * COMIC = 'Comic'
+    * ANIME = 'Anime'
+    * GAME = 'Game'
+    * OTHER ='Other'
+    """    
     NOVEL = 'Novel'
     LIGHTNOVEL = 'Lightnovel'
     MANGA = 'Manga'
@@ -61,6 +97,26 @@ class BASED_ON_TYPE(Enum):
 
 
 class CONTENT_WARNING(Enum):
+    """CONTENT_WARNING 
+    
+    * MATURE_THEMES = 'Mature Themes'
+    * NUDITY = 'Nudity'
+    * SEXUAL_CONTENT = 'Sexual Content'
+    * EXPLICIT_SEX = 'Explict Sex'
+    * HENTAI = 'Hentai'
+    * PROSTITUTION = 'Prostitution'
+    * INCEST = 'Incest'
+    * VIOLENCE = 'Violence'
+    * EXPLICIT_VIOLENCE = 'Explicit Violence'
+    * TERRORISM = 'Terrorism'
+    * EMOTIONAL_ABUSE= 'Emotional Abuse'
+    * SEXUAL_ABUSE = 'Sexual Abuse'
+    * PHYSICAL_ABUSE = 'Physical Abuse'
+    * DOMESTIC_ABUSE = 'Domestic Abuse'
+    * SELF_HARM = 'Self-Harm'
+    * SUICIDE = 'Suicide'
+    * DRUGS = 'Drugs'
+    """    
     MATURE_THEMES = 'Mature Themes'
     NUDITY = 'Nudity'
     SEXUAL_CONTENT = 'Sexual Content'
@@ -81,6 +137,12 @@ class CONTENT_WARNING(Enum):
 
 
 class TARGET_SIDE(Enum):
+    """TARGET_SIDE 
+
+    * AUTO = 'auto'
+    * LEFT = 'left'
+    * RIGHT = 'right'
+    """    
     AUTO = 'auto'
     LEFT = 'left'
     RIGHT = 'right'

@@ -42,6 +42,12 @@ class ecmbNavigationBase(ABC):
     _target_image_side = None
 
     def set_title(self, title:str) -> None:
+        """set_title 
+
+        :param title: the hover-text of the node
+        :type title: str
+
+        """    
         ecmbUtils.validate_str_or_none(True,  'title', title)
         self._title = title
 

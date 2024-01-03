@@ -312,7 +312,7 @@ document.write(`
 <span id="ecmbbook"></span><h2>ecmbBook<a class="headerlink" href="#module-ecmblib.ecmb_book" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="ecmblib.ecmb_book.ecmbBook">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ecmblib.ecmb_book.</span></span><span class="sig-name descname"><span class="pre">ecmbBook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BOOK_TYPE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ecmblib.ecmb_book.ecmbBook" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ecmblib.ecmb_book.</span></span><span class="sig-name descname"><span class="pre">ecmbBook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.BOOK_TYPE" title="ecmblib.lib.ecmb_enums.BOOK_TYPE"><span class="pre">BOOK_TYPE</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ecmblib.ecmb_book.ecmbBook" title="Link to this definition">#</a></dt>
 <dd><p>The main class to genererate <cite>*</cite>.ecmb - files</p>
 <dl class="field-list simple">
 <dt class="field-odd">Note<span class="colon">:</span></dt>
@@ -325,7 +325,7 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>book_type</strong> (<em>BOOK_TYPE</em>) – the book-type defines the reading-direction of the book</p></li>
+<li><p><strong>book_type</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.BOOK_TYPE" title="ecmblib.lib.ecmb_enums.BOOK_TYPE"><em>BOOK_TYPE</em></a>) – the book-type defines the reading-direction of the book</p></li>
 <li><p><strong>language</strong> (<em>str</em>) – language of the content (ISO 639-1 language-code)</p></li>
 <li><p><strong>uid</strong> (<em>str</em>) – unique-id of the book (minlength: 16, maxlength:255)</p></li>
 <li><p><strong>width</strong> (<em>int</em>) – approximately width of the images</p></li>
@@ -381,11 +381,11 @@ document.write(`
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ecmblib.ecmb_book.ecmbBook.navigation">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">navigation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ecmbNavigation</span></em><a class="headerlink" href="#ecmblib.ecmb_book.ecmbBook.navigation" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">navigation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_navigation.ecmbNavigation" title="ecmblib.lib.ecmb_navigation.ecmbNavigation"><span class="pre">ecmbNavigation</span></a></em><a class="headerlink" href="#ecmblib.ecmb_book.ecmbBook.navigation" title="Link to this definition">#</a></dt>
 <dd><p>Add Chapters, Headlines or Links to ecmbNavigation</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>ecmbNavigation</p>
+<dd class="field-odd"><p><a class="reference internal" href="#ecmblib.lib.ecmb_navigation.ecmbNavigation" title="ecmblib.lib.ecmb_navigation.ecmbNavigation">ecmbNavigation</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -490,13 +490,13 @@ Its reccomended to add the authors to the original book, and leave them empty he
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ecmblib.lib.ecmb_metadata.ecmbMetaData.add_editor">
-<span class="sig-name descname"><span class="pre">add_editor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">editortype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EDITOR_TYPE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">href</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_metadata.ecmbMetaData.add_editor" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_editor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">editortype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.EDITOR_TYPE" title="ecmblib.lib.ecmb_enums.EDITOR_TYPE"><span class="pre">EDITOR_TYPE</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">href</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_metadata.ecmbMetaData.add_editor" title="Link to this definition">#</a></dt>
 <dd><p>If it’s an (fan-)translated book you can add the editor-credits here</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – the name of the editor</p></li>
-<li><p><strong>editortype</strong> (<em>EDITOR_TYPE</em>) – the role of the editor</p></li>
+<li><p><strong>editortype</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.EDITOR_TYPE" title="ecmblib.lib.ecmb_enums.EDITOR_TYPE"><em>EDITOR_TYPE</em></a>) – the role of the editor</p></li>
 <li><p><strong>href</strong> (<em>str</em><em>, </em><em>optional</em>) – the homepage of the editor</p></li>
 </ul>
 </dd>
@@ -515,23 +515,23 @@ Its reccomended to add the authors to the original book, and leave them empty he
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ecmblib.lib.ecmb_metadata.ecmbMetaData.add_content_warning">
-<span class="sig-name descname"><span class="pre">add_content_warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content_warning</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">CONTENT_WARNING</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_metadata.ecmbMetaData.add_content_warning" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_content_warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content_warning</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.CONTENT_WARNING" title="ecmblib.lib.ecmb_enums.CONTENT_WARNING"><span class="pre">CONTENT_WARNING</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_metadata.ecmbMetaData.add_content_warning" title="Link to this definition">#</a></dt>
 <dd><p>Use content-based warnings for using safe-guard if necessary</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>content_warning</strong> (<em>CONTENT_WARNING</em>) – content-based warning</p>
+<dd class="field-odd"><p><strong>content_warning</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.CONTENT_WARNING" title="ecmblib.lib.ecmb_enums.CONTENT_WARNING"><em>CONTENT_WARNING</em></a>) – content-based warning</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ecmblib.lib.ecmb_metadata.ecmbMetaData.add_author">
-<span class="sig-name descname"><span class="pre">add_author</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authortype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AUTHOR_TYPE</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">AUTHOR_TYPE.AUTHOR</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">href</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_metadata.ecmbMetaData.add_author" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_author</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authortype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.AUTHOR_TYPE" title="ecmblib.lib.ecmb_enums.AUTHOR_TYPE"><span class="pre">AUTHOR_TYPE</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">AUTHOR_TYPE.AUTHOR</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">href</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_metadata.ecmbMetaData.add_author" title="Link to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – the name of the author</p></li>
-<li><p><strong>authortype</strong> (<em>AUTHOR_TYPE</em><em>, </em><em>optional</em>) – the role of the author</p></li>
+<li><p><strong>authortype</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.AUTHOR_TYPE" title="ecmblib.lib.ecmb_enums.AUTHOR_TYPE"><em>AUTHOR_TYPE</em></a><em>, </em><em>optional</em>) – the role of the author</p></li>
 <li><p><strong>href</strong> (<em>str</em><em>, </em><em>optional</em>) – the homepage of the author</p></li>
 </ul>
 </dd>
@@ -610,12 +610,12 @@ Its reccomended to add the authors here and leave the authors at the main meta-d
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ecmblib.lib.ecmb_metadata_original.ecmbMetaDataOriginal.add_author">
-<span class="sig-name descname"><span class="pre">add_author</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authortype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AUTHOR_TYPE</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">AUTHOR_TYPE.AUTHOR</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">href</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_metadata_original.ecmbMetaDataOriginal.add_author" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_author</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authortype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.AUTHOR_TYPE" title="ecmblib.lib.ecmb_enums.AUTHOR_TYPE"><span class="pre">AUTHOR_TYPE</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">AUTHOR_TYPE.AUTHOR</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">href</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_metadata_original.ecmbMetaDataOriginal.add_author" title="Link to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – the name of the author</p></li>
-<li><p><strong>authortype</strong> (<em>AUTHOR_TYPE</em><em>, </em><em>optional</em>) – the role of the author</p></li>
+<li><p><strong>authortype</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.AUTHOR_TYPE" title="ecmblib.lib.ecmb_enums.AUTHOR_TYPE"><em>AUTHOR_TYPE</em></a><em>, </em><em>optional</em>) – the role of the author</p></li>
 <li><p><strong>href</strong> (<em>str</em><em>, </em><em>optional</em>) – the homepage of the author</p></li>
 </ul>
 </dd>
@@ -673,22 +673,22 @@ Its reccomended to add the authors here and leave the authors at the main meta-d
 </ul>
 <dl class="py method">
 <dt class="sig sig-object py" id="ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn.set_type">
-<span class="sig-name descname"><span class="pre">set_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BASED_ON_TYPE</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn.set_type" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.BASED_ON_TYPE" title="ecmblib.lib.ecmb_enums.BASED_ON_TYPE"><span class="pre">BASED_ON_TYPE</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn.set_type" title="Link to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>book_type</strong> (<em>BASED_ON_TYPE</em>) – </p>
+<dd class="field-odd"><p><strong>book_type</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.BASED_ON_TYPE" title="ecmblib.lib.ecmb_enums.BASED_ON_TYPE"><em>BASED_ON_TYPE</em></a>) – </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn.add_author">
-<span class="sig-name descname"><span class="pre">add_author</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authortype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AUTHOR_TYPE</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">AUTHOR_TYPE.AUTHOR</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">href</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn.add_author" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_author</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authortype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.AUTHOR_TYPE" title="ecmblib.lib.ecmb_enums.AUTHOR_TYPE"><span class="pre">AUTHOR_TYPE</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">AUTHOR_TYPE.AUTHOR</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">href</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_metadata_based_on.ecmbMetaDataBasedOn.add_author" title="Link to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – the name of the author</p></li>
-<li><p><strong>authortype</strong> (<em>AUTHOR_TYPE</em><em>, </em><em>optional</em>) – the role of the author</p></li>
+<li><p><strong>authortype</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.AUTHOR_TYPE" title="ecmblib.lib.ecmb_enums.AUTHOR_TYPE"><em>AUTHOR_TYPE</em></a><em>, </em><em>optional</em>) – the role of the author</p></li>
 <li><p><strong>href</strong> (<em>str</em><em>, </em><em>optional</em>) – the homepage of the author</p></li>
 </ul>
 </dd>
@@ -785,7 +785,7 @@ You can add images directly to the root as well for example the introduction, ta
 <dl class="py method">
 <dt class="sig sig-object py" id="ecmblib.lib.ecmb_content.ecmbContent.add_folder">
 <span class="sig-name descname"><span class="pre">add_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid_or_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder" title="ecmblib.lib.ecmb_content_folder.ecmbContentFolder"><span class="pre">ecmbContentFolder</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder" title="ecmblib.lib.ecmb_content_folder.ecmbContentFolder"><span class="pre">ecmbContentFolder</span></a></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_content.ecmbContent.add_folder" title="Link to this definition">#</a></dt>
-<dd><p>Adds an (sub-)folder. If you want to use chapters (and subchapters) in navigation you have to organize the images in folders, coz a chapter points to a folder.</p>
+<dd><p>Adds/creates an (sub-)folder. If you want to use chapters (and subchapters) in navigation you have to organize the images in folders, coz a chapter points to a folder.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Note<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
@@ -807,7 +807,7 @@ You can add images directly to the root as well for example the introduction, ta
 <dl class="py method">
 <dt class="sig sig-object py" id="ecmblib.lib.ecmb_content.ecmbContent.add_image">
 <span class="sig-name descname"><span class="pre">add_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_or_image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">BytesIO</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><span class="pre">ecmbContentImage</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_left</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">BytesIO</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_right</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">BytesIO</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><span class="pre">ecmbContentImage</span></a></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_content.ecmbContent.add_image" title="Link to this definition">#</a></dt>
-<dd><p>Adds an image</p>
+<dd><p>Adds/creates an image</p>
 <dl class="field-list simple">
 <dt class="field-odd">Note<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
@@ -873,7 +873,7 @@ You can add images directly to the root as well for example the introduction, ta
 <dl class="py method">
 <dt class="sig sig-object py" id="ecmblib.lib.ecmb_content_folder.ecmbContentFolder.add_folder">
 <span class="sig-name descname"><span class="pre">add_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid_or_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder" title="ecmblib.lib.ecmb_content_folder.ecmbContentFolder"><span class="pre">ecmbContentFolder</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder" title="ecmblib.lib.ecmb_content_folder.ecmbContentFolder"><span class="pre">ecmbContentFolder</span></a></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder.add_folder" title="Link to this definition">#</a></dt>
-<dd><p>Adds an (sub-)folder. If you want to use chapters (and subchapters) in navigation you have to organize the images in folders, coz a chapter points to a folder.</p>
+<dd><p>Adds/creates an (sub-)folder. If you want to use chapters (and subchapters) in navigation you have to organize the images in folders, coz a chapter points to a folder.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Note<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
@@ -895,7 +895,7 @@ You can add images directly to the root as well for example the introduction, ta
 <dl class="py method">
 <dt class="sig sig-object py" id="ecmblib.lib.ecmb_content_folder.ecmbContentFolder.add_image">
 <span class="sig-name descname"><span class="pre">add_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_or_image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">BytesIO</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><span class="pre">ecmbContentImage</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_left</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">BytesIO</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_right</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">BytesIO</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><span class="pre">ecmbContentImage</span></a></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder.add_image" title="Link to this definition">#</a></dt>
-<dd><p>Adds an image</p>
+<dd><p>Adds/creates an image</p>
 <dl class="field-list simple">
 <dt class="field-odd">Note<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
@@ -973,6 +973,460 @@ You can add images directly to the root as well for example the introduction, ta
 </dl>
 </dd></dl>
 
+</dd></dl>
+
+</section>
+</section>
+<section id="navigation">
+<h1>Navigation<a class="headerlink" href="#navigation" title="Link to this heading">#</a></h1>
+<section id="module-ecmblib.lib.ecmb_navigation">
+<span id="ecmbnavigation"></span><h2>ecmbNavigation<a class="headerlink" href="#module-ecmblib.lib.ecmb_navigation" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation.ecmbNavigation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ecmblib.lib.ecmb_navigation.</span></span><span class="sig-name descname"><span class="pre">ecmbNavigation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation.ecmbNavigation" title="Link to this definition">#</a></dt>
+<dd><p>This is the root-node of the book’s navigation.</p>
+<p>Navigation is optinal. If you don’t add it the app will automaticaly generate a navigation based on the folder-structure.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation.ecmbNavigation.add_chapter">
+<span class="sig-name descname"><span class="pre">add_chapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_or_chapter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter" title="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter"><span class="pre">ecmbNavigationChapter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder" title="ecmblib.lib.ecmb_content_folder.ecmbContentFolder"><span class="pre">ecmbContentFolder</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><span class="pre">ecmbContentImage</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><span class="pre">TARGET_SIDE</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TARGET_SIDE.AUTO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter" title="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter"><span class="pre">ecmbNavigationChapter</span></a></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation.ecmbNavigation.add_chapter" title="Link to this definition">#</a></dt>
+<dd><p>Adds/creates a (sub-) chapter.</p>
+<p>You can define a target-image, which could be any image as long its part of the chapter’s folder (default is the first image of the folder). If you are pointing to a double-page-image you can define if it should point to the left or right part (defaults to auto).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<ul class="simple">
+<li><p>if you add a previously created ecmbNavigationChapter all other parameters are ignored</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label_or_chapter</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter" title="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter"><em>ecmbNavigationChapter</em></a>) – a label or a previously created ecmbNavigationChapter</p></li>
+<li><p><strong>folder</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder" title="ecmblib.lib.ecmb_content_folder.ecmbContentFolder"><em>ecmbContentFolder</em></a>) – a folder-object or a unique-id pointing to a folder</p></li>
+<li><p><strong>target</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><em>ecmbContentImage</em></a><em>, </em><em>optional</em>) – a image-object or a unique-id pointing to a image</p></li>
+<li><p><strong>target_side</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><em>TARGET_SIDE</em></a><em>, </em><em>optional</em>) – the side of a double-page-image</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – the hover-text of the chapter</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter" title="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter">ecmbNavigationChapter</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation.ecmbNavigation.add_headline">
+<span class="sig-name descname"><span class="pre">add_headline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_or_headline</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline" title="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline"><span class="pre">ecmbNavigationHeadline</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline" title="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline"><span class="pre">ecmbNavigationHeadline</span></a></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation.ecmbNavigation.add_headline" title="Link to this definition">#</a></dt>
+<dd><p>Adds/creates a headline.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<ul class="simple">
+<li><p>you have to add at minimum one child to a headline</p></li>
+<li><p>if you add a previously created ecmbContentImage all other parameters are ignored</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label_or_headline</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline" title="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline"><em>ecmbNavigationHeadline</em></a>) – a label or a previously created ecmbNavigationHeadline</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – the hover-text of the headline</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline" title="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline">ecmbNavigationHeadline</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation.ecmbNavigation.add_item">
+<span class="sig-name descname"><span class="pre">add_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_or_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem" title="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem"><span class="pre">ecmbNavigationItem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><span class="pre">ecmbContentImage</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><span class="pre">TARGET_SIDE</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TARGET_SIDE.AUTO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem" title="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem"><span class="pre">ecmbNavigationItem</span></a></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation.ecmbNavigation.add_item" title="Link to this definition">#</a></dt>
+<dd><p>Adds/creates a link to an image.</p>
+<p>The target-image has to be part of this chapter’s folder. If you are pointing to a double-page-image you can define if it should point to the left or right part (defaults to auto).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<ul class="simple">
+<li><p>if you add a previously created ecmbNavigationItem all other parameters are ignored</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label_or_item</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem" title="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem"><em>ecmbNavigationItem</em></a>) – a label or a previously created ecmbNavigationItem</p></li>
+<li><p><strong>target</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><em>ecmbContentImage</em></a>) – a image-object or a unique-id pointing to a image</p></li>
+<li><p><strong>target_side</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><em>TARGET_SIDE</em></a><em>, </em><em>optional</em>) – the side of a double-page-image</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – the hover-text of the link</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem" title="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem">ecmbNavigationItem</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation.ecmbNavigation.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation.ecmbNavigation.set_title" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – the hover-text of the node</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ecmblib.lib.ecmb_navigation_chapter">
+<span id="ecmbnavigationchapter"></span><h2>ecmbNavigationChapter<a class="headerlink" href="#module-ecmblib.lib.ecmb_navigation_chapter" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ecmblib.lib.ecmb_navigation_chapter.</span></span><span class="sig-name descname"><span class="pre">ecmbNavigationChapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder" title="ecmblib.lib.ecmb_content_folder.ecmbContentFolder"><span class="pre">ecmbContentFolder</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><span class="pre">ecmbContentImage</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><span class="pre">TARGET_SIDE</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TARGET_SIDE.AUTO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter" title="Link to this definition">#</a></dt>
+<dd><p>You can define a target-image, which could be any image as long its part of this chapter’s folder (default is the first image of the folder).  If you are pointing to a double-page-image you can define if it should point to the left or right part (defaults to auto).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>book_obj</strong> (<a class="reference internal" href="#ecmblib.ecmb_book.ecmbBook" title="ecmblib.ecmb_book.ecmbBook"><em>ecmbBook</em></a>) – </p></li>
+<li><p><strong>label</strong> (<em>str</em>) – a label</p></li>
+<li><p><strong>folder</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder" title="ecmblib.lib.ecmb_content_folder.ecmbContentFolder"><em>ecmbContentFolder</em></a>) – a folder-object or a unique-id pointing to a folder</p></li>
+<li><p><strong>target</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><em>ecmbContentImage</em></a><em>, </em><em>optional</em>) – a image-object or a unique-id pointing to a image</p></li>
+<li><p><strong>target_side</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><em>TARGET_SIDE</em></a><em>, </em><em>optional</em>) – the side of a double-page-image</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – the hover-text of the chapter</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter.add_chapter">
+<span class="sig-name descname"><span class="pre">add_chapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_or_chapter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter" title="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter"><span class="pre">ecmbNavigationChapter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder" title="ecmblib.lib.ecmb_content_folder.ecmbContentFolder"><span class="pre">ecmbContentFolder</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><span class="pre">ecmbContentImage</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><span class="pre">TARGET_SIDE</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TARGET_SIDE.AUTO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter" title="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter"><span class="pre">ecmbNavigationChapter</span></a></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter.add_chapter" title="Link to this definition">#</a></dt>
+<dd><p>Adds/creates a (sub-) chapter.</p>
+<p>You can define a target-image, which could be any image as long its part of the chapter’s folder (default is the first image of the folder). If you are pointing to a double-page-image you can define if it should point to the left or right part (defaults to auto).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<ul class="simple">
+<li><p>if you add a previously created ecmbNavigationChapter all other parameters are ignored</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label_or_chapter</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter" title="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter"><em>ecmbNavigationChapter</em></a>) – a label or a previously created ecmbNavigationChapter</p></li>
+<li><p><strong>folder</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder" title="ecmblib.lib.ecmb_content_folder.ecmbContentFolder"><em>ecmbContentFolder</em></a>) – a folder-object or a unique-id pointing to a folder</p></li>
+<li><p><strong>target</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><em>ecmbContentImage</em></a><em>, </em><em>optional</em>) – a image-object or a unique-id pointing to a image</p></li>
+<li><p><strong>target_side</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><em>TARGET_SIDE</em></a><em>, </em><em>optional</em>) – the side of a double-page-image</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – the hover-text of the chapter</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter" title="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter">ecmbNavigationChapter</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter.add_headline">
+<span class="sig-name descname"><span class="pre">add_headline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_or_headline</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline" title="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline"><span class="pre">ecmbNavigationHeadline</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline" title="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline"><span class="pre">ecmbNavigationHeadline</span></a></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter.add_headline" title="Link to this definition">#</a></dt>
+<dd><p>Adds/creates a headline.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<ul class="simple">
+<li><p>you have to add at minimum one child to a headline</p></li>
+<li><p>if you add a previously created ecmbContentImage all other parameters are ignored</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label_or_headline</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline" title="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline"><em>ecmbNavigationHeadline</em></a>) – a label or a previously created ecmbNavigationHeadline</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – the hover-text of the headline</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline" title="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline">ecmbNavigationHeadline</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter.add_item">
+<span class="sig-name descname"><span class="pre">add_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_or_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem" title="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem"><span class="pre">ecmbNavigationItem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><span class="pre">ecmbContentImage</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><span class="pre">TARGET_SIDE</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TARGET_SIDE.AUTO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem" title="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem"><span class="pre">ecmbNavigationItem</span></a></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter.add_item" title="Link to this definition">#</a></dt>
+<dd><p>Adds/creates a link to an image.</p>
+<p>The target-image has to be part of this chapter’s folder. If you are pointing to a double-page-image you can define if it should point to the left or right part (defaults to auto).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<ul class="simple">
+<li><p>if you add a previously created ecmbNavigationItem all other parameters are ignored</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label_or_item</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem" title="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem"><em>ecmbNavigationItem</em></a>) – a label or a previously created ecmbNavigationItem</p></li>
+<li><p><strong>target</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><em>ecmbContentImage</em></a>) – a image-object or a unique-id pointing to a image</p></li>
+<li><p><strong>target_side</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><em>TARGET_SIDE</em></a><em>, </em><em>optional</em>) – the side of a double-page-image</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – the hover-text of the link</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem" title="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem">ecmbNavigationItem</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter.set_title" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – the hover-text of the node</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ecmblib.lib.ecmb_navigation_headline">
+<span id="ecmbnavigationheadline"></span><h2>ecmbNavigationHeadline<a class="headerlink" href="#module-ecmblib.lib.ecmb_navigation_headline" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ecmblib.lib.ecmb_navigation_headline.</span></span><span class="sig-name descname"><span class="pre">ecmbNavigationHeadline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<ul class="simple">
+<li><p>you have to add at minimum one child to a headline</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>book_obj</strong> (<a class="reference internal" href="#ecmblib.ecmb_book.ecmbBook" title="ecmblib.ecmb_book.ecmbBook"><em>ecmbBook</em></a>) – </p></li>
+<li><p><strong>label</strong> (<em>str</em>) – a label</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – the hover-text of the headline</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline.add_chapter">
+<span class="sig-name descname"><span class="pre">add_chapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_or_chapter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter" title="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter"><span class="pre">ecmbNavigationChapter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder" title="ecmblib.lib.ecmb_content_folder.ecmbContentFolder"><span class="pre">ecmbContentFolder</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><span class="pre">ecmbContentImage</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><span class="pre">TARGET_SIDE</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TARGET_SIDE.AUTO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter" title="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter"><span class="pre">ecmbNavigationChapter</span></a></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline.add_chapter" title="Link to this definition">#</a></dt>
+<dd><p>Adds/creates a (sub-) chapter.</p>
+<p>You can define a target-image, which could be any image as long its part of the chapter’s folder (default is the first image of the folder). If you are pointing to a double-page-image you can define if it should point to the left or right part (defaults to auto).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<ul class="simple">
+<li><p>if you add a previously created ecmbNavigationChapter all other parameters are ignored</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label_or_chapter</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter" title="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter"><em>ecmbNavigationChapter</em></a>) – a label or a previously created ecmbNavigationChapter</p></li>
+<li><p><strong>folder</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_content_folder.ecmbContentFolder" title="ecmblib.lib.ecmb_content_folder.ecmbContentFolder"><em>ecmbContentFolder</em></a>) – a folder-object or a unique-id pointing to a folder</p></li>
+<li><p><strong>target</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><em>ecmbContentImage</em></a><em>, </em><em>optional</em>) – a image-object or a unique-id pointing to a image</p></li>
+<li><p><strong>target_side</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><em>TARGET_SIDE</em></a><em>, </em><em>optional</em>) – the side of a double-page-image</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – the hover-text of the chapter</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter" title="ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter">ecmbNavigationChapter</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline.add_headline">
+<span class="sig-name descname"><span class="pre">add_headline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_or_headline</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline" title="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline"><span class="pre">ecmbNavigationHeadline</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline" title="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline"><span class="pre">ecmbNavigationHeadline</span></a></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline.add_headline" title="Link to this definition">#</a></dt>
+<dd><p>Adds/creates a headline.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<ul class="simple">
+<li><p>you have to add at minimum one child to a headline</p></li>
+<li><p>if you add a previously created ecmbContentImage all other parameters are ignored</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label_or_headline</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline" title="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline"><em>ecmbNavigationHeadline</em></a>) – a label or a previously created ecmbNavigationHeadline</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – the hover-text of the headline</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline" title="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline">ecmbNavigationHeadline</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline.add_item">
+<span class="sig-name descname"><span class="pre">add_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label_or_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem" title="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem"><span class="pre">ecmbNavigationItem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><span class="pre">ecmbContentImage</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><span class="pre">TARGET_SIDE</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TARGET_SIDE.AUTO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem" title="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem"><span class="pre">ecmbNavigationItem</span></a></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline.add_item" title="Link to this definition">#</a></dt>
+<dd><p>Adds/creates a link to an image.</p>
+<p>The target-image has to be part of this chapter’s folder. If you are pointing to a double-page-image you can define if it should point to the left or right part (defaults to auto).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<ul class="simple">
+<li><p>if you add a previously created ecmbNavigationItem all other parameters are ignored</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label_or_item</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem" title="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem"><em>ecmbNavigationItem</em></a>) – a label or a previously created ecmbNavigationItem</p></li>
+<li><p><strong>target</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><em>ecmbContentImage</em></a>) – a image-object or a unique-id pointing to a image</p></li>
+<li><p><strong>target_side</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><em>TARGET_SIDE</em></a><em>, </em><em>optional</em>) – the side of a double-page-image</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – the hover-text of the link</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem" title="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem">ecmbNavigationItem</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline.set_title" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – the hover-text of the node</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ecmblib.lib.ecmb_navigation_item">
+<span id="ecmbnavigationitem"></span><h2>ecmbNavigationItem<a class="headerlink" href="#module-ecmblib.lib.ecmb_navigation_item" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ecmblib.lib.ecmb_navigation_item.</span></span><span class="sig-name descname"><span class="pre">ecmbNavigationItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">book_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><span class="pre">ecmbContentImage</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><span class="pre">TARGET_SIDE</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TARGET_SIDE.AUTO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem" title="Link to this definition">#</a></dt>
+<dd><p>The target-image has to be part of its parent chapter’s folder. If you are pointing to a double-page-image you can define if it should point to the left or right part (defaults to auto).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>book_obj</strong> (<a class="reference internal" href="#ecmblib.ecmb_book.ecmbBook" title="ecmblib.ecmb_book.ecmbBook"><em>ecmbBook</em></a>) – </p></li>
+<li><p><strong>label</strong> (<em>str</em>) – a label</p></li>
+<li><p><strong>target</strong> (<em>str</em><em> | </em><a class="reference internal" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage" title="ecmblib.lib.ecmb_content_image.ecmbContentImage"><em>ecmbContentImage</em></a>) – a image-object or a unique-id pointing to a image</p></li>
+<li><p><strong>target_side</strong> (<a class="reference internal" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="ecmblib.lib.ecmb_enums.TARGET_SIDE"><em>TARGET_SIDE</em></a><em>, </em><em>optional</em>) – the side of a double-page-image</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – the hover-text of the link</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem.set_title">
+<span class="sig-name descname"><span class="pre">set_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem.set_title" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – the hover-text of the node</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="misc">
+<h1>Misc<a class="headerlink" href="#misc" title="Link to this heading">#</a></h1>
+<section id="module-ecmblib.lib.ecmb_enums">
+<span id="enums"></span><h2>Enums<a class="headerlink" href="#module-ecmblib.lib.ecmb_enums" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_enums.ALLOWED_IMAGE_EXTENTIONS">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ecmblib.lib.ecmb_enums.</span></span><span class="sig-name descname"><span class="pre">ALLOWED_IMAGE_EXTENTIONS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ecmblib.lib.ecmb_enums.ALLOWED_IMAGE_EXTENTIONS" title="Link to this definition">#</a></dt>
+<dd><ul class="simple">
+<li><p>JPG = ‘jpg’</p></li>
+<li><p>JPEG = ‘jpeg’</p></li>
+<li><p>PNG = ‘png’</p></li>
+<li><p>WEBP = ‘webp’</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_enums.BOOK_TYPE">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ecmblib.lib.ecmb_enums.</span></span><span class="sig-name descname"><span class="pre">BOOK_TYPE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ecmblib.lib.ecmb_enums.BOOK_TYPE" title="Link to this definition">#</a></dt>
+<dd><ul class="simple">
+<li><p>MANGA = ‘manga’</p></li>
+<li><p>COMIC = ‘comic’</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_enums.AUTHOR_TYPE">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ecmblib.lib.ecmb_enums.</span></span><span class="sig-name descname"><span class="pre">AUTHOR_TYPE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ecmblib.lib.ecmb_enums.AUTHOR_TYPE" title="Link to this definition">#</a></dt>
+<dd><ul class="simple">
+<li><p>AUTHOR = ‘Author’</p></li>
+<li><p>COAUTHOR = ‘Co-Author’</p></li>
+<li><p>STORY = ‘Story’</p></li>
+<li><p>ART = ‘Art’</p></li>
+<li><p>COLORIST = ‘Colorist’</p></li>
+<li><p>COVERARTIST = ‘CoverArtist’</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_enums.EDITOR_TYPE">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ecmblib.lib.ecmb_enums.</span></span><span class="sig-name descname"><span class="pre">EDITOR_TYPE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ecmblib.lib.ecmb_enums.EDITOR_TYPE" title="Link to this definition">#</a></dt>
+<dd><ul class="simple">
+<li><p>TRANSLATOR = ‘Translator’</p></li>
+<li><p>SCANNER = ‘Scanner’</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_enums.BASED_ON_TYPE">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ecmblib.lib.ecmb_enums.</span></span><span class="sig-name descname"><span class="pre">BASED_ON_TYPE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ecmblib.lib.ecmb_enums.BASED_ON_TYPE" title="Link to this definition">#</a></dt>
+<dd><ul class="simple">
+<li><p>NOVEL = ‘Novel’</p></li>
+<li><p>LIGHTNOVEL = ‘Lightnovel’</p></li>
+<li><p>MANGA = ‘Manga’</p></li>
+<li><p>COMIC = ‘Comic’</p></li>
+<li><p>ANIME = ‘Anime’</p></li>
+<li><p>GAME = ‘Game’</p></li>
+<li><p>OTHER =’Other’</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_enums.CONTENT_WARNING">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ecmblib.lib.ecmb_enums.</span></span><span class="sig-name descname"><span class="pre">CONTENT_WARNING</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ecmblib.lib.ecmb_enums.CONTENT_WARNING" title="Link to this definition">#</a></dt>
+<dd><ul class="simple">
+<li><p>MATURE_THEMES = ‘Mature Themes’</p></li>
+<li><p>NUDITY = ‘Nudity’</p></li>
+<li><p>SEXUAL_CONTENT = ‘Sexual Content’</p></li>
+<li><p>EXPLICIT_SEX = ‘Explict Sex’</p></li>
+<li><p>HENTAI = ‘Hentai’</p></li>
+<li><p>PROSTITUTION = ‘Prostitution’</p></li>
+<li><p>INCEST = ‘Incest’</p></li>
+<li><p>VIOLENCE = ‘Violence’</p></li>
+<li><p>EXPLICIT_VIOLENCE = ‘Explicit Violence’</p></li>
+<li><p>TERRORISM = ‘Terrorism’</p></li>
+<li><p>EMOTIONAL_ABUSE= ‘Emotional Abuse’</p></li>
+<li><p>SEXUAL_ABUSE = ‘Sexual Abuse’</p></li>
+<li><p>PHYSICAL_ABUSE = ‘Physical Abuse’</p></li>
+<li><p>DOMESTIC_ABUSE = ‘Domestic Abuse’</p></li>
+<li><p>SELF_HARM = ‘Self-Harm’</p></li>
+<li><p>SUICIDE = ‘Suicide’</p></li>
+<li><p>DRUGS = ‘Drugs’</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ecmblib.lib.ecmb_enums.TARGET_SIDE">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ecmblib.lib.ecmb_enums.</span></span><span class="sig-name descname"><span class="pre">TARGET_SIDE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE" title="Link to this definition">#</a></dt>
+<dd><ul class="simple">
+<li><p>AUTO = ‘auto’</p></li>
+<li><p>LEFT = ‘left’</p></li>
+<li><p>RIGHT = ‘right’</p></li>
+</ul>
 </dd></dl>
 
 </section>
@@ -1101,6 +1555,59 @@ You can add images directly to the root as well for example the introduction, ta
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_content_image.ecmbContentImage.get_unique_id"><code class="docutils literal notranslate"><span class="pre">ecmbContentImage.get_unique_id()</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation">Navigation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ecmblib.lib.ecmb_navigation">ecmbNavigation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation.ecmbNavigation"><code class="docutils literal notranslate"><span class="pre">ecmbNavigation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation.ecmbNavigation.add_chapter"><code class="docutils literal notranslate"><span class="pre">ecmbNavigation.add_chapter()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation.ecmbNavigation.add_headline"><code class="docutils literal notranslate"><span class="pre">ecmbNavigation.add_headline()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation.ecmbNavigation.add_item"><code class="docutils literal notranslate"><span class="pre">ecmbNavigation.add_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation.ecmbNavigation.set_title"><code class="docutils literal notranslate"><span class="pre">ecmbNavigation.set_title()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ecmblib.lib.ecmb_navigation_chapter">ecmbNavigationChapter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter"><code class="docutils literal notranslate"><span class="pre">ecmbNavigationChapter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter.add_chapter"><code class="docutils literal notranslate"><span class="pre">ecmbNavigationChapter.add_chapter()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter.add_headline"><code class="docutils literal notranslate"><span class="pre">ecmbNavigationChapter.add_headline()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter.add_item"><code class="docutils literal notranslate"><span class="pre">ecmbNavigationChapter.add_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation_chapter.ecmbNavigationChapter.set_title"><code class="docutils literal notranslate"><span class="pre">ecmbNavigationChapter.set_title()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ecmblib.lib.ecmb_navigation_headline">ecmbNavigationHeadline</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline"><code class="docutils literal notranslate"><span class="pre">ecmbNavigationHeadline</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline.add_chapter"><code class="docutils literal notranslate"><span class="pre">ecmbNavigationHeadline.add_chapter()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline.add_headline"><code class="docutils literal notranslate"><span class="pre">ecmbNavigationHeadline.add_headline()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline.add_item"><code class="docutils literal notranslate"><span class="pre">ecmbNavigationHeadline.add_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation_headline.ecmbNavigationHeadline.set_title"><code class="docutils literal notranslate"><span class="pre">ecmbNavigationHeadline.set_title()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ecmblib.lib.ecmb_navigation_item">ecmbNavigationItem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem"><code class="docutils literal notranslate"><span class="pre">ecmbNavigationItem</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_navigation_item.ecmbNavigationItem.set_title"><code class="docutils literal notranslate"><span class="pre">ecmbNavigationItem.set_title()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#misc">Misc</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ecmblib.lib.ecmb_enums">Enums</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_enums.ALLOWED_IMAGE_EXTENTIONS"><code class="docutils literal notranslate"><span class="pre">ALLOWED_IMAGE_EXTENTIONS</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_enums.BOOK_TYPE"><code class="docutils literal notranslate"><span class="pre">BOOK_TYPE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_enums.AUTHOR_TYPE"><code class="docutils literal notranslate"><span class="pre">AUTHOR_TYPE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_enums.EDITOR_TYPE"><code class="docutils literal notranslate"><span class="pre">EDITOR_TYPE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_enums.BASED_ON_TYPE"><code class="docutils literal notranslate"><span class="pre">BASED_ON_TYPE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_enums.CONTENT_WARNING"><code class="docutils literal notranslate"><span class="pre">CONTENT_WARNING</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecmblib.lib.ecmb_enums.TARGET_SIDE"><code class="docutils literal notranslate"><span class="pre">TARGET_SIDE</span></code></a></li>
 </ul>
 </li>
 </ul>

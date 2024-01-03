@@ -33,6 +33,21 @@ from .ecmb_content_image import ecmbContentImage
 
 
 class ecmbNavigationItem(ecmbNavigationBase):
+    """ecmbNavigationItem 
+
+    The target-image has to be part of its parent chapter's folder. If you are pointing to a double-page-image you can define if it should point to the left or right part (defaults to auto).
+
+    :param book_obj:
+    :type book_obj: ecmbBook
+    :param label: a label 
+    :type label: str 
+    :param target: a image-object or a unique-id pointing to a image
+    :type target: str | ecmbContentImage
+    :param target_side: the side of a double-page-image
+    :type target_side: TARGET_SIDE, optional
+    :param title: the hover-text of the link
+    :type title: str, optional
+    """    
 
     def __init__(self, book_obj, label: str, target: str|ecmbContentImage, target_side: TARGET_SIDE = TARGET_SIDE.AUTO, title:str = None):
         super()._init(book_obj, label, title)
